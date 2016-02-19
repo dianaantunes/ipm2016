@@ -1,0 +1,53 @@
+header {
+	background: rgb(51,51,51);
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.19);
+	padding: 0 0 2em;
+}
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	text-align: center;
+	margin: 0 0;
+	background-image: url("cubes.png")
+}
+
+h1 {
+	margin-top: 0;
+	font-size: 3em;
+	font-weight: lighter;
+	margin-bottom: 0;
+	color: white;
+}
+
+header h2, td {
+	margin-top: 0;
+	margin-bottom: 2em;
+	font-weight: lighter;
+	color: rgb(200,200,200);
+}
+
+table tr td a img {
+	box-shadow: 0 6px 8px 0 rgba(100, 100, 100, 0.1);
+	transition: transform 1s;
+	border-radius: 100%;
+}
+
+#links {
+	text-align: left; 
+	padding-left: 100px;
+}
+
+img:hover{
+	transform: scale(1.1);
+}
+
+.inner_section a:link,
+.inner_section a:visited {
+	text-decoration: none;
+	color: rgb(51,51,51);
+}
+
+.inner_section a:hover {
+	text-decoration: none;
+	color: rgb(0,158,218);
+}

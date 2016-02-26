@@ -1,0 +1,139 @@
+--------------------------------------------------------------------------------
+INTRODUÇÃO
+QUEM É?
+--------------------------------------------------------------------------------
+
+Qual o seu género?
+  Masculino
+  Feminino
+
+Em que intervalo se situa a sua idade?
+  < 18
+  19 - 25
+  26 - 35
+  36 - 50
+  51 
+
+Tem algum tipo de deficiências oculares?
+  Não
+  Miopia
+  Estigmatismo
+  Vista Cansada
+  Outra:
+
+--------------------------------------------------------------------------------
+VIDA NOTURNA
+COMO ESCOLHE A SUA NOITE?
+--------------------------------------------------------------------------------
+
+Com que frequência vai a bares?
+  Menos de 1 vez por mês
+  Entre 1 vez por mês e por semana
+  Mais que 1 vez por semana
+
+Como costuma ir a bares?
+  Sozinho
+  Com mais um amigo
+  Em grupos de 3 a 6 pessoas
+  Em grupos grandes, com mais de 6 pessoas
+
+Qual o seu ambiente favorito num bar?
+  Calmo, ao ar livre
+  Calmo, no interior
+  Agitado, ao ar livre
+  Agitado, no interior
+
+Costuma frequentar sempre o mesmo bar?
+  Sim
+  Não
+
+Se não, como conhece a oferta do bar?
+  Através da lista de bebidas
+  Pelos amigos
+  Vejo anteriormente na internet
+  Pergunto ao bartender
+
+Se sim, qual o seu nivel de familiaridade com o seu bar?
+  Muito familiar: Chego ao bar e recebo o costume, sem pedir
+  Conhecem-me, mas vario os meus pedidos
+  Não sou reconhecido pelos funcionários 
+
+--------------------------------------------------------------------------------
+NO BAR
+COMO SE COMPORTA NUM BAR?
+--------------------------------------------------------------------------------
+
+O que costuma fazer quando vai a bares?
+  Beber
+  Cantar
+  Conhecer pessoas
+  Conversar
+  Dançar
+  Jogar
+
+Quanto tempo demora normalmente a ser atendido ao balcão?
+  Cerca de 1 minuto
+  Entre 1 e 5 minutos
+  Mais de 5 minutos
+
+Quanto tempo demora normalmente a ser atendido na sua mesa?
+  Cerca de 1 minuto
+  Entre 1 e 5 minutos
+  Mais de 5 minutos
+
+Como costuma pagar regularmente?
+  Dinheiro
+  Cartão
+  Outra:
+
+Costuma dividir a conta com os seus amigos?
+  Sim
+  Não 
+
+Como reage se não houver troco, bebida, ou se enganar no seu pedido?
+  Abandono o bar
+  Falo com um empregado para me ajudar
+  Tento arranjar alternativa por mim próprio
+  Outra:
+
+De que forma volta para casa ao fim da noite?
+  Carro
+  Taxi
+  Transporte Públicos
+  A pé
+  Outra:
+
+--------------------------------------------------------------------------------
+TECNOLOGIA
+QUAL O SEU À VONTADE COM GADGETS?
+--------------------------------------------------------------------------------
+
+Como considera o seu à vontade com ecrãs táteis?
+  Muito à vontade, conhecendo imensos gestos multi-touch e sendo capaz de ensinar a outros
+  Confortável, sabendo da existência de alguns gestos multi-touch.
+  Regular
+  Nunca usei ecrãs táteis 
+
+Quando experimenta um novo dispositivo ou aplicação, gosta de ter um tuturial inicial?
+  Sim
+  Não
+
+--------------------------------------------------------------------------------
+NOVAS FUNCIONALIDADES
+SUPONHA AGORA, QUE DISPÕE NO SEU BAR DE UMA MESA INTERATIVA: O SEU ECRÃ SENSÍVEL AO TOQUE TORNA-O FÁCIL DE USAR,
+E OS VÁRIOS SENSORES E CÂMARAS AO SEU DISPOR NA MESA PODEM TORNAR A SUA VISITA MAIS AGRADÁVEL.
+--------------------------------------------------------------------------------
+
+Que funcionalidades gostaria de ter numa mesa interativa?
+  Aceder facilmente a pedidos anteriores
+  Chamar um taxi ao pagar
+  Jogar jogos multi-player
+  Oferecer bebidas à mesa do lado
+  Pagar rodadas
+  Participar na playlist do bar
+  Partilhar fotos com amigos
+  Pedir facilmente bebidas personalizadas
+  Perceber se pode beber mais um copo e ainda conduzir
+  Ter um refill à distância de um clique
+  Ter um refill automático
+  Repor o gelo automáticamente

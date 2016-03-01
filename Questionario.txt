@@ -9,12 +9,12 @@ Qual o seu género?
 
 Em que intervalo se situa a sua idade?
   < 18
-  19 - 25
+  18 - 25
   26 - 35
   36 - 50
-  51 
+  > 51 
 
-Tem algum tipo de deficiências oculares?
+Tem algum tipo de deficiência visual?
   Não
   Miopia
   Estigmatismo
@@ -27,13 +27,13 @@ COMO ESCOLHE A SUA NOITE?
 --------------------------------------------------------------------------------
 
 Com que frequência vai a bares?
-  Menos de 1 vez por mês
-  Entre 1 vez por mês e por semana
-  Mais que 1 vez por semana
+  Nunca ou < 1 vez por mês
+  Entre 1 vez por mês e 1 vez por semana
+  > 1 vez por semana
 
-Como costuma ir a bares?
+Com quem costuma ir a bares? (Ordene do mais frequente ao menos frequente)
   Sozinho
-  Com mais um amigo
+  Com mais uma pessoa
   Em grupos de 3 a 6 pessoas
   Em grupos grandes, com mais de 6 pessoas
 
@@ -47,13 +47,13 @@ Costuma frequentar sempre o mesmo bar?
   Sim
   Não
 
-Se não, como conhece a oferta do bar?
+Se não, como conhece a oferta de bebidas do bar?
   Através da lista de bebidas
   Pelos amigos
   Vejo anteriormente na internet
   Pergunto ao bartender
 
-Se sim, qual o seu nivel de familiaridade com o seu bar?
+Se sim, qual o seu nível de familiaridade com o seu bar?
   Muito familiar: Chego ao bar e recebo o costume, sem pedir
   Conhecem-me, mas vario os meus pedidos
   Não sou reconhecido pelos funcionários 
@@ -63,7 +63,7 @@ NO BAR
 COMO SE COMPORTA NUM BAR?
 --------------------------------------------------------------------------------
 
-O que costuma fazer quando vai a bares?
+Quando vai a bares, costuma: 
   Beber
   Cantar
   Conhecer pessoas
@@ -86,19 +86,21 @@ Como costuma pagar regularmente?
   Cartão
   Outra:
 
-Costuma dividir a conta com os seus amigos?
-  Sim
-  Não 
+Como costuma pagar a conta quando está com amigos?
+  Cada um paga o seu
+  Divide-se por todos
+  Uma pessoa paga tudo
 
-Como reage se não houver troco, bebida, ou se enganar no seu pedido?
+**Como reage se não houver troco, bebida, ou se enganar no seu pedido?
   Abandono o bar
   Falo com um empregado para me ajudar
   Tento arranjar alternativa por mim próprio
   Outra:
 
-De que forma volta para casa ao fim da noite?
-  Carro
-  Taxi
+De que forma costuma voltar para casa ao fim da noite? (Ordene do mais frequente ao menos frequente)
+  Viatura própria
+  Carro de um amigo
+  Táxi
   Transporte Públicos
   A pé
   Outra:
@@ -108,32 +110,33 @@ TECNOLOGIA
 QUAL O SEU À VONTADE COM GADGETS?
 --------------------------------------------------------------------------------
 
-Como considera o seu à vontade com ecrãs táteis?
+Como considera o seu à vontade com ecrãs táteis? 
   Muito à vontade, conhecendo imensos gestos multi-touch e sendo capaz de ensinar a outros
-  Confortável, sabendo da existência de alguns gestos multi-touch.
+  Confortável, sabendo da existência de alguns gestos multi-touch
   Regular
-  Nunca usei ecrãs táteis 
+  Pouco contacto com ecrãs táteis
+  Nunca usei ecrãs táteis
 
-Quando experimenta um novo dispositivo ou aplicação, gosta de ter um tuturial inicial?
+Quando experimenta um novo dispositivo ou aplicação, gosta de ter um tutorial inicial?
   Sim
+  Depende - Especifique:
   Não
 
 --------------------------------------------------------------------------------
 NOVAS FUNCIONALIDADES
-SUPONHA AGORA, QUE DISPÕE NO SEU BAR DE UMA MESA INTERATIVA: O SEU ECRÃ SENSÍVEL AO TOQUE TORNA-O FÁCIL DE USAR,
-E OS VÁRIOS SENSORES E CÂMARAS AO SEU DISPOR NA MESA PODEM TORNAR A SUA VISITA MAIS AGRADÁVEL.
+SUPONHA AGORA, QUE DISPÕE NO SEU BAR DE UMA MESA INTERATIVA: O BarISTa é uma mesa interactiva na qual pode ver a lista de bebidas (e não só!) disponíveis, encomendar as suas, pedir os amendoins e até pedir bebidas para uma pessoa de outra mesa: O SEU ECRÃ SENSÍVEL AO TOQUE TORNA-O FÁCIL DE USAR,E OS VÁRIOS SENSORES E CÂMARAS AO SEU DISPOR NA MESA PODEM TORNAR A SUA VISITA MAIS AGRADÁVEL.
 --------------------------------------------------------------------------------
 
-Que funcionalidades gostaria de ter numa mesa interativa?
+Qual a importância atribuída às seguintes funcionalidades do BarISTa? (1-5)
+  Pedir facilmente bebidas personalizadas
   Aceder facilmente a pedidos anteriores
-  Chamar um taxi ao pagar
-  Jogar jogos multi-player
   Oferecer bebidas à mesa do lado
   Pagar rodadas
-  Participar na playlist do bar
-  Partilhar fotos com amigos
-  Pedir facilmente bebidas personalizadas
-  Perceber se pode beber mais um copo e ainda conduzir
-  Ter um refill à distância de um clique
+  Pedir músicas da playlist do bar
+  Tirar fotos com opção de partilhar nas redes sociais
+  Ter um refill da bebida à distância de um clique
   Ter um refill automático
-  Repor o gelo automáticamente
+  Repor o gelo automaticamente
+  Jogar jogos multi-player - secção (karaoke, quiz, ..)
+  Opção de aviso se exceder um determinado número de bebidas (caso seja o condutor designado)
+  Chamar um táxi ao fechar a conta

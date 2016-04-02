@@ -1,0 +1,128 @@
+body {
+	background: black;
+	font-family: 'Source Sans Pro', sans-serif;
+  	margin:0;
+	padding:0;
+	height:100%;
+	width:100%;
+}
+
+#top{
+	background: rgb(65,105,225);
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.19);
+	padding: 0 0 2em;
+}
+
+#background{
+	width:65%;
+	height:65%;
+}
+
+#background:hover{
+	transform: none;
+} 
+
+#mainBox{
+  	height:90%;
+  	width:100%;
+    margin:0 auto;
+    overflow: hidden;
+}
+
+
+#mainBox2{
+  	height:85%;
+  	width:70%; 
+    overflow: hidden;
+    position:absolute;
+    z-index:9999;
+    margin:0 auto;
+  	top: 10%; 
+  	left:20%; 
+}
+
+#uma{
+	width:30%;
+	height:30%; 
+	margin-left:5%; 
+	margin-top:5%; 
+}
+
+#duas{ 
+	width:20%;
+	height:40%;
+	margin-right:11%;
+	float:right;
+}
+#tres{ 
+	width:35%;
+	height:30%;
+	margin-left:33%;
+	margin-top:5%;
+}
+
+#mainBox3{
+	height:85%;  
+  	width:70%;   
+    overflow: hidden;
+    position:absolute;
+    z-index:9999;
+    margin:0 auto;
+  	top: 10%;   
+  	left:20%;   
+}
+
+#umaajuda{
+	width:5%;
+	margin-left:30%;
+	margin-bottom:30%;
+}
+
+#duasajuda{ 
+	width:5%;
+	margin-right:10%;
+	float:right;
+}
+#tresajuda{ 
+	width:5%;
+	margin-left: 31%;
+	margin-top: 35%;
+}
+
+#mainBox4{
+	height:85%; 
+  	width:70%;   
+    overflow: hidden;
+    position:absolute;
+    z-index:9999;
+    margin:0 auto;
+  	top: 10%;  
+  	left:10%;  
+}
+#sair{
+	width:15%;
+	margin-left: 1%;
+	margin-top: 50.7%;
+}
+
+span{
+	font-size: 3em;
+	font-weight: bolder;
+	color: rgb(65,105,225);
+}
+
+span.uma{
+	margin-left:-23%;
+	position:relative;
+	top:8%;
+}
+span.duas{
+	margin-left:76%;
+	position:relative;
+	top:-2%;
+}
+span.tres{
+	margin-left:-15%;
+	position:relative;
+	top:-0.5%;
+}

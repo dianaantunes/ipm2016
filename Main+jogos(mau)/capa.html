@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>IPM</title>
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+		function toggleVisible(id) {
+			var e = document.getElementById(id);
+       if(e.style.display == 'block') {
+          e.style.display = 'none';
+			 }
+       else {
+          e.style.display = 'block';
+			 }
+		}
+	</script>
+</head>
+
+<body>
+	<div id="mainBox">
+		<img id="background" src="Main_screen.png">
+	</div>
+	<div id="mainBox2">
+		<img id="uma" class="pics" src = "Balcao.png">
+		<img id="duas" class="pics" src = "Jukebox.png">
+		<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><img id="tres" class="pics" src = "Zona_de_jogos.png"></a>
+	</div>
+	<div id="mainBox3">
+		<img id="umaajuda" class="pics" src = "hem.png">
+<!-- 		<img id="duasajuda" class="pics" src = "hem.png">
+		<img id="tresajuda" class="pics" src = "hem.png"> -->
+	</div>
+	<div id="mainBox4">
+		<img id="sair" class="pics" src = "Sair.png">
+	</div>
+
+	<script></script>
+
+	<div id="light" class="white_content">
+
+		<header>
+
+			<img id="backarrow" class="pics" src="arrow.png"> ZONA DE JOGOS 
+			<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"> <img id="close" class="pics" src="close.png"> </a>
+			<img id="question" class="pics" src="square.png">
+		</header>
+
+		<div id="pagewrap">
+
+
+
+			<section id="content">
+				<a href = "javascript:void(0)" onclick = "document.getElementById('challenge').style.display='block';document.getElementById('fade2').style.display='block'">
+					<div id="inside">
+						<h2> Quiz </h2>
+						<img id="games" class="pics" src="quiz.jpg">
+					</div>
+					</a>
+				</section>
+
+				<section id="content">
+					<div id="inside">
+						<h2>Pool8</h2>
+						<img id="games" class="pics" src="pool.png">
+					</div>
+				</section>
+
+				<section id="content">
+					<div id="inside">
+						<h2>Xadrez</h2>
+						<img id="games" class="pics" src="chess.png">
+					</div>
+				</section>
+
+				<section id="content">
+					<div id="inside">
+						<h2>Corridas de Carros</h2>
+						<img id="games" class="pics" src="car.png">
+					</div>
+				</section>
+
+				<section id="content">
+					<div id="inside">
+						<h2>Jogo</h2>
+						<img id="games" class="pics" src="game.png">
+
+					</div>
+				</section>
+
+				<section id="content">
+					<div id="inside">
+						<h2>Jogo</h2>
+						<img id="games" class="pics" src="game.png">
+					</div>
+				</section>
+
+				<section id="content">
+					<div id="inside">
+						<h2>Jogo</h2>
+						<img id="games" class="pics" src="game.png">
+
+					</div>
+				</section>
+
+				<section id="content">
+					<div id="inside">
+						<h2>Jogo</h2>
+						<img id="games" class="pics" src="game.png">
+
+					</div>
+				</section>
+
+				<section id="content">
+					<div id="inside">
+						<h2>Jogo</h2>
+						<img id="games" class="pics" src="game.png">
+					</div>
+				</section>
+
+				
+				<footer>
+	<!--
+		<h4>Footer</h4>
+		<p>Footer text</p>
+	-->
+				</footer>
+
+		</div>
+
+	</div>
+	<div id="challenge" class="white_content">
+			<h3>
+			Selecione quem desafiar: 
+			<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"> <img id="close" class="pics" src="close.png"> </a>
+			<img id="question" class="pics" src="square.png">
+			</h3>
+	<div id="option"> 
+	<h4>Própria Mesa</h4>
+	</div>
+	<div id="option"> 
+	<h4>Outra Mesa</h4>
+	</div>
+	</div>
+				<a href = "javascript:void(0)" onclick = "document.getElementById('challenge').style.display='none';document.getElementById('fade2').style.display='none'"><div id="fade2" class="black_overlay"></div></a>
+
+<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><div id="fade" class="black_overlay"></div></a>
+
+</body>
+<script>
+	document.getElementById("at_inner").style.display = 'none';
+	document.getElementById("mc_inner").style.display = 'none';
+	document.getElementById("proto_inner").style.display = 'none';
+	document.getElementById("au_inner").style.display = 'none';
+</script>
+</html>

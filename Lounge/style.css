@@ -1,5 +1,6 @@
 body {
-	background: black;
+	background-image: url("Main_screen.png");
+	background-size:cover;
 	font-family: 'Source Sans Pro', sans-serif;
   	margin:0;
 	padding:0;
@@ -143,6 +144,13 @@ body {
 	z-index:1004;
 	overflow: auto;
 }
+
+#option {
+	background-color: rgba(0, 0, 0, 0.8);
+	height: 35%;
+	margin: 2% 2%;
+}
+
 #fade2 {
 	z-index:1003;
 }
@@ -158,37 +166,44 @@ p {
 	width: 99%;
 	margin: 0 auto;
 	margin-top: 50px;
-	background-image: url("wood.jpg");
 }
 
 header {
 	height: 50px;
     width: 75%;
-    background-color: #627EE4;
+    background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     font-size: 200%;
 	text-align: center;
 	font-weight: bolder;
+	color: white;
 }
 
 h3 {
-	background-color: #627EE4;
-	font-size: 174%;
-		font-weight: bolder;
-		    margin-top: 0;
+	background-color: black;
+	height: 10%;
+	font-size: 150%;
+	font-weight: bolder;
+	margin-top: 0;
     margin-bottom: 0;
     padding: 1%;
+	text-align: center;
+	color: white;
 }
 
 h4 {
 	font-size: 200%;
-
-		    margin-top: 0;
+	margin-top: 0;
     margin-bottom: -10px;
     padding: 5%;
+	color: white;
 }
 
-#maintitle {
+#light {
+	background-image: url("fabric.jpg");
+	background-size: cover;
+	box-shadow: 2px 2px 2px #333,
+				-2px -2px 2px #333;
 }
 
 #backarrow {
@@ -208,12 +223,20 @@ h4 {
 	float: right;
 }
 
+#close:hover {
+	filter: sepia(50%);
+}
+
 #question {
 	height: 83%;
     width: 5%;
     margin-left: 0.5%;
     margin-top: 0.5%;
-	float: right;
+	float: left;
+}
+
+#question:hover {
+	filter: sepia(50%);
 }
 
 #content {
@@ -227,10 +250,13 @@ h4 {
 }
 
 #inside {
-	margin: 1%;
+	margin: 5%;
 	padding: 5%;
 	text-align: center;
-	background-color: #ffffff;
+	color: white;
+	text-decoration: none;
+	background-color: rgba(0, 0, 0, 0.8);
+
 }
 
 #middle {
@@ -321,6 +347,5 @@ MEDIA QUERIES
 }
 
 #inside, #middle, #sidebar { /*, footer to add footer*/
-	border: solid 1px #ccc;
-	border-radius: 10px;
+	border-radius: 20%;
 }

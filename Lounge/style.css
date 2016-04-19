@@ -6,6 +6,8 @@ body {
 	padding:0;
 	height:100vh;
 	width:100vw;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 a, u {
@@ -163,6 +165,33 @@ a, u {
 	overflow: auto;
 }
 
+#rate_song {
+
+	top: 30.5%;
+    left: 35.5%;
+    width: 30%;
+    height: 30%;
+
+	background-color: rgba(255, 255, 255, 0.8);
+	z-index:1004;
+	overflow: auto;
+
+}
+
+#setlist {
+
+	background-color: rgba(255, 255, 255, 0.8);
+	z-index:1004;
+	overflow: auto;
+}
+
+#playlist {
+
+	background-color: rgba(255, 255, 255, 0.8);
+	z-index:1004;
+	overflow: auto;
+}
+
 #option {
 	background-color: rgba(0, 0, 0, 0.8);
 	text-align: center;
@@ -188,6 +217,34 @@ a, u {
 	margin: 20px 20px;
 }
 
+.star {
+	display: inline-block;
+	margin: 1% 1%;
+}
+
+#stars {
+	position: relative;
+	top: 25%;
+	left: 20%;
+
+}
+
+#rateButton {
+	display: inline-block;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	float: right;
+	font-size: 2.5em;
+	text-align: center;
+	height: 15%;
+	width: 45%;
+	margin-right: 2%;
+	position: absolute;
+	bottom: 5%;
+	right: 2%;
+}
+
 #fade2 {
 	z-index:1003;
 }
@@ -198,15 +255,23 @@ p {
 
 /* STRUCTURE */
 
-#pagewrap {
+#zona_de_jogos_wrap {
 	padding: 5px;
 	width: 99%;
 	margin: 0 auto;
 	margin-top: 50px;
 }
 
+#jukewrap {
+	padding: 5px;
+	width: 99%;
+	height: 100%;
+	margin: 0 auto;
+	margin-top: 6%;
+}
+
 header {
-	height: 50px;
+	height: 6%;
     width: 75%;
     background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
@@ -214,6 +279,31 @@ header {
 	text-align: center;
 	font-weight: bolder;
 	color: white;
+}
+
+footer {
+	height: 5%;
+    width: 75%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+	bottom: 12.5%;
+	left: 12.5%;
+    font-size: 100%;
+	text-align: left;
+	color: white;
+}
+
+#playing {
+	font-size: 100%;
+	text-align: left;
+	color: white;
+}
+
+#rate {
+	float: right;
+	color: white;
+	font-size: 150%;
+	margin-right: 5%;
 }
 
 h3 {
@@ -236,16 +326,29 @@ h4 {
 	color: white;
 }
 
-#light {
+footer img {
+	max-height: 50%;
+}
+
+#zona_de_jogos {
 	background-image: url("img/fabric.jpg");
 	background-size: cover;
 	box-shadow: 2px 2px 2px #333,
 				-2px -2px 2px #333;
 }
 
+#jukebox {
+	background-image: url("img/Zona_de_jukebox.png");
+	background-size: 100% 100%;
+	box-shadow: 2px 2px 2px #333,
+				-2px -2px 2px #333;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
 #backarrow {
 	height: 83%;
-    width: 5%;
+    width: auto;
     margin-left: 0.5%;
     margin-top: 0.5%;
 	float: left;
@@ -253,8 +356,7 @@ h4 {
 
 #close {
 	height: 83%;
-    width: 5%;
-    margin-left: 0.5%;
+    width: auto;
     margin-top: 0.5%;
     margin-right: 0.5%;
 	float: right;
@@ -266,7 +368,7 @@ h4 {
 
 #question {
 	height: 83%;
-    width: 5%;
+    width: auto;
     margin-left: 0.5%;
     margin-top: 0.5%;
 	float: left;
@@ -288,24 +390,42 @@ h4 {
 	filter: sepia(50%);
 }
 
-#content {
+#game {
+	width: 33%;
+	float: left;
+}
+
+#gender {
+	height: 40%;
 	width: 33%;
 	float: left;
 }
 
 #games {
-    height: 125px;;
+    height: 125px;
 
 }
 
-#inside {
+#vinil {
+    height: 125px;
+
+}
+
+#gamecontent {
 	margin: 5%;
 	padding: 5%;
 	text-align: center;
 	color: white;
 	text-decoration: none;
 	background-color: rgba(0, 0, 0, 0.8);
+}
 
+#jukeinside {
+	margin: 2% 5%;
+	padding: 2% 5%;
+	text-align: center;
+	color: white;
+	text-decoration: none;
 }
 
 #middle {
@@ -320,6 +440,49 @@ h4 {
 	padding: 1%;
 	float: left;
 }
+
+#setlist ul {
+	margin-top: 6%;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#setlist ul li {
+	padding: 2% 0;
+	list-style: none;
+	height: 5%;
+	font-size: 2em;
+	padding-left: 3%;
+	border-bottom: 1px solid black;
+}
+
+#playlist ul {
+	margin-top: 6%;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#playlist ul li {
+	padding: 2% 0;
+	list-style: none;
+	height: 5%;
+	font-size: 2em;
+	padding-left: 3%;
+	border-bottom: 1px solid black;
+}
+
+#add {
+	float: right;
+	padding-right: 3%;
+	font-weight: bold;
+}
+
+#remove {
+	float: right;
+	padding-right: 3%;
+	font-weight: bold;
+}
+
 footer {
 	clear: both;
 	padding: 0 15px;
@@ -331,10 +494,10 @@ MEDIA QUERIES
 /* for 980px or less */
 @media screen and (max-width: 980px) {
 
-	#pagewrap {
+	#zona_de_jogos_wrap {
 		width: 90%;
 	}
-	#content {
+	#game {
 		width: 50%;
 	}
 	#middle {
@@ -358,7 +521,7 @@ MEDIA QUERIES
 /* for 700px or less */
 @media screen and (max-width: 600px) {
 
-	#content {
+	#game {
 		width: auto;
 		float: none;
 	}
@@ -391,10 +554,10 @@ MEDIA QUERIES
 
 }
 
-#content, #middle, #sidebar {
+#game, #middle, #sidebar {
 	margin-bottom: 5px;
 }
 
-#inside, #middle, #sidebar { /*, footer to add footer*/
+#gamecontent, #middle, #sidebar { /*, footer to add footer*/
 	border-radius: 20%;
 }

@@ -5,127 +5,148 @@
 	<meta charset="utf-8">
 	<title>The Lounge</title>
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="script.js"></script>
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<script>
-	var selector = null;
-	var tableSelected = 1;
-
-	function switchColor(id) {
-
-		var current = document.getElementById(id).style.backgroundColor;
-		if (current == 'white' || current =='')
-			document.getElementById(id).style.backgroundColor = 'grey';
-		else
-			document.getElementById(id).style.backgroundColor = 'white';
-	}
-
-</script>
 
 <body>
+
+	<!--************************************************************************
+	| 																		   |
+	|								ECRÃ PRINCIPAL 							   |
+	|																		   |
+	*************************************************************************-->
+
 	<div id="mainBox2">
+
 		<img id="uma" class="pics" src = "img/Balcao.png">
-		<img id="duas" class="pics" src = "img/Jukebox.png">
-		<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';"><img id="tres" class="pics" src = "img/Zona_de_jogos.png"></a>
+
+		<a href = "javascript:void(0)"
+			onclick = "document.getElementById('jukebox').style.display='block';
+					   document.getElementById('fade').style.display='block';">
+			<img id="duas" class="pics" src = "img/Jukebox.png">
+		</a>
+
+		<a href = "javascript:void(0)"
+		   onclick = "document.getElementById('zona_de_jogos').style.display='block';
+		   			  document.getElementById('fade').style.display='block';">
+			<img id="tres" class="pics" src = "img/Zona_de_jogos.png">
+		</a>
+
 	</div>
+
 	<div id="mainBox3">
 		<img id="umaajuda" class="pics" src = "img/MainQuestion.png">
 	</div>
+
 	<div id="mainBox4">
 		<img id="sair" class="pics" src = "img/Sair.png">
 	</div>
 
-	<div id="light" class="white_content">
+	<!--************************************************************************
+	| 																		   |
+	|								ZONA DE JOGOS 							   |
+	|																		   |
+	*************************************************************************-->
+
+	<div id="zona_de_jogos" class="white_content">
 
 		<header>
-			<!---<img id="backarrow" class="pics" src="arrow.png">---> ZONA DE JOGOS
-			<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none';"> <img id="close" class="pics" src="img/X.png"> </a>
+
 			<img id="question" class="pics" src="img/Question.png">
+			ZONA DE JOGOS
+			<a href = "javascript:void(0)"
+			   onclick = "document.getElementById('zona_de_jogos').style.display='none';
+			   			  document.getElementById('fade').style.display='none';">
+				<img id="close" class="pics" src="img/X.png">
+			</a>
+
 		</header>
 
-		<div id="pagewrap">
-			<section id="content">
-				<a href = "javascript:void(0)" onclick = "document.getElementById('challenge').style.display='block';document.getElementById('fade2').style.display='block';selector='quiz'">
+		<div id="zona_de_jogos_wrap">
+
+			<section id="game">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('challenge').style.display='block';
+				   			  document.getElementById('fade2').style.display='block';
+							  selector='quiz'">
+
 					<div id="inside">
 						<img id="games" class="pics" src="img/quiz.png">
 						<h2> QUIZ </h2>
 					</div>
-					</a>
-				</section>
 
-				<section id="content">
-				<a href = "javascript:void(0)" onclick = "document.getElementById('challenge').style.display='block';document.getElementById('fade2').style.display='block';selector='snooker'">
-					<div id="inside">
+				</a>
+			</section>
+
+			<section id="game">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('challenge').style.display='block';
+				   			  document.getElementById('fade2').style.display='block';
+							  selector='snooker'">
+
+					<div id="gamecontent">
 						<img id="games" class="pics" src="img/pool.png">
 						<h2>POOL8</h2>
 					</div>
-				</a>
-				</section>
 
-				<section id="content">
+				</a>
+			</section>
+
+			<section id="game">
 				<a href = "javascript:void(0)" onclick = "document.getElementById('challenge').style.display='block';document.getElementById('fade2').style.display='block';selector='chess'">
-					<div id="inside">
+					<div id="gamecontent">
 						<img id="games" class="pics" src="img/chess.png">
 						<h2>XADREZ</h2>
 					</div>
 				</a>
-				</section>
+			</section>
 
-				<section id="content">
+			<section id="game">
 				<a href = "javascript:void(0)" onclick = "document.getElementById('challenge').style.display='block';document.getElementById('fade2').style.display='block';selector='cars'">
-					<div id="inside">
+					<div id="gamecontent">
 						<img id="games" class="pics" src="img/car.png">
 						<h2>CARROS</h2>
 					</div>
 				</a>
-				</section>
+			</section>
 
-				<section id="content">
-					<div id="inside">
+			<section id="game">
+					<div id="gamecontent">
 						<h2>Jogo</h2>
 						<img id="games" class="pics" src="img/game.png">
 
 					</div>
-				</section>
+			</section>
 
-				<section id="content">
-					<div id="inside">
+			<section id="game">
+					<div id="gamecontent">
 						<h2>Jogo</h2>
 						<img id="games" class="pics" src="img/game.png">
 					</div>
-				</section>
+			</section>
 
-				<section id="content">
-					<div id="inside">
-						<h2>Jogo</h2>
-						<img id="games" class="pics" src="img/game.png">
-
-					</div>
-				</section>
-
-				<section id="content">
-					<div id="inside">
-						<h2>Jogo</h2>
-						<img id="games" class="pics" src="img/game.png">
-
-					</div>
-				</section>
-
-				<section id="content">
-					<div id="inside">
+			<section id="game">
+					<div id="gamecontent">
 						<h2>Jogo</h2>
 						<img id="games" class="pics" src="img/game.png">
 					</div>
-				</section>
+			</section>
 
+			<section id="game">
+					<div id="gamecontent">
+						<h2>Jogo</h2>
+						<img id="games" class="pics" src="img/game.png">
+					</div>
+			</section>
 
-				<footer>
-	<!--
-		<h4>Footer</h4>
-		<p>Footer text</p>
-	-->
-				</footer>
+			<section id="game">
+					<div id="gamecontent">
+						<h2>Jogo</h2>
+						<img id="games" class="pics" src="img/game.png">
+					</div>
+			</section>
 
 		</div>
 
@@ -167,9 +188,116 @@
 			<a href = "javascript:void(0)" onclick = "window.open('img/'+selector+'404.png','Error','width=1920,height=1080');"> <img id="play" class="pics" src="img/jogar.png"> </a>
 			<script>switchColor('table1')</script>
 	</div>
+
 	<a href = "javascript:void(0)" onclick = "document.getElementById('challenge').style.display='none';document.getElementById('fade2').style.display='none'"><div id="fade2" class="black_overlay"></div></a>
 
-<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><div id="fade" class="black_overlay"></div></a>
+	<!--************************************************************************
+	| 																		   |
+	|								  JUKEBOX    							   |
+	|																		   |
+	*************************************************************************-->
+
+	<div id="jukebox" class="white_content">
+
+	    <header>
+
+	        JUKEBOX
+	        <a href = "javascript:void(0)"
+			   onclick = "document.getElementById('jukebox').style.display='none';
+			   			  document.getElementById('fade').style.display='none';">
+				<img id="close" class="pics" src="img/X.png">
+			</a>
+	        <img id="question" class="pics" src="img/Question.png">
+
+	    </header>
+
+	    <div id="jukewrap">
+	        <section id="gender">
+	            <a href = "javascript:void(0)" onclick = "document.getElementById('setlist').style.display='block';document.getElementById('fade2').style.display='block';currentGender=rock;document.getElementById('setlist').appendChild(makeSetlist(currentGender));">
+	                <div id="jukeinside">
+	                    <img id="vinil" class="pics" src="img/rock.png">
+	                </div>
+	                </a>
+	            </section>
+
+	            <section id="gender">
+	            <a href = "javascript:void(0)" onclick = "document.getElementById('setlist').style.display='block';document.getElementById('fade2').style.display='block';currentGender=metal;document.getElementById('setlist').appendChild(makeSetlist(currentGender));">
+	                <div id="jukeinside">
+	                    <img id="vinil" class="pics" src="img/metal.png">
+	                </div>
+	            </a>
+	            </section>
+
+	            <section id="gender">
+	            <a href = "javascript:void(0)" onclick = "document.getElementById('setlist').style.display='block';document.getElementById('fade2').style.display='block';">
+	                <div id="jukeinside">
+	                    <img id="vinil" class="pics" src="img/pop.png">
+	                </div>
+	            </a>
+	            </section>
+
+	            <section id="gender">
+	            <a href = "javascript:void(0)" onclick = "document.getElementById('setlist').style.display='block';document.getElementById('fade2').style.display='block';">
+	                <div id="jukeinside">
+	                    <img id="vinil" class="pics" src="img/blues.png">
+	                </div>
+	            </a>
+	            </section>
+
+				<footer class="playing">
+			        <a id="playing" href="javascript:void(0)" onclick="document.getElementById('playlist').style.display='block';document.getElementById('playlist').appendChild(makePlaylist(currentlyPlaying));">A tocar: </a>
+					<a id="rate" href="javascript:void(0)" onclick="document.getElementById('rate_song').style.display='block'"><img id="rateIMG" src="img/2E.png"></a>
+			    </footer>
+
+	    </div>
+
+	</div>
+
+	<div id="setlist" class="white_content">
+		<header>
+			Setlist:
+			<a href = "javascript:void(0)" onclick = "document.getElementById('setlist').style.display='none';document.getElementById('fade2').style.display='none';document.getElementById('setlist').removeChild(document.getElementsByTagName('UL')[0]);"> <img id="backarrow" class="pics" src="img/arrow.png"> </a>
+			<a href = "javascript:void(0)" onclick = "document.getElementById('setlist').style.display='none';document.getElementById('jukebox').style.display='none';document.getElementById('fade').style.display='none';document.getElementById('fade2').style.display='none'; document.getElementById('setlist').removeChild(document.getElementsByTagName('UL')[0]);"> <img id="close" class="pics" src="img/X.png"> </a>
+			<img id="question" class="pics" src="img/Question.png">
+		</header>
+		<footer class="playing">
+			<a id="playing" href="javascript:void(0)" onclick="document.getElementById('setlist').style.display='none'; document.getElementById('playlist').style.display='block'; document.getElementById('playlist').appendChild(makePlaylist(currentlyPlaying)); document.getElementById('setlist').removeChild(document.getElementsByTagName('UL')[0]);">A tocar: </a>
+			<a id="rate" href="javascript:void(0)" onclick="document.getElementById('setlist').style.display='none'; document.getElementById('rate_song').style.display='block'"><img id="rateIMG" src="img/2E.png"></a>
+		</footer>
+	</div>
+
+	<div id="playlist" class="white_content">
+		<header>
+			Playlist:
+			<a href = "javascript:void(0)" onclick = "document.getElementById('playlist').style.display='none';document.getElementById('fade2').style.display='none';document.getElementById('playlist').removeChild(document.getElementsByTagName('UL')[0]);"> <img id="backarrow" class="pics" src="img/arrow.png"> </a>
+			<a href = "javascript:void(0)" onclick = "document.getElementById('jukebox').style.display='none';document.getElementById('playlist').style.display='none';document.getElementById('fade2').style.display='none'; document.getElementById('fade').style.display='none'; document.getElementById('playlist').removeChild(document.getElementsByTagName('UL')[0]);"> <img id="close" class="pics" src="img/X.png"> </a>
+			<img id="question" class="pics" src="img/Question.png">
+		</header>
+	</div>
+
+	<div id="rate_song" class="white_content">
+			<h3>
+			Classifique a música:
+			<a href = "javascript:void(0)" onclick = "document.getElementById('rate_song').style.display='none';document.getElementById('fade2').style.display='none'"> <img id="close" class="pics" src="img/X.png"> </a>
+			<img id="question" class="pics" src="img/Question.png">
+			</h3>
+
+			<div id = "stars">
+				<a class="star" href = "javascript:void(0)" onclick = "switchRate(1); rateSelected=1;"><img id="1star" src="img/star.png"></a>
+				<a class="star" href = "javascript:void(0)" onclick = "switchRate(2); rateSelected=2;"><img id="2star" src="img/star.png"></a>
+				<a class="star" href = "javascript:void(0)" onclick = "switchRate(3); rateSelected=3;"><img id="3star" src="img/star.png"></a>
+				<a class="star" href = "javascript:void(0)" onclick = "switchRate(4); rateSelected=4;"><img id="4star" src="img/star.png"></a>
+				<a class="star" href = "javascript:void(0)" onclick = "switchRate(5); rateSelected=5;"><img id="5star" src="img/star.png"></a>
+			</div>
+			
+			<a id="rateButton" href = "javascript:void(0)" onclick = "document.getElementById('rate_song').style.display='none'; document.getElementById('fade2').style.display='none'; changeRate(currentlyPlaying[0],rateSelected+'E'); updateFooter();"> CONFIRMAR </a>
+
+	</div>
+
+	<a href = "javascript:void(0)" onclick = "document.getElementById('jukebox').style.display='none';document.getElementById('fade2').style.display='none'"><div id="fade2" class="black_overlay"></div></a>
+
+<a href = "javascript:void(0)" onclick = "document.getElementById('jukebox').style.display='none';document.getElementById('fade').style.display='none'"><div id="fade" class="black_overlay"></div></a>
+<a href = "javascript:void(0)" onclick = "document.getElementById('zona_de_jogos').style.display='none';document.getElementById('fade').style.display='none'"><div id="fade" class="black_overlay"></div></a>
 
 </body>
 </html>

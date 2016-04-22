@@ -1,4 +1,5 @@
 var selector = null;
+var minimized = false;
 var rock = [["What'd I Say","4E"],
             ["Smells Like Teen Spirit","5E"],
             ["Hey Jude","5E"],
@@ -19,8 +20,14 @@ var metal = [["Master of puppets – Metallica","5E"],
             ["Holy Diver – Dio","4E"],
             ["Cemetery Gates – Pantera","4E"],
             ["Rime of the ancient mariner – Iron Maiden","5E"]];
-var pop = [];
-var blues = [];
+var blues = [["Sweet Home Chicago","4E"],
+            ["Dust My Broom","5E"],
+            ["Crossroads","5E"],
+            ["Key to Highway","4E"]];
+var pop = [["Me, Myself & I","4E"],
+            ["Cake By The Ocean","5E"],
+            ["Pillowtalk","5E"],
+            ["I Took A Pill In Ibiza","4E"]];
 var currentlyPlaying = [];
 var currentGender = null;
 var tableSelected = 1;
@@ -48,8 +55,10 @@ function makeSetlist(array) {
     for(var i = 0; i < array.length; i++) {
         // Create the list item:
         var item = document.createElement('li');
+        var image = document.createElement('img');
         var anchor = document.createElement('a');
         // Set its contents:
+        image.src = "img/" + array[i][1] + ".png";
         item.appendChild(document.createTextNode(array[i][0]));
 
         anchor.appendChild(document.createTextNode('+'));
@@ -58,6 +67,7 @@ function makeSetlist(array) {
         anchor.addEventListener('click', function() { addToPlaylist(this.parentElement.textContent); });
 
         item.appendChild(anchor);
+        item.appendChild(image);
         // Add it to the list:
         list.appendChild(item);
     }
@@ -91,7 +101,7 @@ function makePlaylist(array) {
 
 function removeFromPlaylist(song) {
 
-    // confirm("Pretende remover esta música da playlist?");
+    confirm("Pretende remover esta música da playlist?");
 
     var index = currentlyPlaying.indexOf(song.substring(0, song.length - 1));
     currentlyPlaying.splice(index, 1);
@@ -103,8 +113,6 @@ function removeFromPlaylist(song) {
 }
 
 function addToPlaylist(song) {
-
-    confirm("Pretende adicionar a música " + song.substring(0, song.length - 1) + " à playlist?");
 
     currentlyPlaying.push(song.substring(0, song.length - 1));
 
@@ -131,6 +139,16 @@ function getRate(song) {
             return metal[i][1];
     }
 
+    for (var i = 0; i < pop.length; i++) {
+        if (pop[i][0] == song)
+            return pop[i][1];
+    }
+
+    for (var i = 0; i < blues.length; i++) {
+        if (blues[i][0] == song)
+            return blues[i][1];
+    }
+
 }
 
 function changeRate(song, newRate) {
@@ -142,5 +160,40 @@ function changeRate(song, newRate) {
     for (var i = 0; i < metal.length; i++) {
         if (metal[i][0] == song)
             metal[i][1] = newRate;
+    }
+
+    for (var i = 0; i < pop.length; i++) {
+        if (pop[i][0] == song)
+            pop[i][1] = newRate;
+    }
+
+    for (var i = 0; i < blues.length; i++) {
+        if (blues[i][0] == song)
+            blues[i][1] = newRate;
+    }
+}
+
+function minimize() {
+
+    if(minimized == false) {
+        document.getElementById('game_menu').style.display='none';
+        document.getElementById('fade').style.display='none';
+        document.getElementById('current_game').style.position='fixed';
+        document.getElementById('current_game').style.top = '0px';
+        document.getElementById('current_game').style.left = '0px';
+        document.getElementById('current_game').style.height = '6%';
+        document.getElementById('current_game').style.width = '6%';
+        document.getElementById('game_header').style.position = 'relative';
+        minimized = true;
+    }
+    else {
+        document.getElementById('fade').style.display='block';
+        document.getElementById('current_game').style.position='absolute';
+        document.getElementById('current_game').style.top = '12.5%';
+        document.getElementById('current_game').style.left = '12.5%';
+        document.getElementById('current_game').style.height = '75%';
+        document.getElementById('current_game').style.width = '75%';
+        document.getElementById('game_header').style.position = 'fixed';
+        minimized = false;
     }
 }

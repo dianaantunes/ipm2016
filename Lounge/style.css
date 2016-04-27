@@ -311,12 +311,12 @@ header {
 
 footer {
 	height: 5%;
-    width: 75%;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: fixed;
+  width: 73.5%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
 	bottom: 12.5%;
 	left: 12.5%;
-    font-size: 100%;
+  font-size: 100%;
 	text-align: left;
 	color: white;
 }
@@ -330,8 +330,11 @@ footer {
 #rate {
 	float: right;
 	color: white;
-	font-size: 150%;
 	margin-right: 5%;
+}
+
+#rateIMG {
+	max-height: 30px;
 }
 
 h3 {
@@ -352,10 +355,6 @@ h4 {
     margin-bottom: -10px;
     padding: 5%;
 	color: white;
-}
-
-footer img {
-	max-height: 50%;
 }
 
 #game_menu {
@@ -435,37 +434,24 @@ footer img {
 	float: left;
 }
 
-#gender {
-	height: 40%;
-	width: 33%;
-	float: left;
-}
-
 #games {
     height: 125px;
-
 }
-
 #vinil {
+    height: 200px;
+}
+#bottle {
     height: 125px;
-
 }
 
-#gamecontent {
+#content {
 	margin: 5%;
 	padding: 5%;
 	text-align: center;
 	color: white;
 	text-decoration: none;
 	background-color: rgba(0, 0, 0, 0.8);
-}
-
-#jukeinside {
-	margin: 2% 5%;
-	padding: 2% 5%;
-	text-align: center;
-	color: white;
-	text-decoration: none;
+	border-radius: 5%;
 }
 
 #middle {
@@ -518,6 +504,28 @@ footer img {
 	border-bottom: 1px solid black;
 }
 
+#drinks ul {
+	margin-top: 6%;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#drinks ul li {
+	padding: 2% 0;
+	list-style: none;
+	height: 5%;
+	font-size: 2em;
+	padding-left: 3%;
+	border-bottom: 1px solid black;
+}
+
+#drinks ul li img {
+	float: right;
+	padding-right: 3%;
+	max-height: 5%;
+	vertical-align: middle;
+}
+
 #add {
 	float: right;
 	padding-right: 3%;
@@ -561,8 +569,6 @@ MEDIA QUERIES
 		float: none;
 	}
 
-	header, footer {
-	}
 }
 
 /* for 700px or less */

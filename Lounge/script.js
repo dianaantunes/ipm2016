@@ -29,7 +29,25 @@ var pop = [["Me, Myself & I","4E"],
             ["Pillowtalk","5E"],
             ["I Took A Pill In Ibiza","4E"]];
 var currentlyPlaying = [];
+var currentlyOrdered = [];
+var beer = [["Sagres",0.99],
+            ["Super Bock",0.99],
+            ["Heineken",1.28],
+            ["Cintra",0.64]];
+var whisky = [["AAA",0.99],
+            ["BBB",0.99],
+            ["CCC",1.28],
+            ["DDD",0.64]];
+var vodka = [["EEE",0.99],
+            ["FFF",0.99],
+            ["GGG",1.28],
+            ["HHH",0.64]];
+var gin = [["III",0.99],
+            ["JJJ",0.99],
+            ["KKK",1.28],
+            ["LLL",0.64]];
 var currentGender = null;
+var currentType = null;
 var tableSelected = 1;
 var rateSelected = 0;
 
@@ -195,5 +213,83 @@ function minimize() {
         document.getElementById('current_game').style.width = '75%';
         document.getElementById('game_header').style.position = 'fixed';
         minimized = false;
+    }
+}
+
+
+
+
+function makeDrinks(array) {
+            // Create the list element:
+    var list = document.createElement('ul');
+
+    for(var i = 0; i < array.length; i++) {
+        // Create the list item:
+        var item = document.createElement('li');
+        var anchor = document.createElement('a');
+        // Set its contents:
+        item.appendChild(document.createTextNode(array[i][0]));
+
+        anchor.appendChild(document.createTextNode('+'));
+        anchor.id = "add";
+        anchor.href = "javascript:void(0)";
+        anchor.addEventListener('click', function() { addToOrder(this.parentElement.textContent); });
+
+        item.appendChild(anchor);
+        // Add it to the list:
+        list.appendChild(item);
+    }
+    // Finally, return the constructed list:
+    return list;
+}
+
+function makeOrder(array) {
+            // Create the list element:
+    var list = document.createElement('ul');
+
+    for(var i = 0; i < array.length; i++) {
+        // Create the list item:
+        var item = document.createElement('li');
+        var anchor = document.createElement('a');
+        // Set its contents:
+        item.appendChild(document.createTextNode(array[i]));
+
+        anchor.appendChild(document.createTextNode('X'));
+        anchor.id = "remove";
+        anchor.href = "javascript:void(0)";
+        anchor.addEventListener('click', function() { removeFromOrder(this.parentElement.textContent); });
+
+        item.appendChild(anchor);
+        // Add it to the list:
+        list.appendChild(item);
+    }
+    // Finally, return the constructed list:
+    return list;
+}
+
+function addToOrder(drink) {
+
+    currentlyOrdered.push(drink.substring(0, drink.length - 1));
+
+    updateOrder();
+}
+
+function removeFromOrder(drink) {
+
+    confirm("Pretende remover esta bebida da encomenda?");
+
+    var index = currentlyOrdered.indexOf(drink.substring(0, drink.length - 1));
+    currentlyOrdered.splice(index, 1);
+
+    document.getElementById('playlist').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('playlist').appendChild(makePlaylist(currentlyPlaying));
+
+    updateFooter();
+}
+
+function updateOrder() {
+    var elements = document.getElementsByClassName('order');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].querySelector("#order").textContent = "A pedir: " + currentlyOrdered[0];
     }
 }

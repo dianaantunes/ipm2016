@@ -20,7 +20,11 @@
 
 		<div id="mainscreen">
 
-			<img id="uma" class="pics" src = "img/Balcao.png">
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('counter').style.display='block';
+						   document.getElementById('fade').style.display='block';">
+							 <img id="uma" class="pics" src = "img/Balcao.png">
+			</a>
 
 			<a href = "javascript:void(0)"
 				onclick = "document.getElementById('jukebox').style.display='block';
@@ -104,7 +108,7 @@
 					   			  document.getElementById('fade2').style.display='block';
 								  selector='quiz'">
 
-						<div id="gamecontent">
+						<div id="content">
 							<img id="games" class="pics" src="img/quiz.png">
 							<h2> QUIZ </h2>
 						</div>
@@ -118,7 +122,7 @@
 					   	document.getElementById('fade2').style.display='block';
 					   	selector='snooker'">
 
-						<div id="gamecontent">
+						<div id="content">
 							<img id="games" class="pics" src="img/pool.png">
 							<h2>POOL8</h2>
 						</div>
@@ -132,7 +136,7 @@
 						document.getElementById('fade2').style.display='block';
 						selector='chess'">
 
-						<div id="gamecontent">
+						<div id="content">
 							<img id="games" class="pics" src="img/chess.png">
 							<h2>XADREZ</h2>
 						</div>
@@ -145,7 +149,7 @@
 						document.getElementById('fade2').style.display='block';
 						selector='cars'">
 
-						<div id="gamecontent">
+						<div id="content">
 							<img id="games" class="pics" src="img/car.png">
 							<h2>CARROS</h2>
 						</div>
@@ -153,7 +157,7 @@
 				</section>
 
 				<section id="game">
-						<div id="gamecontent">
+						<div id="content">
 							<h2>Jogo</h2>
 							<img id="games" class="pics" src="img/game.png">
 
@@ -161,28 +165,28 @@
 				</section>
 
 				<section id="game">
-						<div id="gamecontent">
+						<div id="content">
 							<h2>Jogo</h2>
 							<img id="games" class="pics" src="img/game.png">
 						</div>
 				</section>
 
 				<section id="game">
-						<div id="gamecontent">
+						<div id="content">
 							<h2>Jogo</h2>
 							<img id="games" class="pics" src="img/game.png">
 						</div>
 				</section>
 
 				<section id="game">
-						<div id="gamecontent">
+						<div id="content">
 							<h2>Jogo</h2>
 							<img id="games" class="pics" src="img/game.png">
 						</div>
 				</section>
 
 				<section id="game">
-						<div id="gamecontent">
+						<div id="content">
 							<h2>Jogo</h2>
 							<img id="games" class="pics" src="img/game.png">
 						</div>
@@ -337,45 +341,45 @@
 			</header>
 
 			<div id="jukewrap">
-				<section id="gender">
+				<section id="game">
 					<a href = "javascript:void(0)"
 						onclick = "document.getElementById('setlist').style.display='block';
 						currentGender=rock;
 						document.getElementById('setlist').appendChild(makeSetlist(currentGender));">
-						<div id="jukeinside">
+						<div id="content">
 							<img id="vinil" class="pics" src="img/rock.png">
 						</div>
 					</a>
 				</section>
 
-				<section id="gender">
+				<section id="game">
 					<a href = "javascript:void(0)"
 						onclick = "document.getElementById('setlist').style.display='block';
 						currentGender=metal;
 						document.getElementById('setlist').appendChild(makeSetlist(currentGender));">
-						<div id="jukeinside">
+						<div id="content">
 							<img id="vinil" class="pics" src="img/metal.png">
 						</div>
 					</a>
 				</section>
 
-				<section id="gender">
+				<section id="game">
 					<a href = "javascript:void(0)"
 						onclick = "document.getElementById('setlist').style.display='block';
 						currentGender=pop;
 						document.getElementById('setlist').appendChild(makeSetlist(currentGender));">
-						<div id="jukeinside">
+						<div id="content">
 							<img id="vinil" class="pics" src="img/pop.png">
 						</div>
 					</a>
 				</section>
 
-				<section id="gender">
+				<section id="game">
 					<a href = "javascript:void(0)"
 						onclick = "document.getElementById('setlist').style.display='block';
 						currentGender=blues;
 						document.getElementById('setlist').appendChild(makeSetlist(currentGender));">
-						<div id="jukeinside">
+						<div id="content">
 							<img id="vinil" class="pics" src="img/blues.png">
 						</div>
 					</a>
@@ -515,6 +519,141 @@
 		document.getElementById('fade2').style.display='none'">
 		<div  id="fade2" class="black_overlay"></div>
 	</a>
+
+	<!-- -->
+
+	<div id="counter" class="white_content">
+
+		<header>
+
+			BALCÃO
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('counter').style.display='none';
+				document.getElementById('fade').style.display='none';">
+				<img id="close" class="pics" src="img/X.png">
+			</a>
+			<img id="question" class="pics" src="">
+
+		</header>
+
+		<div id="counterwrap">
+			<section id="game">
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('drinks').style.display='block';
+					currentType=beer;
+					document.getElementById('drinks').appendChild(makeDrinks(currentType));">
+					<div id="content">
+						<img id="bottle" class="pics" src="">
+					</div>
+				</a>
+			</section>
+
+			<section id="game">
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('drinks').style.display='block';
+					currentType=whisky;
+					document.getElementById('drinks').appendChild(makeDrinks(currentType));">
+					<div id="content">
+						<img id="bottle" class="pics" src="">
+					</div>
+				</a>
+			</section>
+
+			<section id="game">
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('drinks').style.display='block';
+					currentType=vodka;
+					document.getElementById('drinks').appendChild(makeDrinks(currentType));">
+					<div id="content">
+						<img id="bootle" class="pics" src="">
+					</div>
+				</a>
+			</section>
+
+			<section id="game">
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('drinks').style.display='block';
+					currentType=gin;
+					document.getElementById('drinks').appendChild(makeDrinks(currentType));">
+					<div id="content">
+						<img id="bottle" class="pics" src="">
+					</div>
+				</a>
+			</section>
+
+			<footer class="order">
+				<a id="order" href="javascript:void(0)"
+					onclick = "document.getElementById('order').style.display='block';
+					document.getElementById('playlist').appendChild(makeDrinks(currentlyOrdered));">
+					A pedir:
+				</a>
+			</footer>
+
+		</div>
+
+	</div>
+
+	<div id="drinks" class="white_content">
+
+		<header>
+			Bebidas:
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('drinks').style.display='none';
+				document.getElementById('drinks').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="backarrow" class="pics" src="img/arrow.png">
+			</a>
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('drinks').style.display='none';
+				document.getElementById('counter').style.display='none';
+				document.getElementById('fade').style.display='none';
+				document.getElementById('drinks').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="close" class="pics" src="img/X.png">
+			</a>
+
+			<img id="question" class="pics" src="img/Question.png">
+
+		</header>
+
+		<footer class="order">
+
+			<a id="order" href="javascript:void(0)"
+				onclick = "document.getElementById('order').style.display='block';
+				document.getElementById('drinks').style.display='none';
+				document.getElementById('order').appendChild(makeDrinks(currentlyOrdered));
+				document.getElementById('drinks').removeChild(document.getElementsByTagName('UL')[0]);">
+			A pedir:
+			</a>
+
+		</footer>
+
+	</div>
+
+	<div id="order" class="white_content">
+
+		<header>
+			Pedido:
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('order').style.display='none';
+				document.getElementById('order').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="backarrow" class="pics" src="img/arrow.png">
+			</a>
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('counter').style.display='none';
+				document.getElementById('order').style.display='none';
+				document.getElementById('fade').style.display='none';
+				document.getElementById('order').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="close" class="pics" src="img/X.png">
+			</a>
+
+			<img id="question" class="pics" src="img/Question.png">
+
+		</header>
+
+	</div>
 
 	</body>
 </html>

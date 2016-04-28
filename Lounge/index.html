@@ -28,7 +28,8 @@
 
 			<a href = "javascript:void(0)"
 				onclick = "document.getElementById('jukebox').style.display='block';
-						   document.getElementById('fade').style.display='block';">
+						   document.getElementById('fade').style.display='block';
+						   updateFooter()">
 				<img id="duas" class="pics" src = "img/Jukebox.png">
 			</a>
 
@@ -51,20 +52,19 @@
 
 		<!--***********| EVENTO - Convite para jogar |***************-->
 
-		<div id="event" class="white_content">
+		<div id="event" class="small_white_content">
 				<h3 id="event_title">
 					DESAFIO!
-
 				</h3>
 
-				<span id="event_text"> A mesa X desafiou-o para jogar Quizz!</span>
+				<span id="event_text" class="text"> A mesa X desafiou-o para jogar Quizz!</span>
 
 				<a href = "javascript:void(0)"
 						onclick = "document.getElementById('event').style.display='none';
 						document.getElementById('fade').style.display='none';
 						window.open('img/quiz404.png','Error','width=1920,height=1080');">
-					<div id="event_accept">
-							Aceitar
+					<div id="accept">
+							<span class="text">Aceitar</span>
 					</div>
 				</a>
 
@@ -72,8 +72,8 @@
 						onclick = "document.getElementById('event').style.display='none';
 						document.getElementById('fade').style.display='none'">
 
-						<div id="event_ignore">
-						Ignorar
+						<div id="ignore">
+							<span class="text">Ignorar</span>
 						</div>
 					</a>
 		</div>
@@ -198,7 +198,7 @@
 
 		<!--********** Desafio: Escolher a quem desafiar ************-->
 
-		<div id="challenge" class="white_content">
+		<div id="challenge" class="small_white_content">
 
 				<h3>
 					Selecione quem desafiar:
@@ -232,7 +232,7 @@
 
 		<!--********** Desafio: Escolher a quem desafiar: Outra mesa ************-->
 
-		<div id="challenge_table" class="white_content">
+		<div id="challenge_table" class="small_white_content">
 				<h3>
 					Selecione a mesa:
 					<a href = "javascript:void(0)"
@@ -470,7 +470,7 @@
 
 		</div>
 
-		<div id="rate_song" class="white_content">
+		<div id="rate_song" class="small_white_content">
 			<h3>
 				Classifique a música:
 				<a href = "javascript:void(0)"
@@ -543,7 +543,8 @@
 					currentType=beer;
 					document.getElementById('drinks').appendChild(makeDrinks(currentType));">
 					<div id="content">
-						<img id="bottle" class="pics" src="">
+						<img id="bottle" class="pics" src="img/beer.png">
+						<h2> Cerveja </h2>
 					</div>
 				</a>
 			</section>
@@ -554,7 +555,8 @@
 					currentType=whisky;
 					document.getElementById('drinks').appendChild(makeDrinks(currentType));">
 					<div id="content">
-						<img id="bottle" class="pics" src="">
+						<img id="bottle" class="pics" src="img/whisky.png">
+						<h2> Whisky </h2>
 					</div>
 				</a>
 			</section>
@@ -565,7 +567,8 @@
 					currentType=vodka;
 					document.getElementById('drinks').appendChild(makeDrinks(currentType));">
 					<div id="content">
-						<img id="bootle" class="pics" src="">
+						<img id="bottle" class="pics" src="img/vodka.png">
+						<h2> Vodka </h2>
 					</div>
 				</a>
 			</section>
@@ -576,17 +579,25 @@
 					currentType=gin;
 					document.getElementById('drinks').appendChild(makeDrinks(currentType));">
 					<div id="content">
-						<img id="bottle" class="pics" src="">
+						<img id="bottle" class="pics" src="img/gin.png">
+						<h2> Gin </h2>
 					</div>
 				</a>
 			</section>
 
 			<footer class="order">
 				<a id="order" href="javascript:void(0)"
-					onclick = "document.getElementById('order').style.display='block';
-					document.getElementById('playlist').appendChild(makeDrinks(currentlyOrdered));">
+					onclick = "document.getElementById('allOrder').style.display='block';
+					document.getElementById('playlist').appendChild(makeOrder(currentlyOrdered));">
 					A pedir:
 				</a>
+				<a id="acceptOrder" href="javascript:void(0)"
+					onclick = "document.getElementById('fade2').style.display='block';
+					document.getElementById('checkout').appendChild(makeOrder(currentlyOrdered));
+					document.getElementById('checkout').style.display='block'">
+					<img src="img/check.png">
+				</a>
+				<a id="tprice"> 0.0€ </a>
 			</footer>
 
 		</div>
@@ -596,7 +607,7 @@
 	<div id="drinks" class="white_content">
 
 		<header>
-			Bebidas:
+			BEBIDAS:
 
 			<a href = "javascript:void(0)"
 				onclick = "document.getElementById('drinks').style.display='none';
@@ -619,33 +630,104 @@
 		<footer class="order">
 
 			<a id="order" href="javascript:void(0)"
-				onclick = "document.getElementById('order').style.display='block';
+				onclick = "document.getElementById('allOrder').style.display='block';
 				document.getElementById('drinks').style.display='none';
-				document.getElementById('order').appendChild(makeDrinks(currentlyOrdered));
+				document.getElementById('allOrder').appendChild(makeOrder(currentlyOrdered));
 				document.getElementById('drinks').removeChild(document.getElementsByTagName('UL')[0]);">
 			A pedir:
 			</a>
+			<a id="acceptOrder" href="javascript:void(0)"
+				onclick = "document.getElementById('fade2').style.display='block';
+				document.getElementById('drinks').style.display='none';
+				document.getElementById('drinks').removeChild(document.getElementsByTagName('UL')[0]);
+				document.getElementById('checkout').appendChild(makeOrder(currentlyOrdered));
+				document.getElementById('checkout').style.display='block'">
+				<img src="img/check.png">
+			</a>
+			<a id="tprice"> 0.0€ </a>
 
 		</footer>
 
 	</div>
 
-	<div id="order" class="white_content">
+	<div id="customize" class="white_content">
+
+		<header>
+			Personalizar bebida:
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('customize').style.display='none';
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="backarrow" class="pics" src="img/arrow.png">
+			</a>
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('customize').style.display='none';
+				document.getElementById('counter').style.display='none';
+				document.getElementById('fade').style.display='none';
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="close" class="pics" src="img/X.png">
+			</a>
+
+			<img id="question" class="pics" src="img/Question.png">
+
+		</header>
+
+		<a href = "javascript:void(0)"
+				onclick = "alert('A sua bebida foi personalizada');
+				document.getElementById('customize').style.display='none';
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);">
+			<div id="accept">
+					Aceitar
+			</div>
+		</a>
+
+		<a href = "javascript:void(0)"
+				onclick = "document.getElementById('customize').style.display='none';
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);">
+				<div id="ignore">
+					Ignorar
+				</div>
+		</a>
+
+		<footer class="order">
+
+			<a id="order" href="javascript:void(0)"
+				onclick = "document.getElementById('allOrder').style.display='block';
+				document.getElementById('customize').style.display='none';
+				document.getElementById('allOrder').appendChild(makeOrder(currentlyOrdered));
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);">
+			A pedir:
+			</a>
+			<a id="acceptOrder" href="javascript:void(0)"
+				onclick = "document.getElementById('fade2').style.display='block';
+				document.getElementById('checkout').appendChild(makeOrder(currentlyOrdered));
+				document.getElementById('checkout').style.display='block'">
+				<img src="img/check.png">
+			</a>
+			<a id="tprice"> 0.0€ </a>
+		</footer>
+
+	</div>
+
+	<div id="allOrder" class="white_content">
 
 		<header>
 			Pedido:
 
 			<a href = "javascript:void(0)"
-				onclick = "document.getElementById('order').style.display='none';
-				document.getElementById('order').removeChild(document.getElementsByTagName('UL')[0]);">
+				onclick = "document.getElementById('allOrder').style.display='none';
+				document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);">
 				<img id="backarrow" class="pics" src="img/arrow.png">
 			</a>
 
 			<a href = "javascript:void(0)"
 				onclick = "document.getElementById('counter').style.display='none';
-				document.getElementById('order').style.display='none';
+				document.getElementById('allOrder').style.display='none';
 				document.getElementById('fade').style.display='none';
-				document.getElementById('order').removeChild(document.getElementsByTagName('UL')[0]);">
+				document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);">
 				<img id="close" class="pics" src="img/X.png">
 			</a>
 
@@ -655,5 +737,54 @@
 
 	</div>
 
+	<div id="checkout" class="white_content">
+
+		<header>
+			Checkout:
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('checkout').style.display='none';
+				document.getElementById('fade2').style.display='none';
+				document.getElementById('checkout').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="backarrow" class="pics" src="img/arrow.png">
+			</a>
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('counter').style.display='none';
+				document.getElementById('checkout').style.display='none';
+				document.getElementById('fade').style.display='none';
+				document.getElementById('fade2').style.display='none';
+				document.getElementById('checkout').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="close" class="pics" src="img/X.png">
+			</a>
+
+			<img id="question" class="pics" src="img/Question.png">
+
+		</header>
+
+		<a href = "javascript:void(0)"
+				onclick = "alert('O seu pedido está a ser processado');
+				document.getElementById('counter').style.display='none';
+				document.getElementById('checkout').style.display='none';
+				document.getElementById('fade').style.display='none';
+				document.getElementById('fade2').style.display='none';
+				document.getElementById('checkout').removeChild(document.getElementsByTagName('UL')[0]);">
+			<div id="accept">
+					Aceitar
+			</div>
+		</a>
+
+		<a href = "javascript:void(0)"
+				onclick = "document.getElementById('checkout').style.display='none';
+				document.getElementById('fade2').style.display='none';
+				document.getElementById('checkout').removeChild(document.getElementsByTagName('UL')[0]);">
+				<div id="ignore">
+					Ignorar
+				</div>
+		</a>
+
+	</div>
+
 	</body>
+
 </html>

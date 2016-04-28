@@ -50,6 +50,8 @@ var currentGender = null;
 var currentType = null;
 var tableSelected = 1;
 var rateSelected = 0;
+var currentPrice = 0.0;
+var ingredients = ["a","b","c","d","e"];
 
 function switchRate(id) {
 
@@ -132,16 +134,30 @@ function removeFromPlaylist(song) {
 
 function addToPlaylist(song) {
 
-    currentlyPlaying.push(song.substring(0, song.length - 1));
+    var index = currentlyPlaying.indexOf(song.substring(0, song.length - 1));
+
+    if (index == -1)
+        currentlyPlaying.push(song.substring(0, song.length - 1));
+    else
+        alert("A música já se encontra na playlist");
 
     updateFooter();
 }
 
 function updateFooter() {
+
     var elements = document.getElementsByClassName('playing');
     for (var i = 0; i < elements.length; i++) {
         elements[i].querySelector("#playing").textContent = "A tocar: " + currentlyPlaying[0];
         elements[i].querySelector("#rate").querySelector("#rateIMG").src = "img/" + getRate(currentlyPlaying[0]) + ".png";
+    }
+    var footers = document.getElementsByTagName('FOOTER');
+
+    for(var i = 0; i < footers.length; i++) {
+        if(currentlyPlaying.length == 0)
+            footers[i].style.display="none"
+        else
+            footers[i].style.display="block";
     }
 }
 
@@ -216,9 +232,6 @@ function minimize() {
     }
 }
 
-
-
-
 function makeDrinks(array) {
             // Create the list element:
     var list = document.createElement('ul');
@@ -226,9 +239,18 @@ function makeDrinks(array) {
     for(var i = 0; i < array.length; i++) {
         // Create the list item:
         var item = document.createElement('li');
+        var price = document.createElement('a');
         var anchor = document.createElement('a');
+        var edit = document.createElement('a');
         // Set its contents:
         item.appendChild(document.createTextNode(array[i][0]));
+        price.appendChild(document.createTextNode(array[i][1] + "€"));
+        price.id = "price";
+
+        edit.appendChild(document.createTextNode('E'));
+        edit.id = "edit";
+        edit.href = "javascript:void(0)";
+        edit.addEventListener('click', function() { editDrink(this.parentElement.textContent); });
 
         anchor.appendChild(document.createTextNode('+'));
         anchor.id = "add";
@@ -236,6 +258,8 @@ function makeDrinks(array) {
         anchor.addEventListener('click', function() { addToOrder(this.parentElement.textContent); });
 
         item.appendChild(anchor);
+        item.appendChild(edit);
+        item.appendChild(price);
         // Add it to the list:
         list.appendChild(item);
     }
@@ -267,9 +291,62 @@ function makeOrder(array) {
     return list;
 }
 
+function makeCustom(drink) {
+            // Create the list element:
+    var allIngredients = document.createElement('ul');
+    var currentIngredients = document.createElement('ul');
+
+    for(var i = 0; i < ingredients.length; i++) {
+        // Create the list item:
+        var item = document.createElement('li');
+        var anchor = document.createElement('a');
+        // Set its contents:
+        item.appendChild(document.createTextNode(ingredients[i]));
+        anchor.appendChild(document.createTextNode('X'));
+        anchor.id = "remove";
+        anchor.href = "javascript:void(0)";
+        anchor.addEventListener('click', function() { removeIngredient(this.parentElement.textContent); });
+
+        item.appendChild(anchor);
+        // Add it to the list:
+        currentIngredients.appendChild(item);
+    }
+
+    for(var i = 0; i < ingredients.length; i++) {
+        // Create the list item:
+        var item = document.createElement('li');
+        var anchor = document.createElement('a');
+        // Set its contents:
+        item.appendChild(document.createTextNode(ingredients[i]));
+        anchor.appendChild(document.createTextNode('+'));
+        anchor.id = "add";
+        anchor.href = "javascript:void(0)";
+        anchor.addEventListener('click', function() { addIngredient(this.parentElement.textContent); });
+
+        item.appendChild(anchor);
+        // Add it to the list:
+        allIngredients.appendChild(item);
+    }
+    // Finally, return the constructed list:
+    return [currentIngredients, allIngredients];
+}
+
+function editDrink(drink) {
+
+    var lists = makeCustom(drink)
+
+    document.getElementById('drinks').style.display='none';
+    document.getElementById('drinks').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('customize').style.display='block';
+    document.getElementById('customize').appendChild(lists[0]);
+    document.getElementById('customize').appendChild(lists[1]);
+
+}
+
 function addToOrder(drink) {
 
-    currentlyOrdered.push(drink.substring(0, drink.length - 1));
+    currentlyOrdered.push(drink.substring(0, drink.length - 7));
+    currentPrice += 0.99;
 
     updateOrder();
 }
@@ -278,18 +355,46 @@ function removeFromOrder(drink) {
 
     confirm("Pretende remover esta bebida da encomenda?");
 
-    var index = currentlyOrdered.indexOf(drink.substring(0, drink.length - 1));
+    var index = currentlyOrdered.indexOf(drink.substring(0, drink.length - 7));
     currentlyOrdered.splice(index, 1);
 
-    document.getElementById('playlist').removeChild(document.getElementsByTagName('UL')[0]);
-    document.getElementById('playlist').appendChild(makePlaylist(currentlyPlaying));
+    document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('allOrder').appendChild(makeOrder(currentlyOrdered));
 
     updateFooter();
+}
+
+function addIngredient(ingredient) {
+
+    confirm("Pretende adicionar este ingrediente a sua bebida?");
+
+    var index = ingredients.indexOf(ingredient.substring(0, ingredient.length - 1));
+    ingredients.splice(index, 1);
+
+    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[1]);
+    document.getElementById('customize').appendChild(makeCustom("FIXME")[1]);
+
+}
+
+function removeIngredient(ingredient) {
+
+    confirm("Pretende remover este ingrediente da sua bebida?");
+
+    var index = ingredients.indexOf(ingredient.substring(0, ingredient.length - 1));
+    ingredients.splice(index, 1);
+
+    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('customize').appendChild(makeCustom("FIXME")[0]);
+
+    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('customize').appendChild(makeCustom("FIXME")[1]);
+
 }
 
 function updateOrder() {
     var elements = document.getElementsByClassName('order');
     for (var i = 0; i < elements.length; i++) {
         elements[i].querySelector("#order").textContent = "A pedir: " + currentlyOrdered[0];
+        elements[i].querySelector("#tprice").textContent = currentPrice + "€";
     }
 }

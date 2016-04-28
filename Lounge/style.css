@@ -1,47 +1,29 @@
 body {
-	background-image: url("img/Main_screen.png");
+	background: url("img/Main_screen.png") no-repeat fixed center center;
 	background-size: 100% 100%;
 	font-family: 'Source Sans Pro', sans-serif;
-	/* margin:0; */
-	/* padding:0; */
-	height: 100%;
-	/* width:100vw; */
-	overflow-x: hidden;
-	overflow-y: hidden;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-attachment: fixed;
+	overflow: hidden;
 }
 
-a, u {
+a {
     text-decoration: none;
 	color: black;
 }
 
-#top{
-	background: rgb(65,105,225);
-	box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.19);
-	padding: 0 0 2em;
+.text {
+	line-height: 40px;
+	height: 100%;
 }
 
-#background{
-	width:100%;
-}
-
-#background:hover{
-	transform: none;
-}
-
+/***************************** MAIN SCREEN LAYOUT *****************************/
 
 #mainscreen{
-  	height:100%;
-  	/* width: 84%; */
-  	position:absolute;
-  	z-index:2;
-  	margin: 0px auto;
-  	top: 0%;
-  	left:0%;
-  	right:0%;
+	position:absolute;
+	top: 0;
+  	left: 0;
+  	right: 0;
+	height: 100%;
+  	margin: 0 auto;
 }
 
 #uma{
@@ -50,37 +32,24 @@ a, u {
 	top: 1%;
 	left: 38%;
 }
-#uma:hover {
-	filter: sepia(50%);
-}
 #duas{
 	position: absolute;
-	bottom: 19.9%;
+	bottom: 15%;
 	left: 15%;
 	width: 19%;
 }
-#duas:hover {
-	filter: sepia(50%);
-}
 #tres{
 	position: absolute;
-	bottom: 20%;
+	bottom: 15%;
 	right: 10%;
 	width: 33%;
 }
-#tres:hover {
-	filter: sepia(50%);
-}
-
 #umaajuda{
 	width: 5.5%;
-	/* margin-left:77%; */
-	/* margin-bottom:-8%; */
 	top: 4%;
 	right: 4%;
 	position: absolute;
 }
-
 #sair{
 	width: 13%;
 	left: 2%;
@@ -88,26 +57,19 @@ a, u {
 	position: fixed;
 }
 
-/*************************************
-************  SUBMENUS  **************
-**************************************/
+/***************************** MAIN SCREEN LAYOUT *****************************/
 
 .black_overlay{
 	display: none;
 	position: absolute;
-	top: 0%;
-	left: 0%;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: black;
+
+	background-color: rgba(0, 0, 0, 0.8);
 	z-index:1000;
-	-moz-opacity: 0.8;
-	opacity:.80;
-	filter: alpha(opacity=80);
 }
- #fade2 {
- 	z-index:1019;
- }
 
 .white_content {
 	display: none;
@@ -117,71 +79,24 @@ a, u {
 	width: 75%;
 	height: 75%;
 
-	background-color: white;
-	z-index:1010;
-	overflow: auto;
-}
-
-#event {
-    width: 25%;
-    height: 25%;
-
 	background-color: rgba(255, 255, 255, 0.8);
-	z-index:1020;
+	z-index:1015;
 	overflow: auto;
-	top: 30%;
-  	left: 37%;
-  	position: absolute;
 }
 
-#challenge {
-    top: 26.5%;
+.small_white_content {
+	display: none;
+	position: absolute;
+	top: 26.5%;
     left: 30.5%;
     width: 40%;
     height: 40%;
 
 	background-color: rgba(255, 255, 255, 0.8);
 	z-index:1020;
-	overflow: auto;
 }
 
-#challenge_table {
-    top: 26.5%;
-    left: 30.5%;
-    width: 40%;
-    height: 40%;
-
-	background-color: rgba(255, 255, 255, 0.8);
-	z-index:1020;
-	overflow: auto;
-}
-
-#rate_song {
-
-	top: 30.5%;
-    left: 35.5%;
-    width: 30%;
-    height: 30%;
-
-	background-color: rgba(255, 255, 255, 0.8);
-	z-index:1030;
-	overflow: auto;
-
-}
-
-#setlist {
-
-	background-color: rgba(255, 255, 255, 0.8);
-	z-index:1015;
-	overflow: auto;
-}
-
-#playlist {
-
-	background-color: rgba(255, 255, 255, 0.8);
-	z-index:1015;
-	overflow: auto;
-}
+/***************************** MAIN SCREEN LAYOUT *****************************/
 
 #option {
 	background-color: rgba(0, 0, 0, 0.8);
@@ -190,11 +105,7 @@ a, u {
 	margin: 2% 2%;
 }
 
-#option:hover {
-	background-color: rgb(0, 0, 0);
-}
-
-#event_accept {
+#accept {
     background-color: rgba(28, 95, 6, 0.59);
     text-align: center;
     height: 16%;
@@ -207,7 +118,7 @@ a, u {
     font-weight: bold;
 }
 
-#event_ignore {
+#ignore {
     background-color: rgba(232, 10, 10, 0.61);
     text-align: center;
     height: 16%;
@@ -217,8 +128,9 @@ a, u {
     bottom: 5%;
     position: absolute;
     font-size: large;
-        font-weight: bold;
+    font-weight: bold;
 }
+
 #event_title{
 	height: 17%;
 }
@@ -292,6 +204,17 @@ p {
 	margin-top: 6%;
 }
 
+#counterwrap {
+	padding: 5px;
+	width: 99%;
+	height: 100%;
+	margin: 0 auto;
+	margin-top: 6%;
+}
+#checkout {
+	background-color: white;
+}
+
 header {
 	height: 6%;
     width: 75%;
@@ -327,6 +250,12 @@ footer {
 	color: white;
 }
 
+#order {
+	font-size: 100%;
+	text-align: left;
+	color: white;
+}
+
 #rate {
 	float: right;
 	color: white;
@@ -335,6 +264,24 @@ footer {
 
 #rateIMG {
 	max-height: 30px;
+}
+
+#acceptOrder {
+	float: right;
+	color: white;
+	margin-right: 1%;
+	height: 80%;
+}
+
+#acceptOrder img {
+	max-height: 100%;
+	margin-top: 9%;
+}
+
+#tprice {
+	float: right;
+	color: white;
+	margin-right: 5%;
 }
 
 h3 {
@@ -351,8 +298,6 @@ h3 {
 
 h4 {
 	font-size: 200%;
-	margin-top: 0;
-    margin-bottom: -10px;
     padding: 5%;
 	color: white;
 }
@@ -378,6 +323,14 @@ h4 {
 				-2px -2px 2px #333;
 	overflow-x: hidden;
 	overflow-y: hidden;
+}
+
+#counter {
+	background-image: url("img/Zona_de_balcao.jpg");
+	background-size: 100% 100%;
+	box-shadow: 2px 2px 2px #333,
+				-2px -2px 2px #333;
+	overflow-x: hidden;
 }
 
 #backarrow {
@@ -452,6 +405,11 @@ h4 {
 	text-decoration: none;
 	background-color: rgba(0, 0, 0, 0.8);
 	border-radius: 5%;
+	height: 40%;
+}
+
+.pics{
+	max-height: 100%;
 }
 
 #middle {
@@ -467,21 +425,6 @@ h4 {
 	float: left;
 }
 
-#setlist ul {
-	margin-top: 6%;
-	margin-left: 0;
-	padding-left: 0;
-}
-
-#setlist ul li {
-	padding: 2% 0;
-	list-style: none;
-	height: 5%;
-	font-size: 2em;
-	padding-left: 3%;
-	border-bottom: 1px solid black;
-}
-
 #setlist ul li img {
 	float: right;
 	padding-right: 3%;
@@ -489,13 +432,13 @@ h4 {
 	vertical-align: middle;
 }
 
-#playlist ul {
+ul {
 	margin-top: 6%;
 	margin-left: 0;
 	padding-left: 0;
 }
 
-#playlist ul li {
+ul li {
 	padding: 2% 0;
 	list-style: none;
 	height: 5%;
@@ -504,32 +447,33 @@ h4 {
 	border-bottom: 1px solid black;
 }
 
-#drinks ul {
-	margin-top: 6%;
-	margin-left: 0;
-	padding-left: 0;
+#customize ul {
+
+	width: 50%;
+	float: left;
 }
 
-#drinks ul li {
-	padding: 2% 0;
-	list-style: none;
-	height: 5%;
-	font-size: 2em;
-	padding-left: 3%;
-	border-bottom: 1px solid black;
-}
-
-#drinks ul li img {
+#remove {
 	float: right;
 	padding-right: 3%;
-	max-height: 5%;
-	vertical-align: middle;
+	font-weight: bold;
 }
 
 #add {
 	float: right;
 	padding-right: 3%;
 	font-weight: bold;
+}
+
+#edit {
+	float: right;
+	padding-right: 3%;
+	font-weight: bold;
+}
+
+#price {
+	float: right;
+	padding-right: 3%;
 }
 
 #remove {

@@ -34,55 +34,121 @@ function switchColor(id) {
         document.getElementById(id).style.backgroundColor = 'white';
 }
 
-function makeSetlist(array) {
-            // Create the list element:
+function makeUL(array, type) {
+        // Create the list element:
     var list = document.createElement('ul');
 
     for(var i = 0; i < array.length; i++) {
-        // Create the list item:
+
         var item = document.createElement('li');
-        var image = document.createElement('img');
         var anchor = document.createElement('a');
-        // Set its contents:
-        image.src = "img/" + array[i][1] + ".png";
+        
         item.appendChild(document.createTextNode(array[i][0]));
+        
+        if (type == "setlist") {
+               var image = document.createElement('img');
+               image.src = "img/" + array[i][1] + ".png";
+               
+               anchor.appendChild(document.createTextNode('+'));
+               anchor.id = "add";
+               anchor.href = "javascript:void(0)";
+               anchor.addEventListener('click', function() { addToPlaylist(this.parentElement.textContent); });
+               
+               item.appendChild(anchor);
+               item.appendChild(image);
+               list.appendChild(item);
+        }
+        
+        else if (type == "playlist") {
+               anchor.appendChild(document.createTextNode('X'));
+               anchor.id = "remove";
+               anchor.href = "javascript:void(0)";
+               anchor.addEventListener('click', function() { removeFromPlaylist(this.parentElement.textContent); });
 
-        anchor.appendChild(document.createTextNode('+'));
-        anchor.id = "add";
-        anchor.href = "javascript:void(0)";
-        anchor.addEventListener('click', function() { addToPlaylist(this.parentElement.textContent); });
+               item.appendChild(anchor);
+               list.appendChild(item);        
+        }
+        
+        else if (type == "drinks") {
+                var price = document.createElement('a');
+                var edit = document.createElement('a');
 
-        item.appendChild(anchor);
-        item.appendChild(image);
-        // Add it to the list:
-        list.appendChild(item);
+                price.appendChild(document.createTextNode(array[i][1] + "€"));
+                price.id = "price";
+
+                edit.appendChild(document.createTextNode('E'));
+                edit.id = "edit";
+                edit.href = "javascript:void(0)";
+                edit.addEventListener('click', function() { editDrink(this.parentElement.textContent); });
+
+                anchor.appendChild(document.createTextNode('+'));
+                anchor.id = "add";
+                anchor.href = "javascript:void(0)";
+                anchor.addEventListener('click', function() { addToOrder(this.parentElement.textContent); });
+
+                item.appendChild(anchor);
+                item.appendChild(edit);
+                item.appendChild(price);
+                list.appendChild(item);
+        }
+        
+        else if (type =="order") {
+                anchor.appendChild(document.createTextNode('X'));
+                anchor.id = "remove";
+                anchor.href = "javascript:void(0)";
+                anchor.addEventListener('click', function() { removeFromOrder(this.parentElement.textContent); });
+
+                item.appendChild(anchor);
+                list.appendChild(item);
+        }
+        
     }
-    // Finally, return the constructed list:
     return list;
 }
 
-function makePlaylist(array) {
+function makeCustom(drink) {
             // Create the list element:
-    var list = document.createElement('ul');
+    var allIngredients = document.createElement('ul');
+    var currentIngredients = document.createElement('ul');
 
-    for(var i = 0; i < array.length; i++) {
+    for (var i = 0; i < gin.length; i++) {
+        if (gin[i][0] == drink)
+            var ingredients = gin[i][2]
+    }
+
+    for(var i = 0; i < ingredients[0].length; i++) {
         // Create the list item:
         var item = document.createElement('li');
         var anchor = document.createElement('a');
         // Set its contents:
-        item.appendChild(document.createTextNode(array[i]));
-
+        item.appendChild(document.createTextNode(ingredients[0][i]));
         anchor.appendChild(document.createTextNode('X'));
         anchor.id = "remove";
         anchor.href = "javascript:void(0)";
-        anchor.addEventListener('click', function() { removeFromPlaylist(this.parentElement.textContent); });
+        anchor.addEventListener('click', function() { removeIngredient(drink, this.parentElement.textContent); });
 
         item.appendChild(anchor);
         // Add it to the list:
-        list.appendChild(item);
+        currentIngredients.appendChild(item);
+    }
+
+    for(var i = 0; i < ingredients[1].length; i++) {
+        // Create the list item:
+        var item = document.createElement('li');
+        var anchor = document.createElement('a');
+        // Set its contents:
+        item.appendChild(document.createTextNode(ingredients[1][i]));
+        anchor.appendChild(document.createTextNode('+'));
+        anchor.id = "add";
+        anchor.href = "javascript:void(0)";
+        anchor.addEventListener('click', function() { addIngredient(drink, this.parentElement.textContent); });
+
+        item.appendChild(anchor);
+        // Add it to the list:
+        allIngredients.appendChild(item);
     }
     // Finally, return the constructed list:
-    return list;
+    return [currentIngredients, allIngredients];
 }
 
 function removeFromPlaylist(song) {
@@ -162,112 +228,6 @@ function minimize() {
         document.getElementById('game_header').style.position = 'fixed';
         minimized = false;
     }
-}
-
-function makeDrinks(array) {
-            // Create the list element:
-    var list = document.createElement('ul');
-
-    for(var i = 0; i < array.length; i++) {
-        // Create the list item:
-        var item = document.createElement('li');
-        var price = document.createElement('a');
-        var anchor = document.createElement('a');
-        var edit = document.createElement('a');
-        // Set its contents:
-        item.appendChild(document.createTextNode(array[i][0]));
-        price.appendChild(document.createTextNode(array[i][1] + "€"));
-        price.id = "price";
-
-        edit.appendChild(document.createTextNode('E'));
-        edit.id = "edit";
-        edit.href = "javascript:void(0)";
-        edit.addEventListener('click', function() { editDrink(this.parentElement.textContent); });
-
-        anchor.appendChild(document.createTextNode('+'));
-        anchor.id = "add";
-        anchor.href = "javascript:void(0)";
-        anchor.addEventListener('click', function() { addToOrder(this.parentElement.textContent); });
-
-        item.appendChild(anchor);
-        item.appendChild(edit);
-        item.appendChild(price);
-        // Add it to the list:
-        list.appendChild(item);
-    }
-    // Finally, return the constructed list:
-    return list;
-}
-
-function makeOrder(array) {
-            // Create the list element:
-    var list = document.createElement('ul');
-    var index = [];
-
-
-    for(var i = 0; i < array.length; i++) {
-        // Create the list item:
-        var item = document.createElement('li');
-        var anchor = document.createElement('a');
-        // Set its contents:
-        item.appendChild(document.createTextNode(array[i]));
-
-        anchor.appendChild(document.createTextNode('X'));
-        anchor.id = "remove";
-        anchor.href = "javascript:void(0)";
-        anchor.addEventListener('click', function() { removeFromOrder(this.parentElement.textContent); });
-
-        item.appendChild(anchor);
-        // Add it to the list:
-        list.appendChild(item);
-    }
-    // Finally, return the constructed list:
-    return list;
-}
-
-function makeCustom(drink) {
-            // Create the list element:
-    var allIngredients = document.createElement('ul');
-    var currentIngredients = document.createElement('ul');
-
-    for (var i = 0; i < gin.length; i++) {
-        if (gin[i][0] == drink)
-            var ingredients = gin[i][2]
-    }
-
-    for(var i = 0; i < ingredients[0].length; i++) {
-        // Create the list item:
-        var item = document.createElement('li');
-        var anchor = document.createElement('a');
-        // Set its contents:
-        item.appendChild(document.createTextNode(ingredients[0][i]));
-        anchor.appendChild(document.createTextNode('X'));
-        anchor.id = "remove";
-        anchor.href = "javascript:void(0)";
-        anchor.addEventListener('click', function() { removeIngredient(drink, this.parentElement.textContent); });
-
-        item.appendChild(anchor);
-        // Add it to the list:
-        currentIngredients.appendChild(item);
-    }
-
-    for(var i = 0; i < ingredients[1].length; i++) {
-        // Create the list item:
-        var item = document.createElement('li');
-        var anchor = document.createElement('a');
-        // Set its contents:
-        item.appendChild(document.createTextNode(ingredients[1][i]));
-        anchor.appendChild(document.createTextNode('+'));
-        anchor.id = "add";
-        anchor.href = "javascript:void(0)";
-        anchor.addEventListener('click', function() { addIngredient(drink, this.parentElement.textContent); });
-
-        item.appendChild(anchor);
-        // Add it to the list:
-        allIngredients.appendChild(item);
-    }
-    // Finally, return the constructed list:
-    return [currentIngredients, allIngredients];
 }
 
 function editDrink(drink) {
@@ -352,6 +312,7 @@ function updateOrder() {
         elements[i].querySelector("#tprice").textContent = currentPrice + "€";
     }
 }
+
 
 /* Given an item (drink or music), this function returns the list and index in the list of that iten,
 in the form [list, index]*/

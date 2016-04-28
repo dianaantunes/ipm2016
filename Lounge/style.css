@@ -428,7 +428,7 @@ h4 {
 #setlist ul li img {
 	float: right;
 	padding-right: 3%;
-	max-height: 5%;
+	max-height: 20px;
 	vertical-align: middle;
 }
 

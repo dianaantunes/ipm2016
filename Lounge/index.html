@@ -588,7 +588,7 @@
 			<footer class="order">
 				<a id="order" href="javascript:void(0)"
 					onclick = "document.getElementById('allOrder').style.display='block';
-					document.getElementById('playlist').appendChild(makeOrder(currentlyOrdered));">
+					document.getElementById('allOrder').appendChild(makeOrder(currentlyOrdered));">
 					A pedir:
 				</a>
 				<a id="acceptOrder" href="javascript:void(0)"
@@ -677,7 +677,8 @@
 				onclick = "alert('A sua bebida foi personalizada');
 				document.getElementById('customize').style.display='none';
 				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
-				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);">
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+				addToOrder(currentDrink);">
 			<div id="accept">
 					Aceitar
 			</div>

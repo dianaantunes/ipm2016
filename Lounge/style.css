@@ -245,6 +245,26 @@ h5 {
 	font-size: 1.5em;
 }
 
+h6 {
+	display: inline-block;
+	font-size: 2em;
+	margin-top: 6%;
+	width: 40%;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	text-align: center;
+}
+
+#h6Left {
+	float: left;
+	margin-left: 3%;
+}
+
+#h6Right {
+	float: right;
+	margin-right: 3%;
+}
+
 #game_header a {
 	text-decoration: none;
 	color: white;
@@ -264,16 +284,16 @@ footer {
 
 #playing {
 	float: left;
-	padding-top: 1%;
-	font-size: 100%;
+	padding-top: 0.8%;
+	font-size: 150%;
 	text-align: left;
 	color: white;
 }
 
 #order {
 	float: left;
-	padding-top: 1%;
-	font-size: 100%;
+	padding-top: 0.8%;
+	font-size: 150%;
 	text-align: left;
 	color: white;
 	width: 75%;
@@ -302,8 +322,8 @@ footer {
 }
 
 #tprice {
-	padding-top: 1%;
-	font-size: 100%;
+	padding-top: 0.8%;
+	font-size: 150%;
 	float: right;
 	color: white;
 	margin-right: 2%;
@@ -405,6 +425,11 @@ h4 {
 #vinil {
     height: 125px;
 }
+
+#jukebox #vinil {
+    box-shadow: 0px 0px 30px #fff;
+    border-radius: 100%;
+}
 #bottle {
     height: 125px;
 }
@@ -448,6 +473,10 @@ ul {
 	margin-top: 4%;
 	margin-left: 0;
 	padding-left: 0;
+}
+
+#customize ul {
+	margin-top: 0;
 }
 
 #allOrder ul, #checkout ul {

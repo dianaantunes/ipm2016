@@ -112,24 +112,24 @@ img {
 #accept {
     background-color: rgba(28, 95, 6, 0.59);
     text-align: center;
-    height: 16%;
-    width: 25%;
+    height: 12%;
+    width: 15%;
     margin: 2% 2%;
-    left: 8%;
-    bottom: 5%;
-    position: absolute;
+    left: 18%;
+    bottom: 18%;
+    position: fixed;
     font-size: large;
     font-weight: bold;
 }
 #ignore {
     background-color: rgba(232, 10, 10, 0.61);
     text-align: center;
-    height: 16%;
-    width: 25%;
+    height: 12%;
+    width: 15%;
     margin: 2% 2%;
-    right: 8%;
-    bottom: 5%;
-    position: absolute;
+    right: 18%;
+    bottom: 18%;
+    position: fixed;
     font-size: large;
     font-weight: bold;
 }
@@ -139,11 +139,13 @@ img {
 }
 
 #accept p {
-	padding-top: 10%;
+	padding-top: 12%;
+	font-size: 2em;
 }
 
 #ignore p {
-	padding-top: 10%;
+	padding-top: 12%;
+	font-size: 2em;
 }
 
 #event_text{
@@ -274,6 +276,7 @@ footer {
 	font-size: 100%;
 	text-align: left;
 	color: white;
+	width: 75%;
 }
 
 #rate {
@@ -335,6 +338,12 @@ h4 {
 }
 
 #jukebox {
+	background-image: url("img/Zona_de_jukebox.png");
+	background-size: 100% 100%;
+	overflow-x: hidden;
+}
+
+#jukeboxBand {
 	background-image: url("img/Zona_de_jukebox.png");
 	background-size: 100% 100%;
 	overflow-x: hidden;
@@ -441,6 +450,18 @@ ul {
 	padding-left: 0;
 }
 
+#allOrder ul, #checkout ul {
+	margin-top: 4%;
+	margin-left: 0;
+	padding-left: 0;
+	overflow-y: scroll;
+	height: 50%;
+}
+
+#allOrder ul li, #checkout ul li{
+	padding-top: 10px;
+}
+
 ul li {
 	padding: 2% 0;
 	list-style: none;
@@ -488,6 +509,11 @@ ul li {
 }
 
 #price {
+	float: right;
+	padding-right: 3%;
+}
+
+#ammount {
 	float: right;
 	padding-right: 3%;
 }

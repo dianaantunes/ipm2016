@@ -344,9 +344,7 @@
 			<div id="jukewrap">
 				<section id="game">
 					<a href = "javascript:void(0)"
-						onclick = "document.getElementById('setlist').style.display='block';
-						currentGender=rock;
-						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						onclick = "document.getElementById('jukeboxBand').style.display='block';">
 						<div id="content">
 							<img id="vinil" class="pics" src="img/rock.png">
 							<h2>ROCK</h2>
@@ -386,6 +384,115 @@
 						<div id="content">
 							<img id="vinil" class="pics" src="img/blues.png">
 							<h2>BLUES</h2>
+						</div>
+					</a>
+				</section>
+
+				<footer class="playing">
+					<a id="playing" href="javascript:void(0)"
+						onclick = "document.getElementById('playlist').style.display='block';
+						document.getElementById('playlist').appendChild(makeUL(currentlyPlaying, 'playlist'));">
+						A tocar:
+					</a>
+					<a id="rate" href="javascript:void(0)"
+						onclick = "document.getElementById('fade2').style.display='block';
+						document.getElementById('rate_song').style.display='block'">
+						<img id="rateIMG" src="img/2E.png">
+					</a>
+				</footer>
+
+			</div>
+
+		</div>
+
+		<div id="jukeboxBand" class="white_content">
+
+			<header>
+
+				<h5>ROCK</h5>
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('jukeboxBand').style.display='none';">
+					<img id="backarrow" class="pics" src="img/arrow.png">
+				</a>
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('jukebox').style.display='none';
+					document.getElementById('jukeboxBand').style.display='none';
+					document.getElementById('fade').style.display='none';">
+					<img id="close" class="pics" src="img/X.png">
+				</a>
+				<img id="question" class="pics" src="img/Question.png">
+
+			</header>
+
+			<div id="jukewrap">
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=rockACDC;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/acdc.png">
+							<h2>AC/DC</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=rockBeatles;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/beatles.png">
+							<h2>BEATLES</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=rockFoo;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/foo.png">
+							<h2>FOO FIGHTERS</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=rockGuns;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/guns.png">
+							<h2>GUNS N' ROSES</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=rockMuse;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/muse.png">
+							<h2>MUSE</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=rockQueen;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/queen.png">
+							<h2>QUEEN</h2>
 						</div>
 					</a>
 				</section>
@@ -537,7 +644,7 @@
 				document.getElementById('fade').style.display='none';">
 				<img id="close" class="pics" src="img/X.png">
 			</a>
-			<img id="question" class="pics" src="">
+			<img id="question" class="pics" src="img/Question.png">
 
 		</header>
 
@@ -710,6 +817,7 @@
 
 			<a href = "javascript:void(0)"
 				onclick = "document.getElementById('customize').style.display='none';
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
 				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);">
 				<img id="backarrow" class="pics" src="img/arrow.png">
 			</a>
@@ -798,7 +906,7 @@
 				document.getElementById('fade2').style.display='none';
 				document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);">
 			<div id="accept">
-					<p>Concluir</p>
+					<p>Finalizar Pedido</p>
 			</div>
 		</a>
 
@@ -810,7 +918,7 @@
 				document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
 				updateOrder();">
 				<div id="ignore">
-					<p>Limpar</p>
+					<p>Limpar Pedido</p>
 				</div>
 		</a>
 
@@ -857,7 +965,7 @@
 				}
 				">
 			<div id="accept">
-					<p>Aceitar</p>
+					<p>Finalizar pedido</p>
 			</div>
 		</a>
 
@@ -866,7 +974,7 @@
 				document.getElementById('fade2').style.display='none';
 				document.getElementById('checkout').removeChild(document.getElementsByTagName('UL')[0]);">
 				<div id="ignore">
-					<p>Ignorar</p>
+					<p>Voltar atrás</p>
 				</div>
 		</a>
 

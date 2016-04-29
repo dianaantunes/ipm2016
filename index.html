@@ -1,100 +1,990 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<meta charset="utf-8">
-	<title>IPM</title>
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="style.css">
-	<script type="text/javascript">
-		function toggleVisible(id) {
-			var e = document.getElementById(id);
-       if(e.style.display == 'block') {
-          e.style.display = 'none';
-			 }
-       else {
-          e.style.display = 'block';
-			 }
-		}
-	</script>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>The Lounge</title>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="script.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
 
-<body>
-	<header>
-		<h1>INTERFACES PESSOA MÁQUINA 2015-16</h1>
-		<h2>Grupo 38 - Turno IPM201113L08</h2>
-		<table align=center>
-			<tr>
-				<td><a href="https://fenix.tecnico.ulisboa.pt/homepage/ist182448"><img id="rgb" src = "student1.jpg" width="100"></a></td>
-				<td><a href="https://fenix.tecnico.ulisboa.pt/homepage/ist178974"><img id="cmy" src = "student2.jpg" width="100"></a></td>
-				<td><a href="https://fenix.tecnico.ulisboa.pt/homepage/ist180774"><img id="hsv" src = "student3.jpg" width="100"></a></td>
-			</tr>
-			<tr>
-				<td width="33%"> Diana Antunes </td>
-				<td width="33%"> Eduardo Janicas </td>
-				<td width="33%"> Nuno Fernandes </td>
-			</tr>
-			<tr>
-				<td>82448</td>
-				<td>78974</td>
-				<td>80774</td>
-			</tr>
-		</table>
-	</header>
 
-	<div id="links">
-		<p>
+	<body>
 
-			<div id="at" class="section">
-				<h2><a id="at_innera" href="#" onclick="toggleVisible('at_inner');">Análise de Tarefas</a></h2>
-				<div id="at_inner" class="inner_section">
-					<a href="Questionario.pdf">Questionário para análise de tarefas</a> <br />
-					<a href="Questionario(Melhorado).pdf">Questionário para análise de tarefas (melhorado)</a> <br />
-					<a href="38A.pdf">Análise de tarefas + Funcionalidades</a> <br />
-					<a href="at2.html">Análise de tarefas + Funcionalidades (melhorados)</a> <br />
-				</div>
-			</div>
+		<!--************************************************************************
+		| 																		   |
+		|								ECRÃ PRINCIPAL 							   |
+		|																		   |
+		*************************************************************************-->
 
-			<div id="mc" class="section">
-				<h2><a id="mc_innera" href="#" onclick="toggleVisible('mc_inner');">Modelo Conceptual</a></h2>
-				<div id="mc_inner" class="inner_section">
-					<a href="mod-conceptual1.html">Modelo Conceptual</a> <br />
-					<a href="mod-conceptual2.html">Modelo Conceptual (melhorado)</a> <br />
-				</div>
-			</div>
+		<div id="mainscreen">
 
-			<div id="proto" class="section">
-				<h2><a id="proto_innera" href="#" onclick="toggleVisible('proto_inner');">Protótipos</a></h2>
-				<div id="proto_inner" class="inner_section">
-					<a href="pbf1.html">PBF</a> <br />
-					<a href="pbf2.html">PBF (melhorado)</a> <br />
-					<a href="Lounge/index.html">Primeiro protótipo funcional</a> <br />
-					<a href="protFuncional1-completo.html">Primeiro protótipo funcional completo</a> <br />
-					<a href="protFuncional2-beta.html">Segundo protótipo funcional</a> <br />
-					<a href="protFuncional2-completo.html">Segundo protótipo funcional completo</a><br />
-					<a href="protFinal-beta.html">Protótipo Final</a> <br />
-					<a href="protFinal-completo.html">Protótipo Final completo</a><br />
-				</div>
-			</div>
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('counter').style.display='block';
+						   document.getElementById('fade').style.display='block';
+						   updateOrder();">
+							 <img id="uma" class="pics" src = "img/Balcao.png">
+			</a>
 
-			<div id="au" class="section">
-				<h2><a id="au_innera" href="#" onclick="toggleVisible('au_inner');">Avaliação com Utilizadores</a></h2>
-				<div id="au_inner" class="inner_section">
-					<a href="tarefas-criterios1.html">Tarefas e Critérios de usabilidade</a> <br />
-					<a href="tarefas-criterios2.html">Tarefas e Critérios de usabilidade (melhorado)</a> <br />
-					<a href="relatorioTestes1.html">Relatório da avaliação com utilizadores</a> <br />
-					<a href="relatorioTestes2.html">Relatório da avaliação com utilizadores (melhorado)</a> <br />
-					<a href="manual.html">Manual do Utilizador</a> <br />
-				</p>
-			</div>
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('jukebox').style.display='block';
+						   document.getElementById('fade').style.display='block';
+						   updateFooter();">
+				<img id="duas" class="pics" src = "img/Jukebox.png">
+			</a>
+
+			<a href = "javascript:void(0)"
+			   onclick = "document.getElementById('game_menu').style.display='block';
+			   			  document.getElementById('fade').style.display='block';">
+				<img id="tres" class="pics" src = "img/Zona_de_jogos.png">
+			</a>
+
+			<!-- <a href = "javascript:void(0)"
+			   onclick = "document.getElementById('event').style.display='block';
+			   			  document.getElementById('fade').style.display='block';">
+				<img id="exclamation" class="pics" src = "img/exclamation.png">
+			</a> -->
+			<img id="umaajuda" class="pics" src = "img/MainQuestion.png">
+			<img id="sair" class="pics" src = "img/Sair.png">
 		</div>
+
+
+
+		<!--***********| EVENTO - Convite para jogar |***************-->
+
+		<!-- <div id="event" class="small_white_content">
+				<h3 id="event_title">
+					DESAFIO!
+				</h3>
+
+				<span id="event_text" class="text"> A mesa X desafiou-o para jogar Quizz!</span>
+
+				<a href = "javascript:void(0)"
+						onclick = "document.getElementById('event').style.display='none';
+						document.getElementById('fade').style.display='none';
+						window.open('img/quiz404.png','Error','width=1920,height=1080');">
+					<div id="accept">
+							<span class="text">Aceitar</span>
+					</div>
+				</a>
+
+				<a href = "javascript:void(0)"
+						onclick = "document.getElementById('event').style.display='none';
+						document.getElementById('fade').style.display='none'">
+
+						<div id="ignore">
+							<span class="text">Ignorar</span>
+						</div>
+					</a>
+		</div> -->
+
+
+
+		<!--************************************************************************
+		| 																		   |
+		|								ZONA DE JOGOS 							   |
+		|																		   |
+		*************************************************************************-->
+
+		<div id="game_menu" class="white_content">
+
+			<header>
+				<h5>ZONA DE JOGOS</h5>
+
+				<img id="question" class="pics" src="img/Question.png">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('game_menu').style.display='none';
+				   			  document.getElementById('fade').style.display='none';">
+					<img id="close" class="pics" src="img/X.png">
+				</a>
+
+			</header>
+
+			<div id="zona_de_jogos_wrap">
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+					   onclick = "document.getElementById('challenge').style.display='block';
+					   			  document.getElementById('fade2').style.display='block';
+								  selector='quiz'">
+
+						<div id="content">
+							<img id="games" class="pics" src="img/quiz.png">
+							<h2> QUIZ </h2>
+						</div>
+
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+					   onclick = "document.getElementById('challenge').style.display='block';
+					   	document.getElementById('fade2').style.display='block';
+					   	selector='snooker'">
+
+						<div id="content">
+							<img id="games" class="pics" src="img/pool.png">
+							<h2>POOL8</h2>
+						</div>
+
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('challenge').style.display='block';
+						document.getElementById('fade2').style.display='block';
+						selector='chess'">
+
+						<div id="content">
+							<img id="games" class="pics" src="img/chess.png">
+							<h2>XADREZ</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('challenge').style.display='block';
+						document.getElementById('fade2').style.display='block';
+						selector='cars'">
+
+						<div id="content">
+							<img id="games" class="pics" src="img/car.png">
+							<h2>CARROS</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+						<div id="content">
+							<h2>Jogo</h2>
+							<img id="games" class="pics" src="img/game.png">
+
+						</div>
+				</section>
+
+				<section id="game">
+						<div id="content">
+							<h2>Jogo</h2>
+							<img id="games" class="pics" src="img/game.png">
+						</div>
+				</section>
+
+				<section id="game">
+						<div id="content">
+							<h2>Jogo</h2>
+							<img id="games" class="pics" src="img/game.png">
+						</div>
+				</section>
+
+				<section id="game">
+						<div id="content">
+							<h2>Jogo</h2>
+							<img id="games" class="pics" src="img/game.png">
+						</div>
+				</section>
+
+				<section id="game">
+						<div id="content">
+							<h2>Jogo</h2>
+							<img id="games" class="pics" src="img/game.png">
+						</div>
+				</section>
+
+			</div>
+
+		</div>
+
+		<!--********** Desafio: Escolher a quem desafiar ************-->
+
+		<div id="challenge" class="small_white_content">
+
+				<h3>
+					Selecione quem desafiar:
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('challenge').style.display='none';
+						document.getElementById('fade2').style.display='none'">
+
+						<img id="close" class="pics" src="img/X.png">
+					</a>
+					<img id="question" class="pics" src="img/Question.png">
+				</h3>
+
+				<a href = "javascript:void(0)"
+					onclick= "document.getElementById('challenge').style.display='none';
+					document.getElementById('fade2').style.display='none';
+					document.getElementById('current_game').style.display='block';" >
+					<div id="option">
+						<h4>Própria Mesa</h4>
+					</div>
+				</a>
+
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('challenge').style.display='none';
+					document.getElementById('challenge_table').style.display='block'">
+					<div id="option">
+						<h4>Outra Mesa</h4>
+					</div>
+				</a>
+		</div>
+
+
+		<!--********** Desafio: Escolher a quem desafiar: Outra mesa ************-->
+
+		<div id="challenge_table" class="small_white_content">
+				<h3>
+					Selecione a mesa:
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('challenge_table').style.display='none';
+						document.getElementById('challenge').style.display='block'">
+						<img id="backarrow" class="pics" src="img/arrow.png">
+					</a>
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('challenge_table').style.display='none';
+						document.getElementById('fade2').style.display='none'">
+						<img id="close" class="pics" src="img/X.png">
+					</a>
+					<img id="question" class="pics" src="img/Question.png">
+				</h3>
+
+				<a id="table1" class="table" href = "javascript:void(0)"
+					onclick = "switchColor('table1'); switchColor('table'+tableSelected);
+					tableSelected=1; ">1</a>
+				<a id="table2" class="table" href = "javascript:void(0)"
+					onclick = "switchColor('table2'); switchColor('table'+tableSelected);
+					tableSelected=2; ">2</a>
+				<a id="table3" class="table" href = "javascript:void(0)"
+					onclick = "switchColor('table3'); switchColor('table'+tableSelected);
+					tableSelected=3; ">3</a>
+				<a id="table4" class="table" href = "javascript:void(0)"
+					onclick = "switchColor('table4'); switchColor('table'+tableSelected);
+					tableSelected=4; ">4</a>
+				<a id="table5" class="table" href = "javascript:void(0)"
+					onclick = "switchColor('table5'); switchColor('table'+tableSelected);
+					tableSelected=5; ">5</a>
+				<a id="table6" class="table" href = "javascript:void(0)"
+					onclick = "switchColor('table6'); switchColor('table'+tableSelected);
+					tableSelected=6; ">6</a>
+				<a id="table7" class="table" href = "javascript:void(0)"
+					onclick = "switchColor('table7'); switchColor('table'+tableSelected);
+					tableSelected=7; ">7</a>
+				<a id="table8" class="table" href = "javascript:void(0)"
+					onclick = "switchColor('table8'); switchColor('table'+tableSelected);
+					tableSelected=8; ">8</a>
+
+				<a href = "javascript:void(0)"
+					onclick = " confirm('Pretende desafiar a mesa ' + tableSelected + ' para jogar?');
+					window.open('img/'+selector+'404.png','Error','width=1920,height=1080');">
+					<img id="play" class="pics" src="img/jogar.png">
+				</a>
+
+				<script>switchColor('table1')</script>
+		</div>
+
+
+		<div id="current_game" class="white_content">
+
+			<header id = "game_header">
+				<a href = "javascript:void(0)" onclick = "minimize()">
+					<h5>QUIZ</h5>
+				</a>
+				<a href = "javascript:void(0)"
+				   onclick = "minimize()">
+					<img id="question" class="pics" src="img/Minimize.png">
+				</a>
+
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('current_game').style.display='none';
+				   document.getElementById('fade').style.display='none';">
+					<img id="close" class="pics" src="img/X.png">
+				</a>
+
+			</header>
+
+		</div>
+
+		<!--********** Jogo em curso ************
+
+		<div id="zona_de_jogos" class="white_content">
+
+			<header>
+				ZONA DE JOGOS
+
+				<img id="question" class="pics" src="img/Question.png">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('zona_de_jogos').style.display='none';
+				   			  document.getElementById('fade_games').style.display='none';">
+					<img id="close" class="pics" src="img/X.png">
+				</a>
+
+			</header>-->
+
+		<!--************************************************************************
+		| 																		   |
+		|								  JUKEBOX    							   |
+		|																		   |
+		*************************************************************************-->
+
+		<div id="jukebox" class="white_content">
+
+			<header>
+
+				<h5>JUKEBOX</h5>
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('jukebox').style.display='none';
+					document.getElementById('fade').style.display='none';">
+					<img id="close" class="pics" src="img/X.png">
+				</a>
+				<img id="question" class="pics" src="img/Question.png">
+
+			</header>
+
+			<div id="jukewrap">
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('jukeboxBand').style.display='block';">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/rock.png">
+							<h2>ROCK</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=metal;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/metal.png">
+							<h2>METAL</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=pop;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/pop.png">
+							<h2>POP</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=blues;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/blues.png">
+							<h2>BLUES</h2>
+						</div>
+					</a>
+				</section>
+
+				<footer class="playing">
+					<a id="playing" href="javascript:void(0)"
+						onclick = "document.getElementById('playlist').style.display='block';
+						document.getElementById('playlist').appendChild(makeUL(currentlyPlaying, 'playlist'));">
+						A tocar:
+					</a>
+					<a id="rate" href="javascript:void(0)"
+						onclick = "document.getElementById('fade2').style.display='block';
+						document.getElementById('rate_song').style.display='block'">
+						<img id="rateIMG" src="img/2E.png">
+					</a>
+				</footer>
+
+			</div>
+
+		</div>
+
+		<div id="jukeboxBand" class="white_content">
+
+			<header>
+
+				<h5>ROCK</h5>
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('jukeboxBand').style.display='none';">
+					<img id="backarrow" class="pics" src="img/arrow.png">
+				</a>
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('jukebox').style.display='none';
+					document.getElementById('jukeboxBand').style.display='none';
+					document.getElementById('fade').style.display='none';">
+					<img id="close" class="pics" src="img/X.png">
+				</a>
+				<img id="question" class="pics" src="img/Question.png">
+
+			</header>
+
+			<div id="jukewrap">
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=rockACDC;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/acdc.png">
+							<h2>AC/DC</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=rockBeatles;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/beatles.png">
+							<h2>BEATLES</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=rockFoo;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/foo.png">
+							<h2>FOO FIGHTERS</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=rockGuns;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/guns.png">
+							<h2>GUNS N' ROSES</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=rockMuse;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/muse.png">
+							<h2>MUSE</h2>
+						</div>
+					</a>
+				</section>
+
+				<section id="game">
+					<a href = "javascript:void(0)"
+						onclick = "document.getElementById('setlist').style.display='block';
+						currentGender=rockQueen;
+						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
+						<div id="content">
+							<img id="vinil" class="pics" src="img/queen.png">
+							<h2>QUEEN</h2>
+						</div>
+					</a>
+				</section>
+
+				<footer class="playing">
+					<a id="playing" href="javascript:void(0)"
+						onclick = "document.getElementById('playlist').style.display='block';
+						document.getElementById('playlist').appendChild(makeUL(currentlyPlaying, 'playlist'));">
+						A tocar:
+					</a>
+					<a id="rate" href="javascript:void(0)"
+						onclick = "document.getElementById('fade2').style.display='block';
+						document.getElementById('rate_song').style.display='block'">
+						<img id="rateIMG" src="img/2E.png">
+					</a>
+				</footer>
+
+			</div>
+
+		</div>
+
+		<div id="setlist" class="white_content">
+
+			<header>
+				<h5>Setlist:</h5>
+
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('setlist').style.display='none';
+					document.getElementById('setlist').removeChild(document.getElementsByTagName('UL')[0]);">
+					<img id="backarrow" class="pics" src="img/arrow.png">
+				</a>
+
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('setlist').style.display='none';
+					document.getElementById('jukebox').style.display='none';
+					document.getElementById('fade').style.display='none';
+					document.getElementById('setlist').removeChild(document.getElementsByTagName('UL')[0]);">
+					<img id="close" class="pics" src="img/X.png">
+				</a>
+
+				<img id="question" class="pics" src="img/Question.png">
+
+			</header>
+
+			<footer class="playing">
+
+				<a id="playing" href="javascript:void(0)"
+					onclick = "document.getElementById('playlist').style.display='block';
+					document.getElementById('setlist').style.display='none';
+					document.getElementById('playlist').appendChild(makeUL(currentlyPlaying, 'playlist'));
+					document.getElementById('setlist').removeChild(document.getElementsByTagName('UL')[0]);">
+				A tocar:
+				</a>
+
+				<a id="rate" href="javascript:void(0)"
+					onclick = "document.getElementById('fade2').style.display='block';
+					document.getElementById('rate_song').style.display='block'">
+					<img id="rateIMG" src="img/2E.png">
+				</a>
+
+			</footer>
+
+		</div>
+
+		<div id="playlist" class="white_content">
+
+			<header>
+				<h5>Playlist:</h5>
+
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('playlist').style.display='none';
+					document.getElementById('playlist').removeChild(document.getElementsByTagName('UL')[0]);">
+					<img id="backarrow" class="pics" src="img/arrow.png">
+				</a>
+
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('jukebox').style.display='none';
+					document.getElementById('playlist').style.display='none';
+					document.getElementById('fade').style.display='none';
+					document.getElementById('playlist').removeChild(document.getElementsByTagName('UL')[0]);">
+					<img id="close" class="pics" src="img/X.png">
+				</a>
+
+				<img id="question" class="pics" src="img/Question.png">
+
+			</header>
+
+		</div>
+
+		<div id="rate_song" class="small_white_content">
+			<h3>
+				Classifique a música:
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('rate_song').style.display='none';
+					document.getElementById('fade2').style.display='none'">
+					<img id="close" class="pics" src="img/X.png">
+				</a>
+				<img id="question" class="pics" src="img/Question.png">
+			</h3>
+
+			<div id = "stars">
+				<a class="star" href = "javascript:void(0)" onclick = "switchRate(1); rateSelected=1;">
+					<img id="1star" src="img/star.png">
+				</a>
+				<a class="star" href = "javascript:void(0)" onclick = "switchRate(2); rateSelected=2;">
+					<img id="2star" src="img/star.png">
+				</a>
+				<a class="star" href = "javascript:void(0)" onclick = "switchRate(3); rateSelected=3;">
+					<img id="3star" src="img/star.png">
+				</a>
+				<a class="star" href = "javascript:void(0)" onclick = "switchRate(4); rateSelected=4;">
+					<img id="4star" src="img/star.png">
+				</a>
+				<a class="star" href = "javascript:void(0)" onclick = "switchRate(5); rateSelected=5;">
+					<img id="5star" src="img/star.png">
+				</a>
+			</div>
+
+			<a id="rateButton" href = "javascript:void(0)"
+				onclick = "document.getElementById('rate_song').style.display='none';
+				document.getElementById('fade2').style.display='none';
+				changeRate(currentlyPlaying[0],rateSelected+'E'); updateFooter();">
+				CONFIRMAR
+			</a>
+
+		</div>
+
+	<a href = "javascript:void(0)" onclick = "document.getElementsByClassName('white_content').style.display='none';
+		document.getElementById('fade').style.display='none'">
+		<div id="fade" class="black_overlay"></div>
+	</a>
+
+	<a href = "javascript:void(0)" onclick = "document.getElementById('rate_song').style.display='none';
+		document.getElementById('challenge').style.display='none';
+		document.getElementById('challenge_table').style.display='none';
+		document.getElementById('fade2').style.display='none'">
+		<div  id="fade2" class="black_overlay"></div>
+	</a>
+
+	<!-- -->
+
+	<div id="counter" class="white_content">
+
+		<header>
+
+			<h5>BALCÃO</h5>
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('counter').style.display='none';
+				document.getElementById('fade').style.display='none';">
+				<img id="close" class="pics" src="img/X.png">
+			</a>
+			<img id="question" class="pics" src="img/Question.png">
+
+		</header>
+
+		<div id="counterwrap">
+			<section id="game">
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('drinks').style.display='block';
+					currentType=beer;
+					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
+					<div id="content">
+						<img id="bottle" class="pics" src="img/beer.png">
+						<h2> CERVEJA </h2>
+					</div>
+				</a>
+			</section>
+
+			<section id="game">
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('drinks').style.display='block';
+					currentType=cocktails;
+					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
+					<div id="content">
+						<img id="bottle" class="pics" src="img/cocktail.png">
+						<h2> COCKTAILS </h2>
+					</div>
+				</a>
+			</section>
+
+			<section id="game">
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('drinks').style.display='block';
+					currentType=gin;
+					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
+					<div id="content">
+						<img id="bottle" class="pics" src="img/gin.png">
+						<h2> GIN </h2>
+					</div>
+				</a>
+			</section>
+
+			<section id="game">
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('drinks').style.display='block';
+					currentType=licores;
+					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
+					<div id="content">
+						<img id="bottle" class="pics" src="img/liquor.png">
+						<h2> LICORES </h2>
+					</div>
+				</a>
+			</section>
+
+			<section id="game">
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('drinks').style.display='block';
+					currentType=shots;
+					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
+					<div id="content">
+						<img id="bottle" class="pics" src="img/shot.png">
+						<h2> SHOTS </h2>
+					</div>
+				</a>
+			</section>
+
+			<section id="game">
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('drinks').style.display='block';
+					currentType=vodka;
+					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
+					<div id="content">
+						<img id="bottle" class="pics" src="img/vodka.png">
+						<h2> VODKA </h2>
+					</div>
+				</a>
+			</section>
+
+			<section id="game">
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('drinks').style.display='block';
+					currentType=semalcool;
+					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
+					<div id="content">
+						<img id="bottle" class="pics" src="img/water.png">
+						<h2> SEM ALCOOL </h2>
+					</div>
+				</a>
+			</section>
+
+			<section id="game">
+				<a href = "javascript:void(0)"
+					onclick = "document.getElementById('drinks').style.display='block';
+					currentType=cafetaria;
+					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
+					<div id="content">
+						<img id="bottle" class="pics" src="img/cafetaria.png">
+						<h2> CAFETARIA </h2>
+					</div>
+				</a>
+			</section>
+
+			<footer class="order">
+				<a id="order" href="javascript:void(0)"
+					onclick = "document.getElementById('allOrder').style.display='block';
+					document.getElementById('allOrder').appendChild(makeUL(currentlyOrdered, 'order'));">
+					A pedir:
+				</a>
+				<a id="acceptOrder" href="javascript:void(0)"
+					onclick = "document.getElementById('fade2').style.display='block';
+					document.getElementById('checkout').appendChild(makeUL(currentlyOrdered, 'order'));
+					document.getElementById('checkout').style.display='block'">
+					<img src="img/check.png">
+				</a>
+				<a id="tprice"> 0.0€ </a>
+			</footer>
+
+		</div>
+
 	</div>
-	<script></script>
-</body>
-<script>
-	document.getElementById("at_inner").style.display = 'none';
-	document.getElementById("mc_inner").style.display = 'none';
-	document.getElementById("proto_inner").style.display = 'none';
-	document.getElementById("au_inner").style.display = 'none';
-</script>
+
+	<div id="drinks" class="white_content">
+
+		<header>
+			<h5>BEBIDAS:</h5>
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('drinks').style.display='none';
+				document.getElementById('drinks').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="backarrow" class="pics" src="img/arrow.png">
+			</a>
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('drinks').style.display='none';
+				document.getElementById('counter').style.display='none';
+				document.getElementById('fade').style.display='none';
+				document.getElementById('drinks').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="close" class="pics" src="img/X.png">
+			</a>
+
+			<img id="question" class="pics" src="img/Question.png">
+
+		</header>
+
+		<footer class="order">
+
+			<a id="order" href="javascript:void(0)"
+				onclick = "document.getElementById('allOrder').style.display='block';
+				document.getElementById('drinks').style.display='none';
+				document.getElementById('allOrder').appendChild(makeUL(currentlyOrdered, 'order'));
+				document.getElementById('drinks').removeChild(document.getElementsByTagName('UL')[0]);">
+			A pedir:
+			</a>
+			<a id="acceptOrder" href="javascript:void(0)"
+				onclick = "document.getElementById('fade2').style.display='block';
+				document.getElementById('drinks').style.display='none';
+				document.getElementById('drinks').removeChild(document.getElementsByTagName('UL')[0]);
+				document.getElementById('checkout').appendChild(makeUL(currentlyOrdered, 'order'));
+				document.getElementById('checkout').style.display='block'">
+				<img src="img/check.png">
+			</a>
+			<a id="tprice"> 0.0€ </a>
+
+		</footer>
+
+	</div>
+
+	<div id="customize" class="white_content">
+
+		<header>
+			<h5>Personalizar bebida:</h5>
+			
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('customize').style.display='none';
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="backarrow" class="pics" src="img/arrow.png">
+			</a>
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('customize').style.display='none';
+				document.getElementById('counter').style.display='none';
+				document.getElementById('fade').style.display='none';
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="close" class="pics" src="img/X.png">
+			</a>
+
+			<img id="question" class="pics" src="img/Question.png">
+
+		</header>
+		
+		<h6 id="h6Left">Ingredientes Atuais</h6>
+		<h6 id="h6Right">Ingredientes Adicionais</h6>
+		
+		<a href = "javascript:void(0)"
+				onclick = "alert('A sua bebida foi personalizada');
+				document.getElementById('customize').style.display='none';
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+				addToOrder(currentDrink);">
+			<div id="accept">
+					<p>Aceitar</p>
+			</div>
+		</a>
+
+		<a href = "javascript:void(0)"
+				onclick = "document.getElementById('customize').style.display='none';
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);">
+				<div id="ignore">
+					<p>Ignorar</p>
+				</div>
+		</a>
+
+		<footer class="order">
+
+			<a id="order" href="javascript:void(0)"
+				onclick = "document.getElementById('allOrder').style.display='block';
+				document.getElementById('customize').style.display='none';
+				document.getElementById('allOrder').appendChild(makeUL(currentlyOrdered, 'order'));
+				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);">
+			A pedir:
+			</a>
+			<a id="acceptOrder" href="javascript:void(0)"
+				onclick = "document.getElementById('fade2').style.display='block';
+				document.getElementById('checkout').appendChild(makeUL(currentlyOrdered, 'order'));
+				document.getElementById('checkout').style.display='block'">
+				<img src="img/check.png">
+			</a>
+			<a id="tprice"> 0.0€ </a>
+		</footer>
+
+	</div>
+
+	<div id="allOrder" class="white_content">
+
+		<header>
+			<h5>Pedido:</h5>
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('allOrder').style.display='none';
+				document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="backarrow" class="pics" src="img/arrow.png">
+			</a>
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('counter').style.display='none';
+				document.getElementById('allOrder').style.display='none';
+				document.getElementById('fade').style.display='none';
+				document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="close" class="pics" src="img/X.png">
+			</a>
+
+			<img id="question" class="pics" src="img/Question.png">
+
+		</header>
+		
+		<a href = "javascript:void(0)"
+				onclick = "confirm('Pretende concluir o seu pedido?');
+				alert('O seu pedido está a ser processado');
+				document.getElementById('counter').style.display='none';
+				document.getElementById('allOrder').style.display='none';
+				document.getElementById('fade').style.display='none';
+				document.getElementById('fade2').style.display='none';
+				document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);">
+			<div id="accept">
+					<p>Finalizar Pedido</p>
+			</div>
+		</a>
+
+		<a href = "javascript:void(0)"
+				onclick = "confirm('Pretende limpar o seu pedido?');
+				document.getElementById('allOrder').style.display='none';
+				document.getElementById('fade2').style.display='none';
+				currentlyOrdered = [];
+				document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
+				updateOrder();">
+				<div id="ignore">
+					<p>Limpar Pedido</p>
+				</div>
+		</a>
+
+	</div>
+
+	<div id="checkout" class="white_content">
+
+		<header>
+			<h5>Checkout:</h5>
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('checkout').style.display='none';
+				document.getElementById('fade2').style.display='none';
+				document.getElementById('checkout').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="backarrow" class="pics" src="img/arrow.png">
+			</a>
+
+			<a href = "javascript:void(0)"
+				onclick = "document.getElementById('counter').style.display='none';
+				document.getElementById('checkout').style.display='none';
+				document.getElementById('fade').style.display='none';
+				document.getElementById('fade2').style.display='none';
+				document.getElementById('checkout').removeChild(document.getElementsByTagName('UL')[0]);">
+				<img id="close" class="pics" src="img/X.png">
+			</a>
+
+			<img id="question" class="pics" src="img/Question.png">
+
+		</header>
+		
+		<h6 id="h6Total">Total:</h6>
+		
+		<a href = "javascript:void(0)"
+				onclick = "
+				if(currentlyOrdered.length == 0) {
+					alert('O seu pedido está vazio');
+				}
+				else {
+					confirm('Pretende concluir o seu pedido?');
+					alert('O seu pedido está a ser processado');
+					document.getElementById('counter').style.display='none';
+					document.getElementById('checkout').style.display='none';
+					document.getElementById('fade').style.display='none';
+					document.getElementById('fade2').style.display='none';
+					document.getElementById('checkout').removeChild(document.getElementsByTagName('UL')[0]);
+				}
+				">
+			<div id="accept">
+					<p>Finalizar pedido</p>
+			</div>
+		</a>
+
+		<a href = "javascript:void(0)"
+				onclick = "document.getElementById('checkout').style.display='none';
+				document.getElementById('fade2').style.display='none';
+				document.getElementById('checkout').removeChild(document.getElementsByTagName('UL')[0]);">
+				<div id="ignore">
+					<p>Voltar atrás</p>
+				</div>
+		</a>
+
+	</div>
+
+	</body>
+
 </html>

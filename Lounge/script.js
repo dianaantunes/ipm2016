@@ -4,6 +4,11 @@ var selector = null;
 var minimized = false;
 var rockMuse = [["Assassin","4E"], ["Bliss","5E"], ["Citizen Erased","5E"], ["Dead Star","5E"], ["Feeling Good","4E"],
             ["Hysteria","4E"], ["Knights of Cydonia","5E"], ["Map of Problematique","5E"], ["New Born","5E"], ["Showbiz","5E"]];
+var rockACDC = [["Dirty Deeds Done Dirt Cheap","5E"],["For Those About to Rock (We Salute You)","5E"],["Highway to Hell","4E"],["Problem Child","5E"],["Thunderstruck","5E"],["The Jack","4E"],["You Shook Me All Night Long","5E"]];
+var rockBeatles = [["Across the Universe","5E"], ["A Day in the Life","5E"], ["Blackbird","5E"], ["Eleanor Rigby","5E"], ["Hey Jude","5E"], ["Let It Be","5E"], ["Strawberry Fields Forever","5E"], ["While My Guitar Gently Weeps","5E"]];
+var rockFFighters = [["All My Life","5E"], ["Best of You","5E"], ["Everlong","5E"], ["Monkey Wrench","5E"], ["My Hero","5E"],["The Pretender","5E"], ["Something From Nothing","5E"], ["Walk","5E"]];
+var rockGnRoses = [["Civil War","5E"], ["Estranged","5E"], ["Mr. Brownstone","5E"], ["Nightrain","5E"], ["November Rain","5E"], ["Patience","5E"], ["Paradise City","5E"], ["Sweet Child O’ Mine","5E"]];
+var rockQueen = [["Another One Bites the Dust","5E"], ["Bohemian Rhapsody","5E"], ["Crazy Little Thing Called Love","5E"], ["Fat Bottomed Girls","5E"], ["Somebody to Love","5E"], ["Under Pressure","5E"], ["Killer Queen","5E"], ["We Will Rock You / We Are the Champions","5E"]];
 var metal = [["Master of puppets – Metallica","5E"], ["Hallowed by the name – Iron Maiden","5E"], ["Ace of spades – Motorhead","5E"],
             ["Hangar 18 – Megadeth","4E"], ["Angel of death – Slayer","4E"], ["Painkiller – Judas Priest","4E"], ["Paranoid – Black Sabbath","5E"],
             ["Holy Diver – Dio","4E"], ["Cemetery Gates – Pantera","4E"], ["Rime of the ancient mariner – Iron Maiden","5E"]];
@@ -518,6 +523,31 @@ function getIndexOf(item) {
   for (i = 0; i < rockMuse.length; i++) {
       if (rockMuse[i][0] == item)
           return ["rockMuse", i]
+  }
+
+  for (i = 0; i < rockACDC.length; i++) {
+      if (rockACDC[i][0] == item)
+          return ["rockACDC", i]
+  }
+
+  for (i = 0; i < rockFFighters.length; i++) {
+      if (rockFFighters[i][0] == item)
+          return ["rockFFighters", i]
+  }
+
+  for (i = 0; i < rockGnRoses.length; i++) {
+      if (rockGnRoses[i][0] == item)
+          return ["rockGnRoses", i]
+  }
+
+  for (i = 0; i < rockQueen.length; i++) {
+      if (rockQueen[i][0] == item)
+          return ["rockQueen", i]
+  }
+
+  for (i = 0; i < rockBeatles.length; i++) {
+      if (rockBeatles[i][0] == item)
+          return ["rockBeatles", i]
   }
 
   for (i = 0; i < metal.length; i++) {

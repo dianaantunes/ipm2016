@@ -274,7 +274,7 @@ function removeFromPlaylist(song) {
     It first confirms with the user, then it removes the song
     from the currentlyPlaying list and updates the playlist screen */
 
-    confirm("Pretende remover esta música da playlist?");
+    customConfirm("Pretende remover esta música da playlist?");
 
     var index = currentlyPlaying.indexOf(song);
     currentlyPlaying.splice(index, 1);
@@ -432,7 +432,7 @@ function removeFromOrder(drink) {
   When removing a drink we confirm with the user, remove the drink from the currentlyOrdered
   list and reupdate the screen to show the new ammount of drinks in the order */
 
-    confirm("Pretende remover esta bebida da encomenda?");
+    customConfirm("Pretende remover esta bebida da encomenda?");
 
     var index = currentlyOrdered.indexOf(drink.substring(0, drink.length - 7));
     currentlyOrdered.splice(index, 1);
@@ -446,7 +446,7 @@ function removeFromOrder(drink) {
 
 function addIngredient(drink, ingredient) {
 
-    confirm("Pretende adicionar este ingrediente a sua bebida?");
+    customConfirm("Pretende adicionar este ingrediente a sua bebida?");
 
     var item = getIndexOf(drink);
     var ingredients = window[item[0]][item[1]][2];
@@ -467,7 +467,7 @@ function addIngredient(drink, ingredient) {
 
 function removeIngredient(drink, ingredient) {
 
-    confirm("Pretende remover este ingrediente da sua bebida?");
+    customConfirm("Pretende remover este ingrediente da sua bebida?");
 
     var item = getIndexOf(drink);
 
@@ -591,4 +591,22 @@ function getIndexOf(item) {
   }
 
   return -1;
+}
+
+function toggle_visibility(id) {
+   var e = document.getElementById(id);
+   if(e.style.display == 'block')
+      e.style.display = 'none';
+   else
+      e.style.display = 'block';
+}
+
+function alert(text) {
+    document.getElementById('popup').textContent = text;
+    toggle_visibility('popup');
+}
+
+function customConfirm(text) {
+    document.getElementById('popup').textContent = text;
+    toggle_visibility('popup');
 }

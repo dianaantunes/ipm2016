@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 	<head>
 		<title>Simple Popup Boxes</title>
 
@@ -17,7 +15,7 @@
 
 		<style type="text/css">
 
-			#popupBoxPosition{
+			#popup{
 				top: 0; left: 0; position: fixed; width: 100%; height: 120%;
 				background-color: rgba(0,0,0,0.7); display: none;
 			}
@@ -32,7 +30,7 @@
 
 	</head>
 
-	<body>
+	<div id="popup">
 
 		<div id="popupBoxPosition">
 			<div class="popupBoxWrapper">
@@ -43,14 +41,6 @@
 				</div>
 			</div>
 		</div>
-		</div>
 
-		<div id="wrapper">
-
-			<p>Clica <a href="javascript:void(0)" onclick="toggle_visibility('popupBoxPosition');">aqui</a> para abrires o popup.</p>
-
-		</div><!-- wrapper end -->
-
-	</body>
-
+	</div>
 </html>

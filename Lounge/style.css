@@ -552,6 +552,15 @@ footer {
 	padding: 0 15px;
 }
 
+
+.popupBoxWrapper{
+	width: 100%;
+	text-align: left;
+}
+.popupBoxContent{
+	background-color: #FFF; padding: 15px;
+}
+
 /************************************************************************************
 MEDIA QUERIES
 *************************************************************************************/

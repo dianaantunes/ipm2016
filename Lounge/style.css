@@ -19,6 +19,54 @@ img {
 	max-height: 100%;
 }
 
+.helps {
+	display: none;
+	position: absolute;
+	top: 17%;
+	right: 10%;
+	width: 30%;
+	background-color: rgba(255, 255, 255, 0.9);
+	z-index:1500;
+	overflow: auto;
+	padding: 0.5%;
+	font-size: medium;
+	text-align: left;
+	font-weight: normal;
+	color: black;
+}
+
+#help_games {
+	left: 5%;
+}
+
+#help_jukebox {
+	left: 5%;
+}
+
+#help_jukeboxBand {
+	left: 8%;
+}
+
+#help_counter {
+	left: 5%;
+}
+
+#help_setlist {
+	left: 8%;
+}
+
+#help_challenge {
+	left: 2%;
+	width: 99%;
+    top: 10%;
+}
+
+#help_challenge_table {
+	left: 2%;
+	width: 79%;
+    top: 10%;
+}
+
 /***************************** MAIN SCREEN LAYOUT *****************************/
 
 #mainscreen{
@@ -30,30 +78,38 @@ img {
   	margin: 0 auto;
 }
 
-#uma{
+#counter_img{
 	position: absolute;
 	width: 25%;
 	top: 1%;
 	left: 38%;
 }
-#duas{
+#jukebox_img{
 	position: absolute;
 	bottom: 15%;
 	left: 15%;
 	width: 19%;
 }
-#tres{
+#games_img{
 	position: absolute;
 	bottom: 15%;
 	right: 10%;
 	width: 33%;
 }
-#umaajuda{
+#help_img{
 	width: 5.5%;
 	top: 4%;
 	right: 4%;
 	position: absolute;
 }
+
+#help_close {
+    width: 4%;
+    margin-top: 0.5%;
+    margin-right: 0.5%;
+	float: right;
+}
+
 #sair{
 	width: 13%;
 	left: 2%;
@@ -92,10 +148,9 @@ img {
 	display: none;
 	position: absolute;
 	top: 26.5%;
-    left: 30.5%;
-    width: 40%;
-    height: 40%;
-
+	left: 31.5%;
+	width: 35%;
+	height: 50%;
 	background-color: rgba(255, 255, 255, 0.8);
 	z-index:1020;
 }
@@ -105,8 +160,9 @@ img {
 #option {
 	background-color: rgba(0, 0, 0, 0.8);
 	text-align: center;
-	height: 35%;
-	margin: 2% 2%;
+	height: 23%;
+	margin: 0% 26%;
+	width: 50%;
 }
 
 #accept {
@@ -242,7 +298,9 @@ header {
 
 h5 {
 	display: inline;
-	font-size: 1.5em;
+	/* font-size: 88%; */
+	/* top: 0%; */
+	/* position: initial; */
 }
 
 h6 {
@@ -271,13 +329,13 @@ h6 {
 }
 
 footer {
-	height: 5%;
-  width: 73.5%;
-  background-color: rgba(0, 0, 0, 0.9);
-  position: fixed;
+	/* height: 5%; */
+	width: 72.8%;
+	background-color: rgba(0, 0, 0, 0.9);
+	position: fixed;
 	bottom: 12.5%;
 	left: 12.5%;
-  font-size: 100%;
+	font-size: 100%;
 	text-align: left;
 	color: white;
 }
@@ -288,6 +346,7 @@ footer {
 	font-size: 150%;
 	text-align: left;
 	color: white;
+	padding-bottom: 0.7%;
 }
 
 #order {
@@ -393,9 +452,9 @@ h4 {
 
 #question {
 	height: 80%;
-    width: auto;
-    margin-left: 0.5%;
-    margin-top: 0.5%;
+	width: auto;
+	margin-left: 0.5%;
+	margin-top: 0.5%;
 	float: left;
 }
 
@@ -447,6 +506,7 @@ h4 {
 
 .pics{
 	max-height: 100%;
+	max-width: 100%;
 }
 
 #middle {

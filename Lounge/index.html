@@ -24,20 +24,20 @@
 				onclick = "document.getElementById('counter').style.display='block';
 						   document.getElementById('fade').style.display='block';
 						   updateOrder();">
-							 <img id="uma" class="pics" src = "img/Balcao.png">
+							 <img id="counter_img" class="pics" src = "img/Balcao.png">
 			</a>
 
 			<a href = "javascript:void(0)"
 				onclick = "document.getElementById('jukebox').style.display='block';
 						   document.getElementById('fade').style.display='block';
 						   updateFooter();">
-				<img id="duas" class="pics" src = "img/Jukebox.png">
+				<img id="jukebox_img" class="pics" src = "img/Jukebox.png">
 			</a>
 
 			<a href = "javascript:void(0)"
 			   onclick = "document.getElementById('game_menu').style.display='block';
 			   			  document.getElementById('fade').style.display='block';">
-				<img id="tres" class="pics" src = "img/Zona_de_jogos.png">
+				<img id="games_img" class="pics" src = "img/Zona_de_jogos.png">
 			</a>
 
 			<!-- <a href = "javascript:void(0)"
@@ -45,7 +45,23 @@
 			   			  document.getElementById('fade').style.display='block';">
 				<img id="exclamation" class="pics" src = "img/exclamation.png">
 			</a> -->
-			<img id="umaajuda" class="pics" src = "img/MainQuestion.png">
+			<a href = "javascript:void(0)"
+			   onclick = "document.getElementById('help_main').style.display='block'">
+				<img id="help_img" class="pics" src = "img/MainQuestion.png">
+			</a>
+
+			<div id="help_main" class="helps">
+			<a href = "javascript:void(0)"
+			   onclick = "document.getElementById('help_main').style.display='none'">
+				<img id="help_close" class="pics" src = "img/close.png">
+			</a>
+
+				Bem-vindo ao The Lounge! 
+				Seleccione o Balcão para pedir bebidas ou snacks.
+				Na Jukebox, pode adicionar músicas à playlist do bar, e classificá-las.
+				Jogue com os seus amigos e outras mesas na Zona de Jogos!
+				Have fun!
+			</div>
 			<img id="sair" class="pics" src = "img/Sair.png">
 		</div>
 
@@ -90,9 +106,21 @@
 		<div id="game_menu" class="white_content">
 
 			<header>
-				<h5>ZONA DE JOGOS</h5>
+				ZONA DE JOGOS
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_games').style.display='block'">
+					<img id="question" class="pics" src="img/Question.png">
+				</a>
 
-				<img id="question" class="pics" src="img/Question.png">
+				<div id="help_games" class="helps">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_games').style.display='none'">
+					<img id="help_close" class="pics" src = "img/close.png">
+				</a>
+				Seleccione um jogo. Depois poderá escolher entre jogar com a sua mesa ou com outra mesa do bar.
+				</div>
+
+
 				<a href = "javascript:void(0)"
 				   onclick = "document.getElementById('game_menu').style.display='none';
 				   			  document.getElementById('fade').style.display='none';">
@@ -209,7 +237,18 @@
 
 						<img id="close" class="pics" src="img/X.png">
 					</a>
-					<img id="question" class="pics" src="img/Question.png">
+					<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_challenge').style.display='block'">
+						<img id="question" class="pics" src="img/Question.png">
+					</a>
+					<div id="help_challenge" class="helps">
+						<a href = "javascript:void(0)"
+						   onclick = "document.getElementById('help_challenge').style.display='none'">
+							<img id="help_close" class="pics" src = "img/close.png">
+						</a>
+						Seleccione a própria mesa para jogar com os seus amigos. Seleccione outra mesa para escolher a mesa a desafiar para o jogo.
+						</div>				
+
 				</h3>
 
 				<a href = "javascript:void(0)"
@@ -246,8 +285,18 @@
 						document.getElementById('fade2').style.display='none'">
 						<img id="close" class="pics" src="img/X.png">
 					</a>
-					<img id="question" class="pics" src="img/Question.png">
-				</h3>
+					<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_challenge_table').style.display='block'">
+						<img id="question" class="pics" src="img/Question.png">
+					</a>
+					<div id="help_challenge_table" class="helps">
+						<a href = "javascript:void(0)"
+						   onclick = "document.getElementById('help_challenge_table').style.display='none'">
+							<img id="help_close" class="pics" src = "img/close.png">
+						</a>
+						Seleccione a mesa que pretende desafiar para o jogo. Apenas pode desafiar uma mesa. Se a mesa aceitar o seu desafio, o jogo inicia-se automaticamente.
+						</div>	
+					</h3>
 
 				<a id="table1" class="table" href = "javascript:void(0)"
 					onclick = "switchColor('table1'); switchColor('table'+tableSelected);
@@ -337,7 +386,18 @@
 					document.getElementById('fade').style.display='none';">
 					<img id="close" class="pics" src="img/X.png">
 				</a>
-				<img id="question" class="pics" src="img/Question.png">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_jukebox').style.display='block'">
+					<img id="question" class="pics" src="img/Question.png">
+				</a>
+
+				<div id="help_jukebox" class="helps">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_jukebox').style.display='none'">
+					<img id="help_close" class="pics" src = "img/close.png">
+				</a>
+				Seleccione um estilo de música para adicionar as suas músicas preferidas à playlist do bar.
+				</div>
 
 			</header>
 
@@ -420,7 +480,18 @@
 					document.getElementById('fade').style.display='none';">
 					<img id="close" class="pics" src="img/X.png">
 				</a>
-				<img id="question" class="pics" src="img/Question.png">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_jukeboxBand').style.display='block'">
+					<img id="question" class="pics" src="img/Question.png">
+				</a>
+
+				<div id="help_jukeboxBand" class="helps">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_jukeboxBand').style.display='none'">
+					<img id="help_close" class="pics" src = "img/close.png">
+				</a>
+				Seleccione o artista para ver as músicas disponíveis desse artista.
+				</div>
 
 			</header>
 
@@ -533,7 +604,19 @@
 					<img id="close" class="pics" src="img/X.png">
 				</a>
 
-				<img id="question" class="pics" src="img/Question.png">
+				</a>
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_setlist').style.display='block'">
+					<img id="question" class="pics" src="img/Question.png">
+				</a>
+
+				<div id="help_setlist" class="helps">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_setlist').style.display='none'">
+					<img id="help_close" class="pics" src = "img/close.png">
+				</a>
+				Adicione músicas à playlist através do '+'. Para ver a playlist clique em 'A tocar'.
+				</div>
 
 			</header>
 
@@ -644,7 +727,17 @@
 				document.getElementById('fade').style.display='none';">
 				<img id="close" class="pics" src="img/X.png">
 			</a>
-			<img id="question" class="pics" src="img/Question.png">
+			<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_counter').style.display='block'">
+					<img id="question" class="pics" src="img/Question.png">
+			</a>
+			<div id="help_counter" class="helps">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_counter').style.display='none'">
+					<img id="help_close" class="pics" src = "img/close.png">
+				</a>
+				Seleccione a categoria de bebida/snack que pretende pedir. Depois de processado o pedido, será entregue na sua mesa. 
+			</div>
 
 		</header>
 

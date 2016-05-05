@@ -41,8 +41,9 @@ var currentDrink = "";
 /* This function is used when rating a song. The popup that appears has 5 stars.
 Given a rate from 1 to 5 (id), the function fills all the stars from 1 to id */
 function switchRate(id) {
-    for(var i = 1; i <= id; i++)
+    for(var i = 1; i <=id ; i++)
         document.getElementById(i + "star").src= "img/filledStar.png";
+    document.getElementById(i + "star").src="img/star.png";
 }
 
 /* This function is used when selecting another table to play with. The number

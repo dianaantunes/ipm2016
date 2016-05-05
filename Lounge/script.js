@@ -432,16 +432,40 @@ function removeFromOrder(drink) {
 
 function addIngredient(drink, ingredient) {
 
-    document.getElementById('mini_accept').addEventListener('click', function() {
-        appendConfirmAddIngredient(drink, ingredient);
-    });
-    customConfirm("Pretende adicionar este ingrediente a sua bebida?");
+    var item = getIndexOf(drink);
+    var ingredients = window[item[0]][item[1]][2];
+
+    var index = ingredients[1].indexOf(ingredient);
+    ingredients[1].splice(index, 1);
+    ingredients[0].push(ingredient);
+
+    window[item[0]][item[1]][2] = ingredients;
+
+    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('customize').appendChild(makeCustom(drink)[0]);
+
+    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('customize').appendChild(makeCustom(drink)[1]);
 
 }
 
 function removeIngredient(drink, ingredient) {
 
-    customConfirm("Pretende remover este ingrediente da sua bebida?");
+    var item = getIndexOf(drink);
+
+    var ingredients = window[item[0]][item[1]][2];
+
+    var index = ingredients[0].indexOf(ingredient);
+    ingredients[0].splice(index, 1);
+    ingredients[1].push(ingredient);
+
+    window[item[0]][item[1]][2] = ingredients;
+
+    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('customize').appendChild(makeCustom(drink)[0]);
+
+    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('customize').appendChild(makeCustom(drink)[1]);
 
 }
 
@@ -609,39 +633,4 @@ function appendConfirmJukebox(song) {
 
     /* The footer is updated for when we remove the first song of the playlist */
     updateFooter();
-}
-
-function appendConfirmRemoveIngredient(drink, ingredient) {
-    var item = getIndexOf(drink);
-
-    var ingredients = window[item[0]][item[1]][2];
-
-    var index = ingredients[0].indexOf(ingredient);
-    ingredients[0].splice(index, 1);
-    ingredients[1].push(ingredient);
-
-    window[item[0]][item[1]][2] = ingredients;
-
-    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
-    document.getElementById('customize').appendChild(makeCustom(drink)[0]);
-
-    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
-    document.getElementById('customize').appendChild(makeCustom(drink)[1]);
-}
-
-function appendConfirmAddIngredient(drink, ingredient) {
-    var item = getIndexOf(drink);
-    var ingredients = window[item[0]][item[1]][2];
-
-    var index = ingredients[1].indexOf(ingredient);
-    ingredients[1].splice(index, 1);
-    ingredients[0].push(ingredient);
-
-    window[item[0]][item[1]][2] = ingredients;
-
-    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
-    document.getElementById('customize').appendChild(makeCustom(drink)[0]);
-
-    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
-    document.getElementById('customize').appendChild(makeCustom(drink)[1]);
 }

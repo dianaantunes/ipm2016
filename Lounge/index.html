@@ -56,7 +56,7 @@
 				<img id="help_close" class="pics" src = "img/close.png">
 			</a>
 
-				Bem-vindo ao The Lounge! 
+				Bem-vindo ao The Lounge!
 				Seleccione o Balcão para pedir bebidas ou snacks.
 				Na Jukebox, pode adicionar músicas à playlist do bar, e classificá-las.
 				Jogue com os seus amigos e outras mesas na Zona de Jogos!
@@ -247,7 +247,7 @@
 							<img id="help_close" class="pics" src = "img/close.png">
 						</a>
 						Seleccione a própria mesa para jogar com os seus amigos. Seleccione outra mesa para escolher a mesa a desafiar para o jogo.
-						</div>				
+						</div>
 
 				</h3>
 
@@ -295,7 +295,7 @@
 							<img id="help_close" class="pics" src = "img/close.png">
 						</a>
 						Seleccione a mesa que pretende desafiar para o jogo. Apenas pode desafiar uma mesa. Se a mesa aceitar o seu desafio, o jogo inicia-se automaticamente.
-						</div>	
+						</div>
 					</h3>
 
 				<a id="table1" class="table" href = "javascript:void(0)"
@@ -736,7 +736,7 @@
 				   onclick = "document.getElementById('help_counter').style.display='none'">
 					<img id="help_close" class="pics" src = "img/close.png">
 				</a>
-				Seleccione a categoria de bebida/snack que pretende pedir. Depois de processado o pedido, será entregue na sua mesa. 
+				Seleccione a categoria de bebida/snack que pretende pedir. Depois de processado o pedido, será entregue na sua mesa.
 			</div>
 
 		</header>
@@ -994,25 +994,29 @@
 		</header>
 
 		<a href = "javascript:void(0)"
-				onclick = "customConfirm('Pretende concluir o seu pedido?');
-				alert('O seu pedido está a ser processado');
-				document.getElementById('counter').style.display='none';
-				document.getElementById('allOrder').style.display='none';
-				document.getElementById('fade').style.display='none';
-				document.getElementById('fade2').style.display='none';
-				document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);">
+				onclick = "
+				if(currentlyOrdered.length == 0) {
+					alert('O seu pedido está vazio');
+				}
+				else {
+					document.getElementById('mini_accept').addEventListener('click', function() {
+						appendConfirmBar();
+					});
+					customConfirm('Pretende concluir o seu pedido?');
+				}
+				">
 			<div id="accept">
 					<p>Finalizar Pedido</p>
 			</div>
 		</a>
 
 		<a href = "javascript:void(0)"
-				onclick = "customConfirm('Pretende limpar o seu pedido?');
-				document.getElementById('allOrder').style.display='none';
-				document.getElementById('fade2').style.display='none';
-				currentlyOrdered = [];
-				document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
-				updateOrder();">
+				onclick = "
+				document.getElementById('mini_accept').addEventListener('click', function() {
+					appendConfirmClean();
+				});
+				customConfirm('Pretende limpar o seu pedido?');
+				">
 				<div id="ignore">
 					<p>Limpar Pedido</p>
 				</div>
@@ -1051,13 +1055,10 @@
 					alert('O seu pedido está vazio');
 				}
 				else {
+					document.getElementById('mini_accept').addEventListener('click', function() {
+						appendConfirmBar();
+					});
 					customConfirm('Pretende concluir o seu pedido?');
-					alert('O seu pedido está a ser processado');
-					document.getElementById('counter').style.display='none';
-					document.getElementById('checkout').style.display='none';
-					document.getElementById('fade').style.display='none';
-					document.getElementById('fade2').style.display='none';
-					document.getElementById('checkout').removeChild(document.getElementsByTagName('UL')[0]);
 				}
 				">
 			<div id="accept">
@@ -1076,15 +1077,33 @@
 
 	</div>
 
-	<div id="popup" class = "small_white_content">
+	<div id="confirm" class = "small_white_content">
+		<span id="confirm_text" class="text"></span>
 
-			<div class="popupBoxWrapper">
-				<div class="popupBoxContent">
-					<h3>Popup Box</h3>
-					<p>Estas a ver a caixa popup.</p>
-					<p>Clica <a href="javascript:void(0)" onclick="toggle_visibility('popupBoxPosition');">aqui</a> para fechar o popup.</p>
-				</div>
+		<a href = "javascript:void(0)" id="mini_accept"
+				onclick = "toggle_visibility('confirm');">
+			<div id="mini_accept">
+					<span class="text">Aceitar</span>
 			</div>
+		</a>
+
+		<a href = "javascript:void(0)" id="mini_ignore"
+				onclick = "toggle_visibility('confirm');">
+				<div id="mini_ignore">
+					<span class="text">Ignorar</span>
+				</div>
+			</a>
+	</div>
+
+	<div id="alert" class = "small_white_content">
+		<span id="alert_text" class="text"></span>
+
+		<a href = "javascript:void(0)"
+			onclick="toggle_visibility('alert');">
+			<div id="mini_accept">
+					<span class="text">Aceitar</span>
+			</div>
+		</a>
 
 	</div>
 

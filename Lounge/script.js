@@ -1,5 +1,5 @@
 /* All variables are initialized here */
-
+var button = 2;
 var selector = null;
 var minimized = false;
 var rockMuse = [["Assassin","4E"], ["Bliss","5E"], ["Citizen Erased","5E"], ["Dead Star","5E"], ["Feeling Good","4E"],
@@ -273,20 +273,11 @@ function removeFromPlaylist(song) {
     /* This function removes a given song from the playlist.
     It first confirms with the user, then it removes the song
     from the currentlyPlaying list and updates the playlist screen */
-
+    document.getElementById('mini_accept').addEventListener('click', function() {
+        appendConfirmJukebox(song);
+    });
     customConfirm("Pretende remover esta música da playlist?");
 
-    var index = currentlyPlaying.indexOf(song);
-    currentlyPlaying.splice(index, 1);
-
-    try {
-        document.getElementById('playlist').removeChild(document.getElementsByTagName('UL')[0]);
-        document.getElementById('playlist').appendChild(makeUL(currentlyPlaying, 'playlist'));
-    }
-    catch (DOMexception) {} /* EXPERIMENT */
-
-    /* The footer is updated for when we remove the first song of the playlist */
-    updateFooter();
 }
 
 function addToPlaylist(song) {
@@ -431,59 +422,26 @@ function removeFromOrder(drink) {
   /* This function removes a given drink from the order.
   When removing a drink we confirm with the user, remove the drink from the currentlyOrdered
   list and reupdate the screen to show the new ammount of drinks in the order */
-
+  document.getElementById('mini_accept').addEventListener('click', function() {
+      appendConfirmRemove(drink);
+  });
     customConfirm("Pretende remover esta bebida da encomenda?");
 
-    var index = currentlyOrdered.indexOf(drink.substring(0, drink.length - 7));
-    currentlyOrdered.splice(index, 1);
 
-    document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
-    document.getElementById('allOrder').appendChild(makeUL(currentlyOrdered, 'order'));
-
-    /* The order footer is updated with the new total price and drinks */
-    updateOrder();
 }
 
 function addIngredient(drink, ingredient) {
 
+    document.getElementById('mini_accept').addEventListener('click', function() {
+        appendConfirmAddIngredient(drink, ingredient);
+    });
     customConfirm("Pretende adicionar este ingrediente a sua bebida?");
-
-    var item = getIndexOf(drink);
-    var ingredients = window[item[0]][item[1]][2];
-
-    var index = ingredients[1].indexOf(ingredient);
-    ingredients[1].splice(index, 1);
-    ingredients[0].push(ingredient);
-
-    window[item[0]][item[1]][2] = ingredients;
-
-    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
-    document.getElementById('customize').appendChild(makeCustom(drink)[0]);
-
-    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
-    document.getElementById('customize').appendChild(makeCustom(drink)[1]);
 
 }
 
 function removeIngredient(drink, ingredient) {
 
     customConfirm("Pretende remover este ingrediente da sua bebida?");
-
-    var item = getIndexOf(drink);
-
-    var ingredients = window[item[0]][item[1]][2];
-
-    var index = ingredients[0].indexOf(ingredient);
-    ingredients[0].splice(index, 1);
-    ingredients[1].push(ingredient);
-
-    window[item[0]][item[1]][2] = ingredients;
-
-    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
-    document.getElementById('customize').appendChild(makeCustom(drink)[0]);
-
-    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
-    document.getElementById('customize').appendChild(makeCustom(drink)[1]);
 
 }
 
@@ -602,11 +560,88 @@ function toggle_visibility(id) {
 }
 
 function alert(text) {
-    document.getElementById('popup').textContent = text;
-    toggle_visibility('popup');
+    document.getElementById('alert_text').textContent = text;
+    toggle_visibility('alert');
 }
 
 function customConfirm(text) {
-    document.getElementById('popup').textContent = text;
-    toggle_visibility('popup');
+    document.getElementById('confirm_text').textContent = text;
+    toggle_visibility('confirm');
+}
+
+function appendConfirmBar() {
+    alert('O seu pedido está a ser processado');
+    document.getElementById('counter').style.display='none';
+    document.getElementById('allOrder').style.display='none';
+    document.getElementById('fade').style.display='none';
+    document.getElementById('fade2').style.display='none';
+    document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
+}
+
+function appendConfirmClean() {
+    document.getElementById('allOrder').style.display='none';
+    document.getElementById('fade2').style.display='none';
+    currentlyOrdered = [];
+    document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
+    updateOrder();
+}
+
+function appendConfirmRemove(drink) {
+    var index = currentlyOrdered.indexOf(drink.substring(0, drink.length - 7));
+    currentlyOrdered.splice(index, 1);
+
+    document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('allOrder').appendChild(makeUL(currentlyOrdered, 'order'));
+
+    /* The order footer is updated with the new total price and drinks */
+    updateOrder();
+}
+
+function appendConfirmJukebox(song) {
+    var index = currentlyPlaying.indexOf(song);
+    currentlyPlaying.splice(index, 1);
+
+    try {
+        document.getElementById('playlist').removeChild(document.getElementsByTagName('UL')[0]);
+        document.getElementById('playlist').appendChild(makeUL(currentlyPlaying, 'playlist'));
+    }
+    catch (DOMexception) {} /* EXPERIMENT */
+
+    /* The footer is updated for when we remove the first song of the playlist */
+    updateFooter();
+}
+
+function appendConfirmRemoveIngredient(drink, ingredient) {
+    var item = getIndexOf(drink);
+
+    var ingredients = window[item[0]][item[1]][2];
+
+    var index = ingredients[0].indexOf(ingredient);
+    ingredients[0].splice(index, 1);
+    ingredients[1].push(ingredient);
+
+    window[item[0]][item[1]][2] = ingredients;
+
+    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('customize').appendChild(makeCustom(drink)[0]);
+
+    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('customize').appendChild(makeCustom(drink)[1]);
+}
+
+function appendConfirmAddIngredient(drink, ingredient) {
+    var item = getIndexOf(drink);
+    var ingredients = window[item[0]][item[1]][2];
+
+    var index = ingredients[1].indexOf(ingredient);
+    ingredients[1].splice(index, 1);
+    ingredients[0].push(ingredient);
+
+    window[item[0]][item[1]][2] = ingredients;
+
+    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('customize').appendChild(makeCustom(drink)[0]);
+
+    document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('customize').appendChild(makeCustom(drink)[1]);
 }

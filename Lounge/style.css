@@ -254,6 +254,10 @@ img {
 	margin: 1% 1%;
 }
 
+#rate_song {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
 #stars {
 	position: relative;
 	top: 25%;
@@ -575,12 +579,15 @@ ul {
 }
 
 ul li {
-	padding: 2% 0;
+	padding: 2% 8%;
 	list-style: none;
 	height: 5%;
 	font-size: 2em;
-	padding-left: 3%;
-	border-bottom: 1px solid black;
+	text-align: left;
+}
+
+ul li:nth-child(odd) {
+	background-color: rgba(128, 128, 128, 0.8);
 }
 
 #customize ul {
@@ -622,25 +629,30 @@ ul li {
 
 #price {
 	float: right;
-	padding-right: 3%;
+	padding-right: 6%;
+	font-weight: 200;
 }
 
 #ammount {
 	float: right;
 	padding-right: 3%;
+	font-weight: 200;
 }
+
 
 footer {
 	clear: both;
 	padding: 0 15px;
 }
 
-
 #confirm {
 	top: 30%;
 	height: 30%;
 	text-align: center;
 	font-size: 2em;
+	background-color: rgba(0, 0, 0, 0.9);
+	color: white;
+	padding: 2% 2%;
 }
 
 #alert {
@@ -648,7 +660,11 @@ footer {
 	height: 30%;
 	text-align: center;
 	font-size: 2em;
+	background-color: rgba(0, 0, 0, 0.9);
+	color: white;
+	padding: 2% 2%;
 }
+
 
 /************************************************************************************
 MEDIA QUERIES

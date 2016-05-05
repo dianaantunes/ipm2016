@@ -41,9 +41,11 @@ var currentDrink = "";
 /* This function is used when rating a song. The popup that appears has 5 stars.
 Given a rate from 1 to 5 (id), the function fills all the stars from 1 to id */
 function switchRate(id) {
+
+    for(var i = 1; i < 6; i++)
+        document.getElementById(i + "star").src="img/star.png";
     for(var i = 1; i <=id ; i++)
         document.getElementById(i + "star").src= "img/filledStar.png";
-    document.getElementById(i + "star").src="img/star.png";
 }
 
 /* This function is used when selecting another table to play with. The number
@@ -598,6 +600,7 @@ function appendConfirmBar() {
     alert('O seu pedido está a ser processado');
     document.getElementById('counter').style.display='none';
     document.getElementById('allOrder').style.display='none';
+    document.getElementById('checkout').style.display='none';
     document.getElementById('fade').style.display='none';
     document.getElementById('fade2').style.display='none';
     document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);

@@ -359,8 +359,8 @@ function minimize() {
         document.getElementById('current_game').style.position='fixed';
         document.getElementById('current_game').style.top = '0px';
         document.getElementById('current_game').style.left = '0px';
-        document.getElementById('current_game').style.height = '6%';
-        document.getElementById('current_game').style.width = '6%';
+        document.getElementById('current_game').style.height = '15%';
+        document.getElementById('current_game').style.width = '10%';
         document.getElementById('game_header').style.position = 'relative';
         minimized = true;
     }
@@ -638,3 +638,12 @@ function appendConfirmJukebox(song) {
     /* The footer is updated for when we remove the first song of the playlist */
     updateFooter();
 }
+
+function appendConfirmGame() {
+  document.getElementById('challenge_table').style.display='none';
+  document.getElementById('fade2').style.display='none';
+  document.getElementById('current_game').style.display='block';
+  
+}
+
+

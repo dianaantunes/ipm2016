@@ -117,6 +117,15 @@ img {
 	position: fixed;
 }
 
+#clickableGame  {
+	width: 10%;
+	height: 15%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3000;
+	display: none;
+}
 /***************************** MAIN SCREEN LAYOUT *****************************/
 
 .black_overlay{

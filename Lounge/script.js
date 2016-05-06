@@ -361,7 +361,9 @@ function minimize() {
         document.getElementById('current_game').style.left = '0px';
         document.getElementById('current_game').style.height = '15%';
         document.getElementById('current_game').style.width = '10%';
-        document.getElementById('game_header').style.position = 'relative';
+        document.getElementById('game_header').style.display = 'none';
+        document.getElementById('clickableGame').style.display = 'block'
+        
         minimized = true;
     }
     else {
@@ -372,7 +374,9 @@ function minimize() {
         document.getElementById('current_game').style.left = '12.5%';
         document.getElementById('current_game').style.height = '75%';
         document.getElementById('current_game').style.width = '75%';
-        document.getElementById('game_header').style.position = 'fixed';
+        document.getElementById('game_header').style.display = 'block';
+        document.getElementById('clickableGame').style.display = 'none'
+
         minimized = false;
     }
 }

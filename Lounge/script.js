@@ -643,7 +643,9 @@ function appendConfirmGame() {
   document.getElementById('challenge_table').style.display='none';
   document.getElementById('fade2').style.display='none';
   document.getElementById('current_game').style.display='block';
-  
+
 }
 
-
+function appendConfirmExit() {
+  document.getElementById('exitScreen').style.display='block';
+}

@@ -325,7 +325,7 @@ header {
 
 h5 {
 	display: inline;
-	/* font-size: 88%; */
+	font-size: 1.5em;
 	/* top: 0%; */
 	/* position: initial; */
 }
@@ -356,7 +356,7 @@ h6 {
 }
 
 footer {
-	/* height: 5%; */
+	min-height: 5%;
 	width: 72.8%;
 	background-color: rgba(0, 0, 0, 0.9);
 	position: fixed;

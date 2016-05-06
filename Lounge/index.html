@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-		<meta charset="ISO-8859-1">
+		<meta charset="UTF-8">
 		<title>The Lounge</title>
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="script.js"></script>
@@ -14,7 +14,7 @@
 
 		<!--************************************************************************
 		| 																		   |
-		|								ECRÃ PRINCIPAL 							   |
+		|								ECRA PRINCIPAL 							   |
 		|																		   |
 		*************************************************************************-->
 
@@ -57,20 +57,24 @@
 			</a>
 
 				Bem-vindo ao The Lounge!
-				Selecione o Balcão para pedir bebidas ou snacks.
-				Na Jukebox, pode adicionar músicas à playlist do bar, e classificá-las.
+				Selecione o BalcÃ£o para pedir bebidas ou snacks.
+				Na Jukebox, pode adicionar mÃºsicas Ã  playlist do bar, e classificÃ¡-las.
 				Jogue com os seus amigos e outras mesas na Zona de Jogos!
 				Have fun!
 			</div>
 			<a href = "javascript:void(0)"
-			   onclick = "document.getElementById('exitScreen').style.display='block'">
+			   onclick = "
+				 document.getElementById('mini_accept').addEventListener('click', function() {
+				 	appendConfirmExit();
+				 });
+				 customConfirm('Tem a certeza que pretende sair?');">
 			<img id="sair" class="pics" src = "img/Sair.png">
 			</a>
 		</div>
 		<div id = exitScreen>
-			<h4>Um empregado vai dirigir-se à sua mesa com a conta. </h4>
+			<h4>Um empregado vai dirigir-se Ã  sua mesa com a conta. </h4>
 			<h4>Obrigada por desfrutar do The Lounge! </h4>
-			<h4>Até à próxima :) </h4>
+			<h4>AtÃ© Ã  prÃ³xima :) </h4>
 		</div>
 
 
@@ -124,7 +128,7 @@
 				   onclick = "document.getElementById('help_games').style.display='none'">
 					<img id="help_close" class="pics" src = "img/close.png">
 				</a>
-				Selecione um jogo. Depois poderá escolher entre jogar com a sua mesa ou com outra mesa do bar.
+				Selecione um jogo. Depois poderÃ¡ escolher entre jogar com a sua mesa ou com outra mesa do bar.
 				</div>
 
 
@@ -264,9 +268,9 @@
 						   onclick = "document.getElementById('help_challenge').style.display='none'">
 							<img id="help_close" class="pics" src = "img/close.png">
 						</a>
-						Selecione a própria mesa para jogar com os seus amigos. Selecione outra mesa para escolher a mesa a desafiar para o jogo.
-					</div>			
-						<span id="challengeTitle"> </span>	
+						Selecione a prÃ³pria mesa para jogar com os seus amigos. Selecione outra mesa para escolher a mesa a desafiar para o jogo.
+					</div>
+						<span id="challengeTitle"> </span>
 				</h3>
 
 				<a href = "javascript:void(0)"
@@ -274,7 +278,7 @@
 					document.getElementById('fade2').style.display='none';
 					document.getElementById('current_game').style.display='block';" >
 					<div id="option">
-						<h4>Própria Mesa</h4>
+						<h4>PrÃ³pria Mesa</h4>
 					</div>
 				</a>
 
@@ -396,7 +400,7 @@
 				   onclick = "document.getElementById('help_jukebox').style.display='none'">
 					<img id="help_close" class="pics" src = "img/close.png">
 				</a>
-				Selecione um estilo de música para adicionar as suas músicas preferidas à playlist do bar.
+				Selecione um estilo de mÃºsica para adicionar as suas mÃºsicas preferidas Ã  playlist do bar.
 				</div>
 
 			</header>
@@ -490,7 +494,7 @@
 				   onclick = "document.getElementById('help_jukeboxBand').style.display='none'">
 					<img id="help_close" class="pics" src = "img/close.png">
 				</a>
-				Selecione o artista para ver as músicas disponíveis desse artista.
+				Selecione o artista para ver as mÃºsicas disponÃ­veis desse artista.
 				</div>
 
 			</header>
@@ -615,7 +619,7 @@
 				   onclick = "document.getElementById('help_setlist').style.display='none'">
 					<img id="help_close" class="pics" src = "img/close.png">
 				</a>
-				Adicione músicas à playlist através do '+'. Para ver a playlist clique em 'A tocar'.
+				Adicione mÃºsicas Ã  playlist atravÃ©s do '+'. Para ver a playlist clique em 'A tocar'.
 				</div>
 
 			</header>
@@ -669,7 +673,7 @@
 				   onclick = "document.getElementById('help_playlist').style.display='none'">
 					<img id="help_close" class="pics" src = "img/close.png">
 				</a>
-				Aqui pode ver a playlist do bar. Pode remover músicas que adicionou através do 'x' à direita da respectiva música.
+				Aqui pode ver a playlist do bar. Pode remover mÃºsicas que adicionou atravÃ©s do 'x' Ã  direita da respectiva mÃºsica.
 				</div>
 			</header>
 
@@ -677,13 +681,13 @@
 
 		<div id="rate_song" class="small_white_content">
 			<h3>
-				Classifique a música:
+				Classifique a mÃºsica:
 				<a href = "javascript:void(0)"
 					onclick = "document.getElementById('rate_song').style.display='none';
 					document.getElementById('fade2').style.display='none'">
 					<img id="close" class="pics" src="img/X.png">
 				</a>
-				
+
 				<a href = "javascript:void(0)"
 				   onclick = "document.getElementById('help_rate_song').style.display='block'">
 				<img id="question" class="pics" src="img/Question.png">
@@ -694,7 +698,7 @@
 				   onclick = "document.getElementById('help_rate_song').style.display='none'">
 					<img id="help_close" class="pics" src = "img/close.png">
 				</a>
-				Para classificar a música, clique no número de estrelas que deseja atribuir.
+				Para classificar a mÃºsica, clique no nÃºmero de estrelas que deseja atribuir.
 				</div>
 			</h3>
 
@@ -743,7 +747,7 @@
 
 		<header>
 
-			<h5>BALCÃO</h5>
+			<h5>BALCÃƒO</h5>
 			<a href = "javascript:void(0)"
 				onclick = "document.getElementById('counter').style.display='none';
 				document.getElementById('fade').style.display='none';">
@@ -758,8 +762,8 @@
 				   onclick = "document.getElementById('help_counter').style.display='none'">
 					<img id="help_close" class="pics" src = "img/close.png">
 				</a>
-				
-				Selecione a categoria de bebida/snack que pretende pedir. Depois de processado o pedido, será entregue na sua mesa.
+
+				Selecione a categoria de bebida/snack que pretende pedir. Depois de processado o pedido, serÃ¡ entregue na sua mesa.
 			</div>
 
 		</header>
@@ -873,7 +877,7 @@
 					document.getElementById('checkout').style.display='block'">
 					<img src="img/check.png">
 				</a>
-				<a id="tprice"> 0.0€ </a>
+				<a id="tprice"> 0.0â‚¬ </a>
 			</footer>
 
 		</div>
@@ -921,7 +925,7 @@
 				document.getElementById('checkout').style.display='block'">
 				<img src="img/check.png">
 			</a>
-			<a id="tprice"> 0.0€ </a>
+			<a id="tprice"> 0.0â‚¬ </a>
 
 		</footer>
 
@@ -989,7 +993,7 @@
 				document.getElementById('checkout').style.display='block'">
 				<img src="img/check.png">
 			</a>
-			<a id="tprice"> 0.0€ </a>
+			<a id="tprice"> 0.0â‚¬ </a>
 		</footer>
 
 	</div>
@@ -1020,7 +1024,7 @@
 		<a href = "javascript:void(0)"
 				onclick = "
 				if(currentlyOrdered.length == 0) {
-					alert('O seu pedido está vazio');
+					alert('O seu pedido estÃ¡ vazio');
 				}
 				else {
 					document.getElementById('mini_accept').addEventListener('click', function() {
@@ -1076,7 +1080,7 @@
 		<a href = "javascript:void(0)"
 				onclick = "
 				if(currentlyOrdered.length == 0) {
-					alert('O seu pedido está vazio');
+					alert('O seu pedido estÃ¡ vazio');
 				}
 				else {
 					document.getElementById('mini_accept').addEventListener('click', function() {
@@ -1095,7 +1099,7 @@
 				document.getElementById('fade2').style.display='none';
 				document.getElementById('checkout').removeChild(document.getElementsByTagName('UL')[0]);">
 				<div id="ignore">
-					<p>Voltar atrás</p>
+					<p>Voltar atrÃ¡s</p>
 				</div>
 		</a>
 

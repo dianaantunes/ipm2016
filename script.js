@@ -1,9 +1,14 @@
 /* All variables are initialized here */
-
+var button = 2;
 var selector = null;
 var minimized = false;
 var rockMuse = [["Assassin","4E"], ["Bliss","5E"], ["Citizen Erased","5E"], ["Dead Star","5E"], ["Feeling Good","4E"],
             ["Hysteria","4E"], ["Knights of Cydonia","5E"], ["Map of Problematique","5E"], ["New Born","5E"], ["Showbiz","5E"]];
+var rockACDC = [["Dirty Deeds Done Dirt Cheap","5E"],["For Those About to Rock (We Salute You)","5E"],["Highway to Hell","4E"],["Problem Child","5E"],["Thunderstruck","5E"],["The Jack","4E"],["You Shook Me All Night Long","5E"]];
+var rockBeatles = [["Across the Universe","5E"], ["A Day in the Life","5E"], ["Blackbird","5E"], ["Eleanor Rigby","5E"], ["Hey Jude","5E"], ["Let It Be","5E"], ["Strawberry Fields Forever","5E"], ["While My Guitar Gently Weeps","5E"]];
+var rockFFighters = [["All My Life","5E"], ["Best of You","5E"], ["Everlong","5E"], ["Monkey Wrench","5E"], ["My Hero","5E"],["The Pretender","5E"], ["Something From Nothing","5E"], ["Walk","5E"]];
+var rockGnRoses = [["Civil War","5E"], ["Estranged","5E"], ["Mr. Brownstone","5E"], ["Nightrain","5E"], ["November Rain","5E"], ["Patience","5E"], ["Paradise City","5E"], ["Sweet Child O’ Mine","5E"]];
+var rockQueen = [["Another One Bites the Dust","5E"], ["Bohemian Rhapsody","5E"], ["Crazy Little Thing Called Love","5E"], ["Fat Bottomed Girls","5E"], ["Somebody to Love","5E"], ["Under Pressure","5E"], ["Killer Queen","5E"], ["We Will Rock You / We Are the Champions","5E"]];
 var metal = [["Master of puppets – Metallica","5E"], ["Hallowed by the name – Iron Maiden","5E"], ["Ace of spades – Motorhead","5E"],
             ["Hangar 18 – Megadeth","4E"], ["Angel of death – Slayer","4E"], ["Painkiller – Judas Priest","4E"], ["Paranoid – Black Sabbath","5E"],
             ["Holy Diver – Dio","4E"], ["Cemetery Gates – Pantera","4E"], ["Rime of the ancient mariner – Iron Maiden","5E"]];
@@ -36,7 +41,10 @@ var currentDrink = "";
 /* This function is used when rating a song. The popup that appears has 5 stars.
 Given a rate from 1 to 5 (id), the function fills all the stars from 1 to id */
 function switchRate(id) {
-    for(var i = 1; i <= id; i++)
+
+    for(var i = 1; i < 6; i++)
+        document.getElementById(i + "star").src="img/star.png";
+    for(var i = 1; i <=id ; i++)
         document.getElementById(i + "star").src= "img/filledStar.png";
 }
 
@@ -268,20 +276,11 @@ function removeFromPlaylist(song) {
     /* This function removes a given song from the playlist.
     It first confirms with the user, then it removes the song
     from the currentlyPlaying list and updates the playlist screen */
+    document.getElementById('mini_accept').addEventListener('click', function() {
+        appendConfirmJukebox(song);
+    });
+    customConfirm("Pretende remover esta música da playlist?");
 
-    confirm("Pretende remover esta música da playlist?");
-
-    var index = currentlyPlaying.indexOf(song);
-    currentlyPlaying.splice(index, 1);
-
-    try {
-        document.getElementById('playlist').removeChild(document.getElementsByTagName('UL')[0]);
-        document.getElementById('playlist').appendChild(makeUL(currentlyPlaying, 'playlist'));
-    }
-    catch (DOMexception) {} /* EXPERIMENT */
-
-    /* The footer is updated for when we remove the first song of the playlist */
-    updateFooter();
 }
 
 function addToPlaylist(song) {
@@ -360,9 +359,11 @@ function minimize() {
         document.getElementById('current_game').style.position='fixed';
         document.getElementById('current_game').style.top = '0px';
         document.getElementById('current_game').style.left = '0px';
-        document.getElementById('current_game').style.height = '6%';
-        document.getElementById('current_game').style.width = '6%';
-        document.getElementById('game_header').style.position = 'relative';
+        document.getElementById('current_game').style.height = '15%';
+        document.getElementById('current_game').style.width = '10%';
+        document.getElementById('game_header').style.display = 'none';
+        document.getElementById('clickableGame').style.display = 'block'
+
         minimized = true;
     }
     else {
@@ -373,7 +374,9 @@ function minimize() {
         document.getElementById('current_game').style.left = '12.5%';
         document.getElementById('current_game').style.height = '75%';
         document.getElementById('current_game').style.width = '75%';
-        document.getElementById('game_header').style.position = 'fixed';
+        document.getElementById('game_header').style.display = 'block';
+        document.getElementById('clickableGame').style.display = 'none'
+
         minimized = false;
     }
 }
@@ -416,7 +419,7 @@ function addToOrder(drink) {
     }
     catch (TypeERROR) {}
 
-	document.getElementById('h6Total').textContent = "Total: " + currentPrice + "€";
+
     /* The order footer is updated with the new total price and drinks */
     updateOrder();
 }
@@ -426,22 +429,15 @@ function removeFromOrder(drink) {
   /* This function removes a given drink from the order.
   When removing a drink we confirm with the user, remove the drink from the currentlyOrdered
   list and reupdate the screen to show the new ammount of drinks in the order */
+  document.getElementById('mini_accept').addEventListener('click', function() {
+      appendConfirmRemove(drink);
+  });
+    customConfirm("Pretende remover esta bebida da encomenda?");
 
-    confirm("Pretende remover esta bebida da encomenda?");
 
-    var index = currentlyOrdered.indexOf(drink.substring(0, drink.length - 7));
-    currentlyOrdered.splice(index, 1);
-
-    document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
-    document.getElementById('allOrder').appendChild(makeUL(currentlyOrdered, 'order'));
-
-    /* The order footer is updated with the new total price and drinks */
-    updateOrder();
 }
 
 function addIngredient(drink, ingredient) {
-
-    confirm("Pretende adicionar este ingrediente a sua bebida?");
 
     var item = getIndexOf(drink);
     var ingredients = window[item[0]][item[1]][2];
@@ -461,8 +457,6 @@ function addIngredient(drink, ingredient) {
 }
 
 function removeIngredient(drink, ingredient) {
-
-    confirm("Pretende remover este ingrediente da sua bebida?");
 
     var item = getIndexOf(drink);
 
@@ -496,10 +490,13 @@ function updateOrder() {
         }
         else {
             elements[i].querySelector("#order").textContent = "A pedir: " + ordered;
-            elements[i].querySelector("#tprice").textContent = currentPrice + "€";
+            elements[i].querySelector("#tprice").textContent = Math.round(currentPrice*100)/100 + "€";
             elements[i].querySelector("#acceptOrder").style.display = 'block';
         }
     }
+
+    document.getElementById("total1").textContent = "Total: " + Math.round(currentPrice*100)/100 + "€";
+    document.getElementById("total2").textContent = "Total: " + Math.round(currentPrice*100)/100 + "€";
 }
 
 function numberOfDrinks(drink) {
@@ -518,6 +515,31 @@ function getIndexOf(item) {
   for (i = 0; i < rockMuse.length; i++) {
       if (rockMuse[i][0] == item)
           return ["rockMuse", i]
+  }
+
+  for (i = 0; i < rockACDC.length; i++) {
+      if (rockACDC[i][0] == item)
+          return ["rockACDC", i]
+  }
+
+  for (i = 0; i < rockFFighters.length; i++) {
+      if (rockFFighters[i][0] == item)
+          return ["rockFFighters", i]
+  }
+
+  for (i = 0; i < rockGnRoses.length; i++) {
+      if (rockGnRoses[i][0] == item)
+          return ["rockGnRoses", i]
+  }
+
+  for (i = 0; i < rockQueen.length; i++) {
+      if (rockQueen[i][0] == item)
+          return ["rockQueen", i]
+  }
+
+  for (i = 0; i < rockBeatles.length; i++) {
+      if (rockBeatles[i][0] == item)
+          return ["rockBeatles", i]
   }
 
   for (i = 0; i < metal.length; i++) {
@@ -561,4 +583,76 @@ function getIndexOf(item) {
   }
 
   return -1;
+}
+
+function toggle_visibility(id) {
+   var e = document.getElementById(id);
+   if(e.style.display == 'block')
+      e.style.display = 'none';
+   else
+      e.style.display = 'block';
+}
+
+function alert(text) {
+    document.getElementById('alert_text').textContent = text;
+    toggle_visibility('alert');
+}
+
+function customConfirm(text) {
+    document.getElementById('confirm_text').textContent = text;
+    toggle_visibility('confirm');
+}
+
+function appendConfirmBar() {
+    alert('O seu pedido está a ser processado');
+    document.getElementById('counter').style.display='none';
+    document.getElementById('allOrder').style.display='none';
+    document.getElementById('checkout').style.display='none';
+    document.getElementById('fade').style.display='none';
+    document.getElementById('fade2').style.display='none';
+    document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
+}
+
+function appendConfirmClean() {
+    document.getElementById('allOrder').style.display='none';
+    document.getElementById('fade2').style.display='none';
+    currentlyOrdered = [];
+    document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
+    updateOrder();
+}
+
+function appendConfirmRemove(drink) {
+    var index = currentlyOrdered.indexOf(drink.substring(0, drink.length - 7));
+    currentlyOrdered.splice(index, 1);
+
+    document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
+    document.getElementById('allOrder').appendChild(makeUL(currentlyOrdered, 'order'));
+
+    /* The order footer is updated with the new total price and drinks */
+    updateOrder();
+}
+
+function appendConfirmJukebox(song) {
+    var index = currentlyPlaying.indexOf(song);
+    currentlyPlaying.splice(index, 1);
+
+    try {
+        document.getElementById('playlist').removeChild(document.getElementsByTagName('UL')[0]);
+        document.getElementById('playlist').appendChild(makeUL(currentlyPlaying, 'playlist'));
+    }
+    catch (DOMexception) {} /* EXPERIMENT */
+
+    /* The footer is updated for when we remove the first song of the playlist */
+    updateFooter();
+}
+
+function appendConfirmGame() {
+  document.getElementById('challenge_table').style.display='none';
+  document.getElementById('fade2').style.display='none';
+  document.getElementById('current_game').style.display='block';
+
+}
+
+function appendConfirmExit() {
+  document.getElementById('exitScreen').style.display='block';
 }

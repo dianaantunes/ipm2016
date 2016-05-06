@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-		<meta charset="utf-8">
+		<meta charset="UTF-8">
 		<title>The Lounge</title>
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="script.js"></script>
@@ -14,7 +14,7 @@
 
 		<!--************************************************************************
 		| 																		   |
-		|								ECRÃ PRINCIPAL 							   |
+		|								ECRA PRINCIPAL 							   |
 		|																		   |
 		*************************************************************************-->
 
@@ -24,20 +24,20 @@
 				onclick = "document.getElementById('counter').style.display='block';
 						   document.getElementById('fade').style.display='block';
 						   updateOrder();">
-							 <img id="uma" class="pics" src = "img/Balcao.png">
+							 <img id="counter_img" class="pics" src = "img/Balcao.png">
 			</a>
 
 			<a href = "javascript:void(0)"
 				onclick = "document.getElementById('jukebox').style.display='block';
 						   document.getElementById('fade').style.display='block';
 						   updateFooter();">
-				<img id="duas" class="pics" src = "img/Jukebox.png">
+				<img id="jukebox_img" class="pics" src = "img/Jukebox.png">
 			</a>
 
 			<a href = "javascript:void(0)"
 			   onclick = "document.getElementById('game_menu').style.display='block';
 			   			  document.getElementById('fade').style.display='block';">
-				<img id="tres" class="pics" src = "img/Zona_de_jogos.png">
+				<img id="games_img" class="pics" src = "img/Zona_de_jogos.png">
 			</a>
 
 			<!-- <a href = "javascript:void(0)"
@@ -45,10 +45,37 @@
 			   			  document.getElementById('fade').style.display='block';">
 				<img id="exclamation" class="pics" src = "img/exclamation.png">
 			</a> -->
-			<img id="umaajuda" class="pics" src = "img/MainQuestion.png">
-			<img id="sair" class="pics" src = "img/Sair.png">
-		</div>
+			<a href = "javascript:void(0)"
+			   onclick = "document.getElementById('help_main').style.display='block'">
+				<img id="help_img" class="pics" src = "img/MainQuestion.png">
+			</a>
 
+			<div id="help_main" class="helps">
+			<a href = "javascript:void(0)"
+			   onclick = "document.getElementById('help_main').style.display='none'">
+				<img id="help_close" class="pics" src = "img/close.png">
+			</a>
+
+				Bem-vindo ao The Lounge!
+				Selecione o Balcão para pedir bebidas ou snacks.
+				Na Jukebox, pode adicionar músicas à playlist do bar, e classificá-las.
+				Jogue com os seus amigos e outras mesas na Zona de Jogos!
+				Have fun!
+			</div>
+			<a href = "javascript:void(0)"
+			   onclick = "
+				 document.getElementById('mini_accept').addEventListener('click', function() {
+				 	appendConfirmExit();
+				 });
+				 customConfirm('Tem a certeza que pretende sair?');">
+			<img id="sair" class="pics" src = "img/Sair.png">
+			</a>
+		</div>
+		<div id = exitScreen>
+			<h4>Um empregado vai dirigir-se à sua mesa com a conta. </h4>
+			<h4>Obrigada por desfrutar do The Lounge! </h4>
+			<h4>Até à próxima :) </h4>
+		</div>
 
 
 		<!--***********| EVENTO - Convite para jogar |***************-->
@@ -90,9 +117,21 @@
 		<div id="game_menu" class="white_content">
 
 			<header>
-				<h5>ZONA DE JOGOS</h5>
+				ZONA DE JOGOS
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_games').style.display='block'">
+					<img id="question" class="pics" src="img/Question.png">
+				</a>
 
-				<img id="question" class="pics" src="img/Question.png">
+				<div id="help_games" class="helps">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_games').style.display='none'">
+					<img id="help_close" class="pics" src = "img/close.png">
+				</a>
+				Selecione um jogo. Depois poderá escolher entre jogar com a sua mesa ou com outra mesa do bar.
+				</div>
+
+
 				<a href = "javascript:void(0)"
 				   onclick = "document.getElementById('game_menu').style.display='none';
 				   			  document.getElementById('fade').style.display='none';">
@@ -107,6 +146,9 @@
 					<a href = "javascript:void(0)"
 					   onclick = "document.getElementById('challenge').style.display='block';
 					   			  document.getElementById('fade2').style.display='block';
+					   			  document.getElementById('challengeTitle').innerHTML = 'Selecione quem desafiar para QUIZ';
+					   			  document.getElementById('current_gameTitle').innerHTML = 'QUIZ';
+					   			  document.getElementById('current_game').style.backgroundImage='url(\'img/quiz404.png\')';
 								  selector='quiz'">
 
 						<div id="content">
@@ -121,6 +163,9 @@
 					<a href = "javascript:void(0)"
 					   onclick = "document.getElementById('challenge').style.display='block';
 					   	document.getElementById('fade2').style.display='block';
+					   	document.getElementById('challengeTitle').innerHTML = 'Selecione quem desafiar para POOL8';
+					   	document.getElementById('current_gameTitle').innerHTML = 'POOL8';
+					   	document.getElementById('current_game').style.backgroundImage='url(\'img/snooker404.png\')';
 					   	selector='snooker'">
 
 						<div id="content">
@@ -135,6 +180,9 @@
 					<a href = "javascript:void(0)"
 						onclick = "document.getElementById('challenge').style.display='block';
 						document.getElementById('fade2').style.display='block';
+						document.getElementById('challengeTitle').innerHTML = 'Selecione quem desafiar para XADREZ';
+						document.getElementById('current_gameTitle').innerHTML = 'XADREZ';
+						document.getElementById('current_game').style.backgroundImage='url(\'img/chess404.png\')';
 						selector='chess'">
 
 						<div id="content">
@@ -148,6 +196,9 @@
 					<a href = "javascript:void(0)"
 						onclick = "document.getElementById('challenge').style.display='block';
 						document.getElementById('fade2').style.display='block';
+						document.getElementById('challengeTitle').innerHTML = 'Selecione quem desafiar para CARROS';
+						document.getElementById('current_gameTitle').innerHTML = 'CARROS';
+						document.getElementById('current_game').style.backgroundImage='url(\'img/cars404.png\')';
 						selector='cars'">
 
 						<div id="content">
@@ -202,14 +253,24 @@
 		<div id="challenge" class="small_white_content">
 
 				<h3>
-					Selecione quem desafiar:
 					<a href = "javascript:void(0)"
 						onclick = "document.getElementById('challenge').style.display='none';
 						document.getElementById('fade2').style.display='none'">
 
 						<img id="close" class="pics" src="img/X.png">
 					</a>
-					<img id="question" class="pics" src="img/Question.png">
+					<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_challenge').style.display='block'">
+						<img id="question" class="pics" src="img/Question.png">
+					</a>
+					<div id="help_challenge" class="helps">
+						<a href = "javascript:void(0)"
+						   onclick = "document.getElementById('help_challenge').style.display='none'">
+							<img id="help_close" class="pics" src = "img/close.png">
+						</a>
+						Selecione a própria mesa para jogar com os seus amigos. Selecione outra mesa para escolher a mesa a desafiar para o jogo.
+					</div>
+						<span id="challengeTitle"> </span>
 				</h3>
 
 				<a href = "javascript:void(0)"
@@ -246,8 +307,18 @@
 						document.getElementById('fade2').style.display='none'">
 						<img id="close" class="pics" src="img/X.png">
 					</a>
-					<img id="question" class="pics" src="img/Question.png">
-				</h3>
+					<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_challenge_table').style.display='block'">
+						<img id="question" class="pics" src="img/Question.png">
+					</a>
+					<div id="help_challenge_table" class="helps">
+						<a href = "javascript:void(0)"
+						   onclick = "document.getElementById('help_challenge_table').style.display='none'">
+							<img id="help_close" class="pics" src = "img/close.png">
+						</a>
+						Selecione a mesa que pretende desafiar para o jogo. Apenas pode desafiar uma mesa. Se a mesa aceitar o seu desafio, o jogo inicia-se automaticamente.
+						</div>
+					</h3>
 
 				<a id="table1" class="table" href = "javascript:void(0)"
 					onclick = "switchColor('table1'); switchColor('table'+tableSelected);
@@ -275,20 +346,20 @@
 					tableSelected=8; ">8</a>
 
 				<a href = "javascript:void(0)"
-					onclick = " confirm('Pretende desafiar a mesa ' + tableSelected + ' para jogar?');
-					window.open('img/'+selector+'404.png','Error','width=1920,height=1080');">
+					onclick = " document.getElementById('mini_accept').addEventListener('click', function() {
+					appendConfirmGame();}); customConfirm('Pretende desafiar a mesa ' + tableSelected + ' para jogar?');">
 					<img id="play" class="pics" src="img/jogar.png">
 				</a>
 
 				<script>switchColor('table1')</script>
 		</div>
 
-
+		<a id= "clickableGame" href = "javascript:void(0)" onclick="minimize();">
 		<div id="current_game" class="white_content">
 
 			<header id = "game_header">
 				<a href = "javascript:void(0)" onclick = "minimize()">
-					<h5>QUIZ</h5>
+					<h5 id="current_gameTitle"> </h5>
 				</a>
 				<a href = "javascript:void(0)"
 				   onclick = "minimize()">
@@ -300,27 +371,10 @@
 				   document.getElementById('fade').style.display='none';">
 					<img id="close" class="pics" src="img/X.png">
 				</a>
-
 			</header>
 
 		</div>
-
-		<!--********** Jogo em curso ************
-
-		<div id="zona_de_jogos" class="white_content">
-
-			<header>
-				ZONA DE JOGOS
-
-				<img id="question" class="pics" src="img/Question.png">
-				<a href = "javascript:void(0)"
-				   onclick = "document.getElementById('zona_de_jogos').style.display='none';
-				   			  document.getElementById('fade_games').style.display='none';">
-					<img id="close" class="pics" src="img/X.png">
-				</a>
-
-			</header>-->
-
+		</a>
 		<!--************************************************************************
 		| 																		   |
 		|								  JUKEBOX    							   |
@@ -337,7 +391,18 @@
 					document.getElementById('fade').style.display='none';">
 					<img id="close" class="pics" src="img/X.png">
 				</a>
-				<img id="question" class="pics" src="img/Question.png">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_jukebox').style.display='block'">
+					<img id="question" class="pics" src="img/Question.png">
+				</a>
+
+				<div id="help_jukebox" class="helps">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_jukebox').style.display='none'">
+					<img id="help_close" class="pics" src = "img/close.png">
+				</a>
+				Selecione um estilo de música para adicionar as suas músicas preferidas à playlist do bar.
+				</div>
 
 			</header>
 
@@ -420,7 +485,18 @@
 					document.getElementById('fade').style.display='none';">
 					<img id="close" class="pics" src="img/X.png">
 				</a>
-				<img id="question" class="pics" src="img/Question.png">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_jukeboxBand').style.display='block'">
+					<img id="question" class="pics" src="img/Question.png">
+				</a>
+
+				<div id="help_jukeboxBand" class="helps">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_jukeboxBand').style.display='none'">
+					<img id="help_close" class="pics" src = "img/close.png">
+				</a>
+				Selecione o artista para ver as músicas disponíveis desse artista.
+				</div>
 
 			</header>
 
@@ -533,7 +609,19 @@
 					<img id="close" class="pics" src="img/X.png">
 				</a>
 
-				<img id="question" class="pics" src="img/Question.png">
+				</a>
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_setlist').style.display='block'">
+					<img id="question" class="pics" src="img/Question.png">
+				</a>
+
+				<div id="help_setlist" class="helps">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_setlist').style.display='none'">
+					<img id="help_close" class="pics" src = "img/close.png">
+				</a>
+				Adicione músicas à playlist através do '+'. Para ver a playlist clique em 'A tocar'.
+				</div>
 
 			</header>
 
@@ -576,8 +664,18 @@
 					<img id="close" class="pics" src="img/X.png">
 				</a>
 
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_playlist').style.display='block'">
 				<img id="question" class="pics" src="img/Question.png">
+				</a>
 
+				<div id="help_playlist" class="helps">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_playlist').style.display='none'">
+					<img id="help_close" class="pics" src = "img/close.png">
+				</a>
+				Aqui pode ver a playlist do bar. Pode remover músicas que adicionou através do 'x' à direita da respectiva música.
+				</div>
 			</header>
 
 		</div>
@@ -590,7 +688,19 @@
 					document.getElementById('fade2').style.display='none'">
 					<img id="close" class="pics" src="img/X.png">
 				</a>
+
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_rate_song').style.display='block'">
 				<img id="question" class="pics" src="img/Question.png">
+				</a>
+
+				<div id="help_rate_song" class="helps">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_rate_song').style.display='none'">
+					<img id="help_close" class="pics" src = "img/close.png">
+				</a>
+				Para classificar a música, clique no número de estrelas que deseja atribuir.
+				</div>
 			</h3>
 
 			<div id = "stars">
@@ -644,7 +754,18 @@
 				document.getElementById('fade').style.display='none';">
 				<img id="close" class="pics" src="img/X.png">
 			</a>
-			<img id="question" class="pics" src="img/Question.png">
+			<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_counter').style.display='block'">
+					<img id="question" class="pics" src="img/Question.png">
+			</a>
+			<div id="help_counter" class="helps">
+				<a href = "javascript:void(0)"
+				   onclick = "document.getElementById('help_counter').style.display='none'">
+					<img id="help_close" class="pics" src = "img/close.png">
+				</a>
+
+				Selecione a categoria de bebida/snack que pretende pedir. Depois de processado o pedido, será entregue na sua mesa.
+			</div>
 
 		</header>
 
@@ -652,7 +773,7 @@
 			<section id="game">
 				<a href = "javascript:void(0)"
 					onclick = "document.getElementById('drinks').style.display='block';
-					currentType=beer;
+					currentType=beer; document.getElementById('drinksTitle').innerHTML = 'CERVEJA';
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/beer.png">
@@ -664,7 +785,7 @@
 			<section id="game">
 				<a href = "javascript:void(0)"
 					onclick = "document.getElementById('drinks').style.display='block';
-					currentType=cocktails;
+					currentType=cocktails; document.getElementById('drinksTitle').innerHTML = 'COCKTAILS';
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/cocktail.png">
@@ -676,7 +797,7 @@
 			<section id="game">
 				<a href = "javascript:void(0)"
 					onclick = "document.getElementById('drinks').style.display='block';
-					currentType=gin;
+					currentType=gin; document.getElementById('drinksTitle').innerHTML = 'GIN';
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/gin.png">
@@ -688,7 +809,7 @@
 			<section id="game">
 				<a href = "javascript:void(0)"
 					onclick = "document.getElementById('drinks').style.display='block';
-					currentType=licores;
+					currentType=licores; document.getElementById('drinksTitle').innerHTML = 'LICORES';
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/liquor.png">
@@ -700,7 +821,7 @@
 			<section id="game">
 				<a href = "javascript:void(0)"
 					onclick = "document.getElementById('drinks').style.display='block';
-					currentType=shots;
+					currentType=shots; document.getElementById('drinksTitle').innerHTML = 'SHOTS';
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/shot.png">
@@ -712,7 +833,7 @@
 			<section id="game">
 				<a href = "javascript:void(0)"
 					onclick = "document.getElementById('drinks').style.display='block';
-					currentType=vodka;
+					currentType=vodka; document.getElementById('drinksTitle').innerHTML = 'VODKA';
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/vodka.png">
@@ -724,7 +845,7 @@
 			<section id="game">
 				<a href = "javascript:void(0)"
 					onclick = "document.getElementById('drinks').style.display='block';
-					currentType=semalcool;
+					currentType=semalcool; document.getElementById('drinksTitle').innerHTML = 'SEM ALCOOL';
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/water.png">
@@ -736,7 +857,7 @@
 			<section id="game">
 				<a href = "javascript:void(0)"
 					onclick = "document.getElementById('drinks').style.display='block';
-					currentType=cafetaria;
+					currentType=cafetaria; document.getElementById('drinksTitle').innerHTML = 'CAFETARIA';
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/cafetaria.png">
@@ -767,8 +888,9 @@
 	<div id="drinks" class="white_content">
 
 		<header>
-			<h5>BEBIDAS:</h5>
 
+			<h5 id=drinksTitle>
+			</h5>
 			<a href = "javascript:void(0)"
 				onclick = "document.getElementById('drinks').style.display='none';
 				document.getElementById('drinks').removeChild(document.getElementsByTagName('UL')[0]);">
@@ -814,7 +936,7 @@
 
 		<header>
 			<h5>Personalizar bebida:</h5>
-			
+
 			<a href = "javascript:void(0)"
 				onclick = "document.getElementById('customize').style.display='none';
 				document.getElementById('customize').removeChild(document.getElementsByTagName('UL')[0]);
@@ -833,10 +955,10 @@
 			<img id="question" class="pics" src="img/Question.png">
 
 		</header>
-		
+
 		<h6 id="h6Left">Ingredientes Atuais</h6>
 		<h6 id="h6Right">Ingredientes Adicionais</h6>
-		
+
 		<a href = "javascript:void(0)"
 				onclick = "alert('A sua bebida foi personalizada');
 				document.getElementById('customize').style.display='none';
@@ -899,27 +1021,33 @@
 			<img id="question" class="pics" src="img/Question.png">
 
 		</header>
-		
+
+		<h6 id="total1"></h6>
+
 		<a href = "javascript:void(0)"
-				onclick = "confirm('Pretende concluir o seu pedido?');
-				alert('O seu pedido está a ser processado');
-				document.getElementById('counter').style.display='none';
-				document.getElementById('allOrder').style.display='none';
-				document.getElementById('fade').style.display='none';
-				document.getElementById('fade2').style.display='none';
-				document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);">
+				onclick = "
+				if(currentlyOrdered.length == 0) {
+					alert('O seu pedido está vazio');
+				}
+				else {
+					document.getElementById('mini_accept').addEventListener('click', function() {
+						appendConfirmBar();
+					});
+					customConfirm('Pretende concluir o seu pedido?');
+				}
+				">
 			<div id="accept">
 					<p>Finalizar Pedido</p>
 			</div>
 		</a>
 
 		<a href = "javascript:void(0)"
-				onclick = "confirm('Pretende limpar o seu pedido?');
-				document.getElementById('allOrder').style.display='none';
-				document.getElementById('fade2').style.display='none';
-				currentlyOrdered = [];
-				document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
-				updateOrder();">
+				onclick = "
+				document.getElementById('mini_accept').addEventListener('click', function() {
+					appendConfirmClean();
+				});
+				customConfirm('Pretende limpar o seu pedido?');
+				">
 				<div id="ignore">
 					<p>Limpar Pedido</p>
 				</div>
@@ -951,22 +1079,19 @@
 			<img id="question" class="pics" src="img/Question.png">
 
 		</header>
-		
-		<h6 id="h6Total">Total:</h6>
-		
+
+		<h6 id="total2"></h6>
+
 		<a href = "javascript:void(0)"
 				onclick = "
 				if(currentlyOrdered.length == 0) {
 					alert('O seu pedido está vazio');
 				}
 				else {
-					confirm('Pretende concluir o seu pedido?');
-					alert('O seu pedido está a ser processado');
-					document.getElementById('counter').style.display='none';
-					document.getElementById('checkout').style.display='none';
-					document.getElementById('fade').style.display='none';
-					document.getElementById('fade2').style.display='none';
-					document.getElementById('checkout').removeChild(document.getElementsByTagName('UL')[0]);
+					document.getElementById('mini_accept').addEventListener('click', function() {
+						appendConfirmBar();
+					});
+					customConfirm('Pretende concluir o seu pedido?');
 				}
 				">
 			<div id="accept">
@@ -981,6 +1106,36 @@
 				<div id="ignore">
 					<p>Voltar atrás</p>
 				</div>
+		</a>
+
+	</div>
+
+	<div id="confirm" class = "small_white_content">
+		<span id="confirm_text" class="text"></span>
+
+		<a href = "javascript:void(0)" id="mini_accept"
+				onclick = "toggle_visibility('confirm');">
+			<div id="mini_accept">
+					<span class="text">Aceitar</span>
+			</div>
+		</a>
+
+		<a href = "javascript:void(0)" id="mini_ignore"
+				onclick = "toggle_visibility('confirm');">
+				<div id="mini_ignore">
+					<span class="text">Ignorar</span>
+				</div>
+			</a>
+	</div>
+
+	<div id="alert" class = "small_white_content">
+		<span id="alert_text" class="text"></span>
+
+		<a href = "javascript:void(0)"
+			onclick="toggle_visibility('alert');">
+			<div id="mini_accept">
+					<span class="text">Aceitar</span>
+			</div>
 		</a>
 
 	</div>

@@ -4,7 +4,7 @@ var selector = null;
 var minimized = false;
 var rockMuse = [["Assassin","4E"], ["Bliss","5E"], ["Citizen Erased","5E"], ["Dead Star","5E"], ["Feeling Good","4E"],
             ["Hysteria","4E"], ["Knights of Cydonia","5E"], ["Map of Problematique","5E"], ["New Born","5E"], ["Showbiz","5E"]];
-var rockACDC = [["Dirty Deeds Done Dirt Cheap","5E"],["For Those About to Rock (We Salute You)","5E"],["Highway to Hell","4E"],["Problem Child","5E"],["Thunderstruck","5E"],["The Jack","4E"],["You Shook Me All Night Long","5E"]];
+var rockACDC = [["Dirty Deeds Done Dirt Cheap","5E"],["For Those About to Rock (We Salute You)","5E"],["Highway to Hell","4E"],["Problem Child","5E"],["The Jack","4E"],["Thunderstruck","5E"],["You Shook Me All Night Long","5E"]];
 var rockBeatles = [["Across the Universe","5E"], ["A Day in the Life","5E"], ["Blackbird","5E"], ["Eleanor Rigby","5E"], ["Hey Jude","5E"], ["Let It Be","5E"], ["Strawberry Fields Forever","5E"], ["While My Guitar Gently Weeps","5E"]];
 var rockFFighters = [["All My Life","5E"], ["Best of You","5E"], ["Everlong","5E"], ["Monkey Wrench","5E"], ["My Hero","5E"],["The Pretender","5E"], ["Something From Nothing","5E"], ["Walk","5E"]];
 var rockGnRoses = [["Civil War","5E"], ["Estranged","5E"], ["Mr. Brownstone","5E"], ["Nightrain","5E"], ["November Rain","5E"], ["Patience","5E"], ["Paradise City","5E"], ["Sweet Child O’ Mine","5E"]];

@@ -17,6 +17,41 @@
 		|								ECRA PRINCIPAL 							   |
 		|																		   |
 		*************************************************************************-->
+		<div id='black'></div>
+		<div id='stripes'>
+		<div class="strip left a1"></div>
+		<div class="strip left a2"></div>
+		<div class="strip left a3"></div>
+		<div class="strip left a4"></div>
+		<div class="strip left a5"></div>
+		<div class="strip left a6"></div>
+		<div class="strip left a7"></div>
+		<div class="strip left a8"></div>
+		<div class="strip left a9"></div>
+		<div class="strip right b1"></div>
+		<div class="strip right b2"></div>
+		<div class="strip right b3"></div>
+		<div class="strip right b4"></div>
+		<div class="strip right b5"></div>
+		<div class="strip right b6"></div>
+		<div class="strip right b7"></div>
+		<div class="strip right b8"></div>
+		<div class="strip right b9"></div>
+	</div>
+		<div id= "anel_div" class="anel"> The Lounge 
+			<a href = "javascript:void(0)"
+			   onclick = "
+				 document.getElementById('stripes').style.display='block'; 
+				 document.getElementById('black').style.display='none';
+				 document.getElementById('anel_div').style.opacity='0';
+				 setTimeout( function(){document.getElementById('stripes').style.display='none';
+				 document.getElementById('anel_div').style.display='none';} , 3000);">
+			<img id="entrar" class="pics" src = "img/entrar.png">
+			</a>
+		</div>
+	
+
+	
 
 		<div id="mainscreen">
 
@@ -71,13 +106,7 @@
 			<img id="sair" class="pics" src = "img/Sair.png">
 			</a>
 		</div>
-		<div id = exitScreen>
-			<h4>Um empregado vai dirigir-se à sua mesa com a conta. </h4>
-			<h4>Obrigada por desfrutar do The Lounge! </h4>
-			<h4>Até à próxima :) </h4>
-		</div>
-
-
+		
 		<!--***********| EVENTO - Convite para jogar |***************-->
 
 		<!-- <div id="event" class="small_white_content">

@@ -674,6 +674,353 @@ footer {
 	padding: 2% 2%;
 }
 
+/************************************************************************************
+			START SCREEN
+*************************************************************************************/
+
+#stripes {
+	display: none;
+  height: 100%;
+  overflow: hidden;
+  z-index: 9001;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+width: 100%;
+}
+
+#black {
+  background-color: black;
+  height: 100%;
+  overflow: hidden;
+  z-index: 9000;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+width: 100%;
+}
+
+#entrar{
+    bottom: -34%;
+    left: 18%;
+    position: absolute;
+}
+
+#anel_div {
+	opacity:1;
+   -webkit-transition: opacity 2s;
+   -moz-transition: opacity 2s;
+   -o-transition: opacity 2s;
+   transition: opacity 2s;
+}
+.anel{
+ color: #1602e2;
+  position: absolute;
+  top: 30%;
+  left: 38%;
+  margin-left: -140px;
+  margin-top: -140px;
+  width: 35%;
+  height: 60%;
+  text-align: center;
+  font-size: 420%;
+  line-height: 280px;
+  -webkit-font-smoothing: antialiased;
+  z-index: 10001;
+}
+.anel:after,
+.anel:before {
+  content: "";
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.anel:after {
+  box-shadow: inset 0 17.5px 0 rgba(250, 250, 0, 0.6), inset 17.5px 0 0 rgba(250, 200, 0, 0.6), inset 0 -17.5px 0 rgba(250, 150, 0, 0.6), inset -17.5px 0 0 rgba(250, 100, 0, 0.6);
+  -webkit-animation: rotar 2s -0.5s linear infinite;
+          animation: rotar 2s -0.5s linear infinite;
+}
+.anel:before {
+  box-shadow: inset 0 17.5px 0 rgba(0, 250, 250, 0.6), inset 17.5px 0 0 rgba(0, 200, 200, 0.6), inset 0 -17.5px 0 rgba(0, 150, 200, 0.6), inset -17.5px 0 0 rgba(0, 200, 250, 0.6);
+  -webkit-animation: rotarIz 2s -0.5s linear infinite;
+          animation: rotarIz 2s -0.5s linear infinite;
+}
+@-webkit-keyframes rotar {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+            transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(360deg) scaleX(1) scaleY(1);
+  }
+}
+@keyframes rotar {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+            transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(360deg) scaleX(1) scaleY(1);
+  }
+}
+@-webkit-keyframes rotarIz {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
+            transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
+  }
+  100% {
+    -webkit-transform: rotateZ(-360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(-360deg) scaleX(1) scaleY(1);
+  }
+}
+@keyframes rotarIz {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
+            transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
+  }
+  100% {
+    -webkit-transform: rotateZ(-360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(-360deg) scaleX(1) scaleY(1);
+  }
+}
+
+
+.strip {
+  position: fixed;
+  width: 50%;
+  height: 11%;
+  z-index: 10000;
+}
+
+
+
+.left { left: 0; }
+.right { right: 0; }
+
+.a1, .b1 { top: 0; height: 11.5%;}
+.a2, .b2 { top: 11.5%; }
+.a3, .b3 { top: 22.5%; }
+.a4, .b4 { top: 33.5%; }
+.a5, .b5 { top: 44.5%; }
+.a6, .b6 { top: 55.5%; }
+.a7, .b7 { top: 66.5%; }
+.a8, .b8 { top: 77.5%; }
+.a9, .b9 { top: 88.5%; height: 11.5%;}
+
+.a1 {
+  background-color: black;
+  animation: openA1 1.5s linear 0.5s forwards;
+}
+.a2 {
+  background-color: black;
+  animation: openA2 1.5s linear 0.5s forwards;
+}
+.a3 {
+  background-color: black;  
+  animation: openA3 1.5s linear 0.5s forwards;
+}
+.a4 {
+  background-color: black;
+  animation: openA4 1.5s linear 0.5s forwards;
+}
+.a5 {
+  background-color: black;
+  animation: openA5 1.5s linear 0.5s forwards;
+}
+.a6 {
+  background-color: black;
+  animation: openA6 1.5s linear 0.5s forwards;
+}
+.a7 {
+  background-color: black;
+  animation: openA7 1.5s linear 0.5s forwards;
+}
+.a8 {
+  background-color: black;
+  animation: openA8 1.5s linear 0.5s forwards;
+}
+.a9 {
+  background-color: black;
+  animation: openA9 1.5s linear 0.5s forwards;
+}
+
+@keyframes openA1 { 
+  from { width: 60%; }
+  75%  { width: 20%; }
+  to   { width: 0%; }
+}
+@keyframes openA2 { 
+  from { width: 50%; }
+  75%  { width: 10%; }
+  to   { width: 0%; }
+}
+@keyframes openA3 { 
+  from { width: 60%; }
+  75%  { width: 15%; }
+  to   { width: 0%; }
+}
+@keyframes openA4 { 
+  from { width: 50%; }
+  75%  { width: 10%; }
+  to   { width: 0%; }
+}
+@keyframes openA5 { 
+  from { width: 60%; }
+  75%  { width: 15%; }
+  to   { width: 0%; }
+}
+@keyframes openA6 { 
+  from { width: 50%; }
+  75%  { width: 10%; }
+  to   { width: 0%; }
+}
+@keyframes openA7 { 
+  from { width: 60%; }
+  75%  { width: 15%; }
+  to   { width: 0%; }
+}
+@keyframes openA8 { 
+  from { width: 50%; }
+  75%  { width: 10%; }
+  to   { width: 0%; }
+}
+@keyframes openA9 { 
+  from { width: 60%; }
+  75%  { width: 20%; }
+  to   { width: 0%; }
+}
+
+.b1 {
+  background-color: black;
+  animation: openB1 1.5s linear 0.5s forwards;
+}
+.b2 {
+  background-color: black;
+  animation: openB2 1.5s linear 0.5s forwards;
+}
+.b3 {
+  background-color: black;
+  animation: openB3 1.5s linear 0.5s forwards;
+}
+.b4 {
+  background-color: black;
+  animation: openB4 1.5s linear 0.5s forwards;
+}
+.b5 {
+  background-color: black;
+  animation: openB5 1.5s linear 0.5s forwards;
+}
+.b6 {
+  background-color: black;
+  animation: openB6 1.5s linear 0.5s forwards;
+}
+.b7 {
+  background-color: black;
+  animation: openB7 1.5s linear 0.5s forwards;
+}
+.b8 {
+  background-color: black;
+  animation: openB8 1.5s linear 0.5s forwards;
+}
+.b9 {
+  background-color: black;
+  animation: openB9 1.5s linear 0.5s forwards;
+}
+
+@keyframes openB1 { 
+  from { width: 60%; }
+  75%  { width: 20%; }
+  to   { width: 0%; }
+}
+@keyframes openB2 { 
+  from { width: 50%; }
+  75%  { width: 15%; }
+  to   { width: 0%; }
+}
+@keyframes openB3 { 
+  from { width: 60%; }
+  75%  { width: 15%; }
+  to   { width: 0%; }
+}
+@keyframes openB4 { 
+  from { width: 50%; }
+  75%  { width: 15%; }
+  to   { width: 0%; }
+}
+@keyframes openB5 { 
+  from { width: 60%; }
+  75%  { width: 15%; }
+  to   { width: 0%; }
+}
+@keyframes openB6 { 
+  from { width: 50%; }
+  75%  { width: 15%; }
+  to   { width: 0%; }
+}
+@keyframes openB7 { 
+  from { width: 60%; }
+  75%  { width: 15%; }
+  to   { width: 0%; }
+}
+@keyframes openB8 { 
+  from { width: 50%; }
+  75%  { width: 15%; }
+  to   { width: 0%; }
+}
+@keyframes openB9 { 
+  from { width: 60%; }
+  75%  { width: 20%; }
+  to   { width: 0%; }
+}
+
+.container {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in 2s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to  { opacity: 1; }
+}
+
+header img {
+  border-radius: 150px;
+  border: 5px solid #F0F0F0;
+}
+
+header {
+  font-family: 'Merriweather', serif;
+}
+
+section {
+  font-family: 'Merriweather Sans', serif;
+  text-align: justify;
+  font-size: 1.1em;
+  color: #333;
+}
 
 /************************************************************************************
 MEDIA QUERIES

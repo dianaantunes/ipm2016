@@ -651,5 +651,7 @@ function appendConfirmGame() {
 }
 
 function appendConfirmExit() {
-  document.getElementById('exitScreen').style.display='block';
+  alert('Um empregado vai dirigir-se à sua mesa com a conta.  \n\r Obrigada por desfrutar do The Lounge! \n\r Até à próxima :) ');
+  document.getElementById('alert_text').innerHTML = document.getElementById('alert_text').innerHTML.replace(/\n\r?/g, '<br />');
+  setTimeout(function(){location.reload(true);}, 6000);
 }

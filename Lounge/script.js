@@ -355,14 +355,14 @@ function minimize() {
       /*If it's maximized, we hide the game menu, and resize the game to the top
       left corner of the main screen*/
         document.getElementById('game_menu').style.display='none';
-        document.getElementById('fade').style.display='none';
+        document.getElementById('fade').style.display='none'; document.getElementById('fadeShortcuts').style.display='none';
         document.getElementById('current_game').style.position='fixed';
         document.getElementById('current_game').style.top = '0px';
         document.getElementById('current_game').style.left = '0px';
         document.getElementById('current_game').style.height = '15%';
         document.getElementById('current_game').style.width = '10%';
         document.getElementById('game_header').style.display = 'none';
-        document.getElementById('clickableGame').style.display = 'block'
+        document.getElementById('clickableGame').style.display = 'block';
 
         minimized = true;
     }
@@ -375,7 +375,7 @@ function minimize() {
         document.getElementById('current_game').style.height = '75%';
         document.getElementById('current_game').style.width = '75%';
         document.getElementById('game_header').style.display = 'block';
-        document.getElementById('clickableGame').style.display = 'none'
+        document.getElementById('clickableGame').style.display = 'none';
 
         minimized = false;
     }
@@ -390,7 +390,7 @@ function editDrink(drink) {
     drink = drink.substring(0, drink.length - 7);
     /* FIXME It receives a drink,the price and the ammount in one string, so we have to crop.
     (Sagres0.99€2x)*/
-    var lists = makeCustom(drink)
+    var lists = makeCustom(drink);
 
     document.getElementById('drinks').style.display='none';
     document.getElementById('drinks').removeChild(document.getElementsByTagName('UL')[0]);
@@ -490,10 +490,13 @@ function updateOrder() {
         }
         else {
             elements[i].querySelector("#order").textContent = "A pedir: " + ordered;
-            elements[i].querySelector("#tprice").textContent = currentPrice + "€";
+            elements[i].querySelector("#tprice").textContent = Math.round(currentPrice*100)/100 + "€";
             elements[i].querySelector("#acceptOrder").style.display = 'block';
         }
     }
+
+    document.getElementById("total1").textContent = "Total: " + Math.round(currentPrice*100)/100 + "€";
+    document.getElementById("total2").textContent = "Total: " + Math.round(currentPrice*100)/100 + "€";
 }
 
 function numberOfDrinks(drink) {
@@ -606,7 +609,10 @@ function appendConfirmBar() {
     document.getElementById('allOrder').style.display='none';
     document.getElementById('checkout').style.display='none';
     document.getElementById('fade').style.display='none';
+    document.getElementById('fadeShortcuts').style.display='none';
     document.getElementById('fade2').style.display='none';
+    currentlyOrdered = [];
+    updateOrder();
     document.getElementById('allOrder').removeChild(document.getElementsByTagName('UL')[0]);
 }
 

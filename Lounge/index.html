@@ -414,7 +414,7 @@
 					<h5 id="current_gameTitle"> </h5>
 				</a>
 				<a href = "javascript:void(0)"
-				   onclick = "minimize()">
+				   onclick = "minimize(); document.getElementById('fadeShortcuts').style.display='none';">
 					<img id="question" class="pics" src="img/Minimize.png">
 				</a>
 
@@ -1075,6 +1075,8 @@
 
 		</header>
 
+		<h6 id="total1"></h6>
+
 		<a href = "javascript:void(0)"
 				onclick = "
 				if(currentlyOrdered.length == 0) {
@@ -1130,6 +1132,8 @@
 			<img id="question" class="pics" src="img/Question.png">
 
 		</header>
+
+		<h6 id="total2"></h6>
 
 		<a href = "javascript:void(0)"
 				onclick = "

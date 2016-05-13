@@ -374,10 +374,10 @@
 					onclick = "switchColor('table8'); switchColor('table'+tableSelected);
 					tableSelected=8; ">8</a>
 
-				<a href = "javascript:void(0)"
-					onclick = " document.getElementById('mini_accept').addEventListener('click', function() {
-					appendConfirmGame();}); customConfirm('Pretende desafiar a mesa ' + tableSelected + ' para jogar?');">
-					<img id="play" class="pics" src="img/jogar.png">
+				<a id="rateButton" href = "javascript:void(0)"
+				onclick = " document.getElementById('mini_accept').addEventListener('click', function() {
+				appendConfirmGame();}); customConfirm('Pretende desafiar a mesa ' + tableSelected + ' para jogar?');">
+					CONFIRMAR
 				</a>
 
 				<script>switchColor('table1')</script>

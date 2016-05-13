@@ -97,6 +97,31 @@ img {
 	right: 10%;
 	width: 33%;
 }
+#fadeShortcuts {
+	display: none;
+	z-index: 2000;
+}
+#fade_counter_img{
+	position: absolute;
+	z-index: 2000;
+	width: 5%;
+	top: 5%;
+	left: 0;
+}
+#fade_jukebox_img{
+	position: absolute;
+	z-index: 2000;
+	top: 15%;
+	left: 0;
+	width: 5%;
+}
+#fade_games_img{
+	position: absolute;
+	z-index: 2000;
+	top: 30%;
+	left:0;
+	width: 5%;
+}
 #help_img{
 	width: 5.5%;
 	top: 4%;

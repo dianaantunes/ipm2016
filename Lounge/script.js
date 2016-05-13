@@ -363,7 +363,7 @@ function minimize() {
         document.getElementById('current_game').style.width = '10%';
         document.getElementById('game_header').style.display = 'none';
         document.getElementById('clickableGame').style.display = 'block'
-        
+
         minimized = true;
     }
     else {
@@ -651,7 +651,7 @@ function appendConfirmGame() {
 }
 
 function appendConfirmExit() {
-  alert('Um empregado vai dirigir-se à sua mesa com a conta.  \n\r Obrigada por desfrutar do The Lounge! \n\r Até à próxima :) ');
+  alert('Um empregado vai dirigir-se à sua mesa com a conta.  \n\r Obrigada por desfrutar do The Lounge!');
   document.getElementById('alert_text').innerHTML = document.getElementById('alert_text').innerHTML.replace(/\n\r?/g, '<br />');
   setTimeout(function(){location.reload(true);}, 6000);
 }

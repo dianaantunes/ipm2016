@@ -38,10 +38,11 @@
 		<div class="strip right b8"></div>
 		<div class="strip right b9"></div>
 	</div>
-		<div id= "anel_div" class="anel"> The Lounge 
+		<div id= "anel_div" class="anel">
+			<img id="lounge" class="pics" src="img/lounge.png">
 			<a href = "javascript:void(0)"
 			   onclick = "
-				 document.getElementById('stripes').style.display='block'; 
+				 document.getElementById('stripes').style.display='block';
 				 document.getElementById('black').style.display='none';
 				 document.getElementById('anel_div').style.opacity='0';
 				 setTimeout( function(){document.getElementById('stripes').style.display='none';
@@ -49,9 +50,9 @@
 			<img id="entrar" class="pics" src = "img/entrar.png">
 			</a>
 		</div>
-	
 
-	
+
+
 
 		<div id="mainscreen">
 
@@ -106,7 +107,7 @@
 			<img id="sair" class="pics" src = "img/Sair.png">
 			</a>
 		</div>
-		
+
 		<!--***********| EVENTO - Convite para jogar |***************-->
 
 		<!-- <div id="event" class="small_white_content">
@@ -146,7 +147,7 @@
 		<div id="game_menu" class="white_content">
 
 			<header>
-				ZONA DE JOGOS
+				<h5>ZONA DE JOGOS</h5>
 				<a href = "javascript:void(0)"
 				   onclick = "document.getElementById('help_games').style.display='block'">
 					<img id="question" class="pics" src="img/Question.png">
@@ -173,16 +174,22 @@
 
 				<section id="game">
 					<a href = "javascript:void(0)"
-					   onclick = "document.getElementById('challenge').style.display='block';
-					   			  document.getElementById('fade2').style.display='block';
-					   			  document.getElementById('challengeTitle').innerHTML = 'Selecione quem desafiar para QUIZ';
-					   			  document.getElementById('current_gameTitle').innerHTML = 'QUIZ';
-					   			  document.getElementById('current_game').style.backgroundImage='url(\'img/quiz404.png\')';
-								  selector='quiz'">
+					   onclick = "
+						 if(minimized==true) {
+	 							alert('Tem um jogo em curso');
+	 						}
+						else {
+								document.getElementById('challenge').style.display='block';
+					   		document.getElementById('fade2').style.display='block';
+					   		document.getElementById('challengeTitle').innerHTML = 'Selecione quem desafiar para QUIZ';
+					   		document.getElementById('current_gameTitle').innerHTML = 'QUIZ';
+					   		document.getElementById('current_game').style.backgroundImage='url(\'img/quiz404.png\')';
+							selector='quiz';
+						}">
 
 						<div id="content">
 							<img id="games" class="pics" src="img/quiz.png">
-							<h2> QUIZ </h2>
+							<h2> Quiz </h2>
 						</div>
 
 					</a>
@@ -190,16 +197,22 @@
 
 				<section id="game">
 					<a href = "javascript:void(0)"
-					   onclick = "document.getElementById('challenge').style.display='block';
+					   onclick = "
+						 if(minimized==true) {
+	 							alert('Tem um jogo em curso');
+	 						}
+						else {
+						 document.getElementById('challenge').style.display='block';
 					   	document.getElementById('fade2').style.display='block';
 					   	document.getElementById('challengeTitle').innerHTML = 'Selecione quem desafiar para POOL8';
 					   	document.getElementById('current_gameTitle').innerHTML = 'POOL8';
 					   	document.getElementById('current_game').style.backgroundImage='url(\'img/snooker404.png\')';
-					   	selector='snooker'">
+					   	selector='snooker';
+						}">
 
 						<div id="content">
 							<img id="games" class="pics" src="img/pool.png">
-							<h2>POOL8</h2>
+							<h2>Pool 8</h2>
 						</div>
 
 					</a>
@@ -207,32 +220,44 @@
 
 				<section id="game">
 					<a href = "javascript:void(0)"
-						onclick = "document.getElementById('challenge').style.display='block';
+						onclick = "
+						if(minimized==true) {
+							 alert('Tem um jogo em curso');
+						 }
+					 else {
+						 document.getElementById('challenge').style.display='block';
 						document.getElementById('fade2').style.display='block';
 						document.getElementById('challengeTitle').innerHTML = 'Selecione quem desafiar para XADREZ';
 						document.getElementById('current_gameTitle').innerHTML = 'XADREZ';
 						document.getElementById('current_game').style.backgroundImage='url(\'img/chess404.png\')';
-						selector='chess'">
+						selector='chess';
+					}">
 
 						<div id="content">
 							<img id="games" class="pics" src="img/chess.png">
-							<h2>XADREZ</h2>
+							<h2>Xadrez</h2>
 						</div>
 					</a>
 				</section>
 
 				<section id="game">
 					<a href = "javascript:void(0)"
-						onclick = "document.getElementById('challenge').style.display='block';
+						onclick = "
+						if(minimized==true) {
+							 alert('Tem um jogo em curso');
+						 }
+					 else {
+						 document.getElementById('challenge').style.display='block';
 						document.getElementById('fade2').style.display='block';
 						document.getElementById('challengeTitle').innerHTML = 'Selecione quem desafiar para CARROS';
 						document.getElementById('current_gameTitle').innerHTML = 'CARROS';
 						document.getElementById('current_game').style.backgroundImage='url(\'img/cars404.png\')';
-						selector='cars'">
+						selector='cars';
+					}">
 
 						<div id="content">
 							<img id="games" class="pics" src="img/car.png">
-							<h2>CARROS</h2>
+							<h2>Carros</h2>
 						</div>
 					</a>
 				</section>
@@ -370,9 +395,7 @@
 				<a id="table7" class="table" href = "javascript:void(0)"
 					onclick = "switchColor('table7'); switchColor('table'+tableSelected);
 					tableSelected=7; ">7</a>
-				<a id="table8" class="table" href = "javascript:void(0)"
-					onclick = "switchColor('table8'); switchColor('table'+tableSelected);
-					tableSelected=8; ">8</a>
+				<a id="table8" class="table" href = "javascript:void(0)"> </a>
 
 				<a id="rateButton" href = "javascript:void(0)"
 				onclick = " document.getElementById('mini_accept').addEventListener('click', function() {
@@ -397,6 +420,7 @@
 
 				<a href = "javascript:void(0)"
 				   onclick = "document.getElementById('current_game').style.display='none';
+					 document.getElementById('game_menu').style.display='none';
 				   document.getElementById('fade').style.display='none';">
 					<img id="close" class="pics" src="img/X.png">
 				</a>
@@ -441,7 +465,7 @@
 						onclick = "document.getElementById('jukeboxBand').style.display='block';">
 						<div id="content">
 							<img id="vinil" class="pics" src="img/rock.png">
-							<h2>ROCK</h2>
+							<h2>Rock</h2>
 						</div>
 					</a>
 				</section>
@@ -453,7 +477,7 @@
 						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
 						<div id="content">
 							<img id="vinil" class="pics" src="img/metal.png">
-							<h2>METAL</h2>
+							<h2>Metal</h2>
 						</div>
 					</a>
 				</section>
@@ -465,7 +489,7 @@
 						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
 						<div id="content">
 							<img id="vinil" class="pics" src="img/pop.png">
-							<h2>POP</h2>
+							<h2>Pop</h2>
 						</div>
 					</a>
 				</section>
@@ -477,7 +501,7 @@
 						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
 						<div id="content">
 							<img id="vinil" class="pics" src="img/blues.png">
-							<h2>BLUES</h2>
+							<h2>Blues</h2>
 						</div>
 					</a>
 				</section>
@@ -549,7 +573,7 @@
 						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
 						<div id="content">
 							<img id="vinil" class="pics" src="img/beatles.png">
-							<h2>BEATLES</h2>
+							<h2>Beatles</h2>
 						</div>
 					</a>
 				</section>
@@ -561,7 +585,7 @@
 						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
 						<div id="content">
 							<img id="vinil" class="pics" src="img/foo.png">
-							<h2>FOO FIGHTERS</h2>
+							<h2>Foo Fighters</h2>
 						</div>
 					</a>
 				</section>
@@ -573,7 +597,7 @@
 						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
 						<div id="content">
 							<img id="vinil" class="pics" src="img/guns.png">
-							<h2>GUNS N' ROSES</h2>
+							<h2>Guns N' Roses</h2>
 						</div>
 					</a>
 				</section>
@@ -585,7 +609,7 @@
 						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
 						<div id="content">
 							<img id="vinil" class="pics" src="img/muse.png">
-							<h2>MUSE</h2>
+							<h2>Muse</h2>
 						</div>
 					</a>
 				</section>
@@ -597,7 +621,7 @@
 						document.getElementById('setlist').appendChild(makeUL(currentGender, 'setlist'));">
 						<div id="content">
 							<img id="vinil" class="pics" src="img/queen.png">
-							<h2>QUEEN</h2>
+							<h2>Queen</h2>
 						</div>
 					</a>
 				</section>
@@ -806,7 +830,7 @@
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/beer.png">
-						<h2> CERVEJA </h2>
+						<h2> Cerveja </h2>
 					</div>
 				</a>
 			</section>
@@ -818,7 +842,7 @@
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/cocktail.png">
-						<h2> COCKTAILS </h2>
+						<h2> Cocktail </h2>
 					</div>
 				</a>
 			</section>
@@ -830,7 +854,7 @@
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/gin.png">
-						<h2> GIN </h2>
+						<h2> Gin </h2>
 					</div>
 				</a>
 			</section>
@@ -842,7 +866,7 @@
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/liquor.png">
-						<h2> LICORES </h2>
+						<h2> Licor </h2>
 					</div>
 				</a>
 			</section>
@@ -854,7 +878,7 @@
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/shot.png">
-						<h2> SHOTS </h2>
+						<h2> Shot </h2>
 					</div>
 				</a>
 			</section>
@@ -866,7 +890,7 @@
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/vodka.png">
-						<h2> VODKA </h2>
+						<h2> Vodka </h2>
 					</div>
 				</a>
 			</section>
@@ -878,7 +902,7 @@
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/water.png">
-						<h2> SEM ALCOOL </h2>
+						<h2> Sem Alcool </h2>
 					</div>
 				</a>
 			</section>
@@ -890,7 +914,7 @@
 					document.getElementById('drinks').appendChild(makeUL(currentType, 'drinks'));">
 					<div id="content">
 						<img id="bottle" class="pics" src="img/cafetaria.png">
-						<h2> CAFETARIA </h2>
+						<h2> Cafetaria </h2>
 					</div>
 				</a>
 			</section>
@@ -1158,7 +1182,7 @@
 
 		<a href = "javascript:void(0)"
 			onclick="toggle_visibility('alert');">
-			<div id="mini_accept">
+			<div id="alert_accept">
 					<span class="text">Aceitar</span>
 			</div>
 		</a>

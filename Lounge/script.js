@@ -371,9 +371,9 @@ function minimize() {
         document.getElementById('fade').style.display='block';
         document.getElementById('current_game').style.position='absolute';
         document.getElementById('current_game').style.top = '12.5%';
-        document.getElementById('current_game').style.left = '12.5%';
+        document.getElementById('current_game').style.left = '20%';
         document.getElementById('current_game').style.height = '75%';
-        document.getElementById('current_game').style.width = '75%';
+        document.getElementById('current_game').style.width = '60%';
         document.getElementById('game_header').style.display = 'block';
         document.getElementById('clickableGame').style.display = 'none';
 
@@ -659,5 +659,5 @@ function appendConfirmGame() {
 function appendConfirmExit() {
   alert('Um empregado vai dirigir-se à sua mesa com a conta.  \n\r Obrigada por desfrutar do The Lounge!');
   document.getElementById('alert_text').innerHTML = document.getElementById('alert_text').innerHTML.replace(/\n\r?/g, '<br />');
-  setTimeout(function(){location.reload(true);}, 6000);
+  setTimeout(function(){location.reload(true);}, 3000);
 }

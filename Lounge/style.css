@@ -104,22 +104,23 @@ img {
 #fade_counter_img{
 	position: absolute;
 	z-index: 2000;
+	width: 10%;
+	top: 35%;
+	left: 5%;
 	width: 5%;
-	top: 25%;
-	left: 0;
 }
 #fade_jukebox_img{
 	position: absolute;
 	z-index: 2000;
-	top: 35%;
-	left: 0;
+	top: 45%;
+	left: 5%;
 	width: 5%;
 }
 #fade_games_img{
 	position: absolute;
 	z-index: 2000;
-	top: 53%;
-	left:0;
+	top: 63%;
+	left:5%;
 	width: 5%;
 }
 #help_img{
@@ -307,7 +308,7 @@ img {
 	float: left;
 	font-size: 4em;
 	text-align: center;
-	height: 20%;
+	height: 18%;
 	width: 14%;
 	margin: 20px 32px;
 }
@@ -775,6 +776,9 @@ width: 100%;
    -moz-transition: opacity 2s;
    -o-transition: opacity 2s;
    transition: opacity 2s;
+}
+#anel_div img {
+	z-index: 1500;
 }
 .anel{
  color: #1602e2;
